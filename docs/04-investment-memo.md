@@ -1,3 +1,9 @@
+---
+title: Investment Memo
+nav_order: 4
+parent: Documents
+---
+
 # House of Ideas — Investment Memo
 
 *Confidential — For Partners and Advisors*

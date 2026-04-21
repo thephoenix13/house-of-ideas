@@ -1,0 +1,16 @@
+title: House of Ideas
+description: A venture studio building with India's best.
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: light
+
+aux_links:
+  "GitHub":
+    - "https://github.com/thephoenix13/house-of-ideas"
+
+aux_links_new_tab: true
+
+footer_content: "&copy; House of Ideas"
+
+plugins:
+  - jekyll-remote-theme

@@ -1,3 +1,9 @@
+---
+title: Founders Fellowship Brief
+nav_order: 2
+parent: Documents
+---
+
 # House of Ideas — Founders Fellowship Brief
 
 ---

@@ -1,3 +1,9 @@
+---
+title: Domain Framework
+nav_order: 3
+parent: Documents
+---
+
 # House of Ideas — Domain Framework
 
 ---

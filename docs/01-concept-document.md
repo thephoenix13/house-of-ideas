@@ -1,3 +1,9 @@
+---
+title: Concept Document
+nav_order: 1
+parent: Documents
+---
+
 # House of Ideas — Concept Document
 
 ---
