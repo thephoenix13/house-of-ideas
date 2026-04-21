@@ -1,0 +1,15 @@
+# Environment variables — never commit real keys
+.env
+agent/.env
+
+# Agent output — local only
+agent/output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
