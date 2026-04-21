@@ -30,7 +30,7 @@ HoI is designed to close both gaps at once.
 HoI runs a continuous research operation across 10 active domains. Ideas are validated against a six-point framework (problem clarity, market size, timing, execution path, competitive landscape, India fit) before they are listed on the platform or assigned to a Fellow.
 
 **2. Capital Deployment**
-HoI invests $100,000 – $500,000 per venture. Capital is deployed in phases tied to execution milestones, not upfront in a single tranche.
+HoI deploys capital from Angel to VC scale per venture, depending on the stage and scope. Capital is deployed in phases tied to execution milestones, not upfront in a single tranche.
 
 **3. Talent Acquisition**
 The HoI platform lists available ventures. Students from IIT/NIT/premier institutions apply to build them. Selection is rigorous. We look for execution mindset, not just academic performance.
@@ -62,7 +62,7 @@ Fellows are compensated through:
 
 HoI targets a portfolio of 8–12 active ventures at any given time across its defined domain framework.
 
-Each venture is sized between $100k–$500k at initial deployment. Follow-on capital is evaluated on a per-venture basis as milestones are hit.
+Each venture is sized based on its stage and capital requirements. Follow-on capital is evaluated on a per-venture basis as milestones are hit.
 
 **Target portfolio mix (indicative):**
 - 40% AI & Intelligent Systems
@@ -99,7 +99,7 @@ Each venture is sized between $100k–$500k at initial deployment. Follow-on cap
 
 | Allocation | Purpose |
 |---|---|
-| Venture capital pool | Direct investment into portfolio companies ($100k–$500k per venture) |
+| Venture capital pool | Direct investment into portfolio companies (Angel to VC scale, per venture) |
 | Operations | HoI team running day-to-day operations for portfolio ventures |
 | Research & Intelligence | Idea Discovery, domain research, market validation |
 | Fellow stipends | Monthly stipends across active Fellows |

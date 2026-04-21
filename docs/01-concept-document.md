@@ -26,7 +26,7 @@ We are not a traditional fund that waits for founders to pitch us. We do the ups
 
 We bring:
 - The idea (researched and validated)
-- The capital ($100,000 – $500,000 per venture)
+- The capital (from Angels to VCs)
 - The plan (step-by-step execution roadmap)
 - The mentorship (active guidance from the HoI team)
 - The infrastructure (HoI runs operations)
@@ -79,7 +79,7 @@ Beyond the filter:
 | | Traditional VC | House of Ideas |
 |---|---|---|
 | Idea source | Founder | HoI Research |
-| Capital | Yes | Yes ($100k–$500k) |
+| Capital | Yes | Yes (Angels to VCs) |
 | Operational support | Limited | Full (HoI runs ops) |
 | Mentorship | Advisory | Active, embedded |
 | IP ownership | Founder | HoI |

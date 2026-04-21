@@ -18,7 +18,7 @@ Before a domain is added to the active research list, it must meet the following
 - **Market timing** — Is the market ready, or is it still 5+ years out?
 - **Structural tailwind** — Is there a regulatory, technological, or demographic shift accelerating this space?
 - **India relevance** — Does this problem exist meaningfully in the Indian context?
-- **Execution feasibility** — Can a small, focused team make meaningful early progress with $100k–$500k?
+- **Execution feasibility** — Can a small, focused team make meaningful early progress with the capital available?
 - **IP potential** — Is there defensible value that HoI can protect and build on?
 
 ---
