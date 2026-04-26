@@ -2,6 +2,7 @@
 title: Our Agents
 nav_order: 5
 parent: Documents
+has_children: true
 ---
 
 # House of Ideas — Our Agents
