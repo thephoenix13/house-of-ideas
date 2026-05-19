@@ -1,10 +1,12 @@
 title: House of Ideas
-description: A venture studio building with India's best.
+description: A venture studio for India's sharpest minds.
 remote_theme: just-the-docs/just-the-docs
 
 color_scheme: light
 
 aux_links:
+  "Live site":
+    - "/"
   "GitHub":
     - "https://github.com/thephoenix13/house-of-ideas"
 
@@ -14,3 +16,20 @@ footer_content: "&copy; House of Ideas"
 
 plugins:
   - jekyll-remote-theme
+
+# Exclude internal-only and dev-only files from the published site.
+# Our HTML marketing site at the repo root passes through Jekyll unchanged.
+# The docs/*.md files continue to be Jekyll-processed with the just-the-docs theme.
+exclude:
+  - .htaccess
+  - DEPLOY.md
+  - brand/
+  - partials/
+  - agent/
+  - foundations.html
+  - "*.docx"
+  - "*.zip"
+  - README.md
+  - vendor/
+  - Gemfile
+  - Gemfile.lock

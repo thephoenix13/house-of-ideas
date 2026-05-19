@@ -1,0 +1,84 @@
+/* =========================================================
+   tokens.css — design tokens
+   The single source of truth for palette, typography,
+   spacing, motion, and Bootstrap overrides.
+   ========================================================= */
+
+:root {
+  /* ---------- Palette ---------- */
+  --ink:        #0E0E0C;   /* primary text, surfaces */
+  --ink-soft:   #2A2925;   /* body copy */
+  --paper:      #F6F1E8;   /* page background */
+  --paper-soft: #FAF5EC;   /* card surfaces */
+  --ochre:      #B8862F;   /* single accent — sparingly */
+  --ochre-deep: #9A6F23;   /* accent hover */
+  --stone:      #6B6660;   /* secondary text */
+  --stone-soft: #8F8A82;   /* tertiary text */
+  --rule:       #D9D2C5;   /* hairline dividers */
+
+  /* ---------- Typography ---------- */
+  --font-serif: "Source Serif 4", "Iowan Old Style", "Apple Garamond",
+                 "Baskerville", "Times New Roman", Times, serif;
+  --font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:  "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+
+  /* Type scale — fluid, editorial */
+  --t-display:  clamp(2.75rem, 5vw + 1rem, 5.5rem);
+  --t-h1:       clamp(2rem, 3vw + 1rem, 3.5rem);
+  --t-h2:       clamp(1.5rem, 2vw + 0.5rem, 2.25rem);
+  --t-h3:       1.375rem;
+  --t-lede:     clamp(1.125rem, 0.5vw + 1rem, 1.375rem);
+  --t-body:     1.0625rem;
+  --t-small:    0.875rem;
+  --t-eyebrow:  0.75rem;
+
+  /* Line heights */
+  --lh-tight:   1.1;
+  --lh-snug:    1.25;
+  --lh-normal:  1.55;
+  --lh-loose:   1.7;
+
+  /* ---------- Spacing scale ---------- */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-5: 3rem;
+  --s-6: 4.5rem;
+  --s-7: 7rem;
+  --s-8: 10rem;
+
+  /* ---------- Motion ---------- */
+  --ease:      cubic-bezier(.2, .7, .2, 1);
+  --dur-fast:  200ms;
+  --dur-base:  400ms;
+  --dur-slow:  600ms;
+
+  /* ---------- Layout ---------- */
+  --container-max:    1200px;
+  --container-narrow: 760px;
+  --nav-height:       72px;
+
+  /* ---------- Bootstrap variable overrides ---------- */
+  --bs-body-color:         var(--ink);
+  --bs-body-bg:            var(--paper);
+  --bs-body-font-family:   var(--font-sans);
+  --bs-body-font-size:     var(--t-body);
+  --bs-body-line-height:   var(--lh-normal);
+  --bs-link-color:         var(--ochre);
+  --bs-link-hover-color:   var(--ochre-deep);
+  --bs-border-color:       var(--rule);
+  --bs-secondary-bg:       var(--paper-soft);
+  --bs-emphasis-color:     var(--ink);
+}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

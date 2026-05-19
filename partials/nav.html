@@ -1,0 +1,71 @@
+<!--
+  Site nav — copy this block into the <body> of every page,
+  immediately after the skip-link. Update aria-current on the
+  active link.
+-->
+<header class="site-nav">
+  <div class="container-hoi site-nav__inner">
+    <a class="site-nav__brand" href="index.html">House of Ideas</a>
+
+    <nav aria-label="Primary">
+      <ul class="site-nav__links">
+        <li><a href="studio.html">The Studio</a></li>
+        <li><a href="fellowship.html">Fellowship</a></li>
+        <li><a href="ideas.html">Ideas</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="insights.html">Insights</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn-hoi btn-primary-hoi site-nav__cta" href="apply.html">
+      Apply
+      <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+      </svg>
+    </a>
+
+    <button class="site-nav__toggle" type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            data-nav-toggle>
+      <svg viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M2 6h18M2 11h18M2 16h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true" data-mobile-nav>
+  <div class="container-hoi">
+    <div class="mobile-nav__header">
+      <a class="site-nav__brand" href="index.html">House of Ideas</a>
+      <button class="site-nav__toggle" type="button"
+              aria-label="Close menu"
+              data-mobile-nav-close>
+        <svg viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="mobile-nav__links">
+      <li><a href="studio.html"><span class="num">01</span> The Studio</a></li>
+      <li><a href="fellowship.html"><span class="num">02</span> Fellowship</a></li>
+      <li><a href="ideas.html"><span class="num">03</span> Ideas</a></li>
+      <li><a href="partners.html"><span class="num">04</span> Partners</a></li>
+      <li><a href="insights.html"><span class="num">05</span> Insights</a></li>
+      <li><a href="apply.html"><span class="num">06</span> Apply</a></li>
+    </ul>
+
+    <div class="mobile-nav__footer">
+      <a href="contact.html" class="link-arrow">
+        Contact
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

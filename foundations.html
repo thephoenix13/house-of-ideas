@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Foundations &mdash; House of Ideas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="container-hoi site-nav__inner">
+      <a class="site-nav__brand" href="index.html">House of Ideas</a>
+      <span class="small muted mono">foundations / design system</span>
+    </div>
+  </header>
+
+  <main class="container-hoi section">
+    <p class="eyebrow eyebrow--ochre">Internal &mdash; Phase 0</p>
+    <h1 class="display" style="max-width: 18ch;">Foundations.</h1>
+    <p class="lede" style="max-width: 56ch;">
+      The visual primitives the site is built on. Not for public consumption &mdash; this page exists so we can pressure-test the system before scaling it across pages.
+    </p>
+
+    <hr>
+
+    <!-- ====== TYPOGRAPHY ====== -->
+    <section class="section--tight">
+      <p class="eyebrow">01 &mdash; Typography</p>
+      <h2>Type specimen</h2>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">.display</span>
+        <p class="display" style="margin: 0;">Build something real.</p>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">h1</span>
+        <h1 style="margin: 0;">Conviction before capital.</h1>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">h2</span>
+        <h2 style="margin: 0;">The filter is the differentiation.</h2>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">h3</span>
+        <h3 style="margin: 0;">How it works</h3>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">.lede</span>
+        <p class="lede" style="margin: 0;">We bring the idea, the capital, the plan, and the mentorship. The Fellow brings the execution.</p>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">body</span>
+        <p style="margin: 0;">House of Ideas (HoI) is a venture studio. We are not a traditional fund that waits for founders to pitch us. We do the upstream work: research domains, identify ideas with genuine market potential, build the execution roadmap, and then find the right person to run it.</p>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">.eyebrow</span>
+        <p class="eyebrow" style="margin: 0;">Founders Fellowship</p>
+      </div>
+      <div class="foundations__row">
+        <span class="foundations__spec-label">.small.mono</span>
+        <p class="small mono muted" style="margin: 0;">$100k&ndash;$500k per venture</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ====== PALETTE ====== -->
+    <section class="section--tight">
+      <p class="eyebrow">02 &mdash; Palette</p>
+      <h2>Colour tokens</h2>
+
+      <div class="foundations__swatches">
+        <div class="foundations__swatch" style="background: var(--ink); color: var(--paper); border-color: var(--ink);">
+          --ink
+          <span class="foundations__swatch-hex">#0E0E0C</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--paper); color: var(--ink);">
+          --paper
+          <span class="foundations__swatch-hex">#F6F1E8</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--paper-soft); color: var(--ink);">
+          --paper-soft
+          <span class="foundations__swatch-hex">#FAF5EC</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--ochre); color: var(--paper); border-color: var(--ochre);">
+          --ochre
+          <span class="foundations__swatch-hex">#B8862F</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--ochre-deep); color: var(--paper); border-color: var(--ochre-deep);">
+          --ochre-deep
+          <span class="foundations__swatch-hex">#9A6F23</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--stone); color: var(--paper); border-color: var(--stone);">
+          --stone
+          <span class="foundations__swatch-hex">#6B6660</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--rule); color: var(--ink);">
+          --rule
+          <span class="foundations__swatch-hex">#D9D2C5</span>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ====== BUTTONS ====== -->
+    <section class="section--tight">
+      <p class="eyebrow">03 &mdash; Actions</p>
+      <h2>Buttons &amp; links</h2>
+
+      <div class="foundations__btn-grid">
+        <a class="btn-hoi btn-primary-hoi" href="#">
+          Apply
+          <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+
+        <a class="btn-hoi btn-ghost-hoi" href="#">
+          The Studio
+          <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+
+        <a class="btn-hoi btn-ochre-hoi" href="#">
+          Request Access
+          <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+
+        <a class="link-arrow" href="#">
+          Read the concept
+          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ====== RULES + EYEBROWS ====== -->
+    <section class="section--tight">
+      <p class="eyebrow">04 &mdash; Editorial primitives</p>
+      <h2>Rules, eyebrows, numbers</h2>
+
+      <p class="eyebrow">A standard eyebrow</p>
+      <p class="eyebrow eyebrow--ochre">An ochre eyebrow &mdash; used sparingly</p>
+      <p class="section-number">01 &mdash; The Studio</p>
+
+      <hr>
+
+      <p>Hairline rules separate ideas. They do not decorate.</p>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
