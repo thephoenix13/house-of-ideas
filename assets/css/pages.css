@@ -155,6 +155,197 @@
   align-items: center;
 }
 
+/* Logo / wordmark specimens */
+.foundations__logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+  margin-bottom: var(--s-4);
+}
+
+.foundations__wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.foundations__monogram {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.foundations__monogram--invert {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* Spacing scale bars */
+.foundations__scale {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.foundations__scale-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+
+.foundations__scale-bar {
+  height: 18px;
+  background: var(--ochre);
+  flex-shrink: 0;
+}
+
+.foundations__scale-label {
+  font-family: var(--font-mono);
+  font-size: var(--t-small);
+  color: var(--stone);
+}
+
+/* Token / spec table */
+.foundations__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-small);
+}
+
+.foundations__table th,
+.foundations__table td {
+  text-align: left;
+  padding: var(--s-2) var(--s-3) var(--s-2) 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: baseline;
+}
+
+.foundations__table th {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--t-eyebrow);
+  color: var(--stone);
+}
+
+.foundations__table code {
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+
+/* Motion demo */
+.foundations__motion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  align-items: flex-start;
+}
+
+.foundations__motion-box {
+  width: 120px;
+  height: 120px;
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--stone);
+  padding: var(--s-2);
+}
+
+.foundations__motion-box--hover {
+  cursor: pointer;
+  transition: transform var(--dur-base) var(--ease),
+              background var(--dur-base) var(--ease),
+              color var(--dur-base) var(--ease);
+}
+
+.foundations__motion-box--hover:hover {
+  transform: translateY(-6px);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Do / Don't two-column */
+.foundations__dodont {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-4);
+}
+
+@media (min-width: 768px) {
+  .foundations__dodont { grid-template-columns: 1fr 1fr; }
+}
+
+.foundations__dodont-col {
+  border-top: 2px solid var(--rule);
+  padding-top: var(--s-3);
+}
+
+.foundations__dodont-col--do { border-top-color: var(--ink); }
+.foundations__dodont-col--dont { border-top-color: var(--ochre); }
+
+.foundations__dodont-title {
+  font-family: var(--font-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 var(--s-3);
+}
+
+.foundations__dodont-col--do .foundations__dodont-title { color: var(--ink); }
+.foundations__dodont-col--dont .foundations__dodont-title { color: var(--ochre); }
+
+.foundations__dodont ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  font-size: var(--t-small);
+}
+
+.foundations__dodont li {
+  color: var(--ink-soft);
+  max-width: none;
+}
+
+/* Component specimen wrapper — frames a live component on paper-soft */
+.foundations__specimen {
+  border: 1px solid var(--rule);
+  margin-bottom: var(--s-3);
+}
+
+.foundations__specimen-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--stone);
+  letter-spacing: 0.06em;
+  padding: var(--s-1) var(--s-2);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-soft);
+}
+
+.foundations__specimen-body { padding: var(--s-3); }
+
 /* ---------- Home: How It Works ---------- */
 
 .home-process__intro {

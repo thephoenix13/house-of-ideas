@@ -23,10 +23,8 @@ plugins:
 exclude:
   - .htaccess
   - DEPLOY.md
-  - brand/
   - partials/
   - agent/
-  - foundations.html
   - "*.docx"
   - "*.zip"
   - README.md

@@ -2,6 +2,8 @@
 
 A foundational brand document covering positioning, voice, visual direction, and external narrative. Intended for internal alignment, designer briefs, and investor/partner materials.
 
+> **This is the strategic *why*.** For the operational *how* — live type specimens, colour tokens, components, and do/don't rendered with the site's own CSS — see the living style guide at [`foundations.html`](../foundations.html).
+
 ---
 
 ## 1. Brand Essence
@@ -63,7 +65,7 @@ Four ideas that every piece of communication should reinforce:
 
 ### Voice principles
 - **Plain over puffed.** No "synergistic" anything. No "10x", no "disruption", no "ecosystem-builder".
-- **Specific over sweeping.** "We invest $100k–$500k per venture" beats "We provide world-class funding".
+- **Specific over sweeping.** "We bring the idea, the capital, the plan, and the mentorship" beats "We provide world-class funding".
 - **Calm over loud.** The brand carries authority. It doesn't need to shout.
 - **First-person plural, sparingly.** "We" when describing the studio; otherwise the brand speaks in declarative third person.
 

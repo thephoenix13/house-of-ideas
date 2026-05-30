@@ -17,22 +17,134 @@
   <header class="site-nav">
     <div class="container-hoi site-nav__inner">
       <a class="site-nav__brand" href="index.html">House of Ideas</a>
-      <span class="small muted mono">foundations / design system</span>
+      <span class="small muted mono">foundations / style &amp; brand guide</span>
     </div>
   </header>
 
   <main class="container-hoi section">
-    <p class="eyebrow eyebrow--ochre">Internal &mdash; Phase 0</p>
+    <p class="eyebrow eyebrow--ochre">Internal &mdash; the canonical guide</p>
     <h1 class="display" style="max-width: 18ch;">Foundations.</h1>
-    <p class="lede" style="max-width: 56ch;">
-      The visual primitives the site is built on. Not for public consumption &mdash; this page exists so we can pressure-test the system before scaling it across pages.
+    <p class="lede" style="max-width: 58ch;">
+      The single reference for how House of Ideas looks and sounds. Every value on this page is rendered with the site&rsquo;s own CSS, so it can&rsquo;t drift from what actually ships.
     </p>
+    <p style="max-width: 60ch;">
+      This is the operational <em>how</em>. For the strategic <em>why</em> &mdash; positioning, audience segments, and the reasoning behind these choices &mdash; see the
+      <a href="brand/brand-outline.md">brand outline</a>. Not for public consumption.
+    </p>
+
+    <nav aria-label="Sections" style="margin-top: var(--s-4);">
+      <p class="small mono muted" style="margin: 0;">
+        01 Brand &amp; voice &nbsp;&middot;&nbsp; 02 Logo &nbsp;&middot;&nbsp; 03 Typography &nbsp;&middot;&nbsp; 04 Colour &nbsp;&middot;&nbsp; 05 Spacing &amp; motion &nbsp;&middot;&nbsp; 06 Components &nbsp;&middot;&nbsp; 07 Actions &nbsp;&middot;&nbsp; 08 Do &amp; don&rsquo;t
+      </p>
+    </nav>
 
     <hr>
 
-    <!-- ====== TYPOGRAPHY ====== -->
-    <section class="section--tight">
-      <p class="eyebrow">01 &mdash; Typography</p>
+    <!-- ====== 01 BRAND & VOICE ====== -->
+    <section class="section--tight" id="brand">
+      <p class="eyebrow">01 &mdash; Brand &amp; voice</p>
+      <h2>What we are, and how we sound.</h2>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">Essence</span>
+        <div>
+          <p class="lede" style="margin: 0 0 var(--s-3);">House of Ideas is where India&rsquo;s sharpest minds build the ventures the country actually needs.</p>
+          <p class="small mono muted" style="margin: 0;">Considered. &nbsp; Selective. &nbsp; Builder.</p>
+        </div>
+      </div>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">The promise</span>
+        <p style="margin: 0;">We bring the idea, the capital, the plan, and the mentorship. The Fellow brings the execution.</p>
+      </div>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">Voice</span>
+        <ul class="home-fellows__list" style="margin: 0;">
+          <li><strong>Plain over puffed.</strong> No &ldquo;synergistic&rdquo; anything. No &ldquo;10x&rdquo;, no &ldquo;disruption&rdquo;.</li>
+          <li><strong>Specific over sweeping.</strong> Name the idea, the capital, the plan, the mentorship.</li>
+          <li><strong>Calm over loud.</strong> The brand carries authority. It doesn&rsquo;t shout.</li>
+          <li><strong>First-person plural, sparingly.</strong> &ldquo;We&rdquo; for the studio; declarative third person otherwise.</li>
+        </ul>
+      </div>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">Lines that travel</span>
+        <ul class="home-fellows__list" style="margin: 0;">
+          <li>&ldquo;We bring the idea, the capital, the plan, and the mentorship. The Fellow brings the execution.&rdquo;</li>
+          <li>&ldquo;We don&rsquo;t wait for founders to pitch us. We do the upstream work.&rdquo;</li>
+          <li>&ldquo;The filter is the differentiation.&rdquo;</li>
+          <li>&ldquo;Conviction before capital.&rdquo;</li>
+        </ul>
+      </div>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">Naming</span>
+        <table class="foundations__table">
+          <tbody>
+            <tr><th>House of Ideas / HoI</th><td>Capital H, lowercase o, capital I. Never <code>HOI</code>, never <code>Hoi</code>.</td></tr>
+            <tr><th>Fellow</th><td>The operator. Capitalised. Plural: Fellows. The program is the <strong>Founders Fellowship</strong>.</td></tr>
+            <tr><th>venture</th><td>The portfolio company. Lowercase. Avoid &ldquo;startup&rdquo; in formal copy.</td></tr>
+            <tr><th>Idea</th><td>A researched entry in the catalogue. Capitalised in that sense, lowercase in general use.</td></tr>
+            <tr><th>Founders</th><td>The product line in scope. <strong>Workforce</strong> is deferred &mdash; do not surface externally.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ====== 02 LOGO & WORDMARK ====== -->
+    <section class="section--tight" id="logo">
+      <p class="eyebrow">02 &mdash; Logo &amp; wordmark</p>
+      <h2>Wordmark-led. The brand is the name.</h2>
+      <p style="max-width: 60ch;">No pictorial mark for the primary logo. The wordmark is set in the display serif with generous spacing &mdash; masthead energy, not a startup logo.</p>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">Primary lockup</span>
+        <div class="foundations__logo-row">
+          <span class="foundations__wordmark">House of Ideas</span>
+        </div>
+      </div>
+
+      <div class="foundations__row">
+        <span class="foundations__spec-label">Monogram</span>
+        <div class="foundations__logo-row">
+          <span class="foundations__monogram">HoI</span>
+          <span class="foundations__monogram foundations__monogram--invert">HoI</span>
+          <span class="small muted" style="max-width: 32ch;">For favicons, avatars, and tight spaces. A thin rule-line box reads like a publisher&rsquo;s seal.</span>
+        </div>
+      </div>
+
+      <div class="foundations__dodont">
+        <div class="foundations__dodont-col foundations__dodont-col--do">
+          <p class="foundations__dodont-title">Do</p>
+          <ul>
+            <li>Keep the wordmark single-weight, letter-spaced, on ink or paper.</li>
+            <li>Use the monogram only where the full wordmark won&rsquo;t fit.</li>
+            <li>Give it room &mdash; generous clear space on all sides.</li>
+          </ul>
+        </div>
+        <div class="foundations__dodont-col foundations__dodont-col--dont">
+          <p class="foundations__dodont-title">Don&rsquo;t</p>
+          <ul>
+            <li>No abstract marks, lightbulbs, brains, or gradients.</li>
+            <li>No app-icon styling competing on a Play Store grid.</li>
+            <li>Don&rsquo;t set the wordmark in the sans or distort the spacing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="small muted" style="margin-top: var(--s-4); max-width: 60ch;">
+        <strong>Open:</strong> custom-drawn serif vs. off-the-shelf, and the public tagline, are unresolved &mdash; see the brand outline &sect;11.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- ====== 03 TYPOGRAPHY ====== -->
+    <section class="section--tight" id="type">
+      <p class="eyebrow">03 &mdash; Typography</p>
       <h2>Type specimen</h2>
 
       <div class="foundations__row">
@@ -65,54 +177,269 @@
       </div>
       <div class="foundations__row">
         <span class="foundations__spec-label">.small.mono</span>
-        <p class="small mono muted" style="margin: 0;">$100k&ndash;$500k per venture</p>
+        <p class="small mono muted" style="margin: 0;">Capital, plan &amp; mentorship per venture</p>
       </div>
+
+      <h3 style="margin-top: var(--s-5);">Typefaces</h3>
+      <table class="foundations__table">
+        <thead>
+          <tr><th>Role</th><th>Token</th><th>Family</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Display &amp; headings</td><td><code>--font-serif</code></td><td>Source Serif 4 (italics carry editorial emphasis)</td></tr>
+          <tr><td>Body &amp; UI</td><td><code>--font-sans</code></td><td>Inter</td></tr>
+          <tr><td>Data &amp; labels</td><td><code>--font-mono</code></td><td>JetBrains Mono (rare)</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top: var(--s-5);">Scale &amp; rhythm</h3>
+      <table class="foundations__table">
+        <thead>
+          <tr><th>Token</th><th>Size</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>--t-display</code></td><td>clamp(2.75rem, 5vw + 1rem, 5.5rem)</td></tr>
+          <tr><td><code>--t-h1</code></td><td>clamp(2rem, 3vw + 1rem, 3.5rem)</td></tr>
+          <tr><td><code>--t-h2</code></td><td>clamp(1.5rem, 2vw + 0.5rem, 2.25rem)</td></tr>
+          <tr><td><code>--t-h3</code></td><td>1.375rem</td></tr>
+          <tr><td><code>--t-lede</code></td><td>clamp(1.125rem, 0.5vw + 1rem, 1.375rem)</td></tr>
+          <tr><td><code>--t-body</code></td><td>1.0625rem &middot; line-height 1.55</td></tr>
+          <tr><td><code>--t-small</code></td><td>0.875rem</td></tr>
+          <tr><td><code>--t-eyebrow</code></td><td>0.75rem</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <hr>
 
-    <!-- ====== PALETTE ====== -->
-    <section class="section--tight">
-      <p class="eyebrow">02 &mdash; Palette</p>
-      <h2>Colour tokens</h2>
+    <!-- ====== 04 COLOUR ====== -->
+    <section class="section--tight" id="colour">
+      <p class="eyebrow">04 &mdash; Colour</p>
+      <h2>Ink, paper, and one signal.</h2>
+      <p style="max-width: 60ch;">The palette is near-black ink on warm paper, with a single ochre accent used <em>sparingly</em>. If two ochre elements share a screen, one is too many. Never use the accent for body text. No gradients, no shadows beyond minimal elevation.</p>
 
       <div class="foundations__swatches">
         <div class="foundations__swatch" style="background: var(--ink); color: var(--paper); border-color: var(--ink);">
           --ink
-          <span class="foundations__swatch-hex">#0E0E0C</span>
+          <span class="foundations__swatch-hex">#0E0E0C &middot; text, surfaces</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--ink-soft); color: var(--paper); border-color: var(--ink-soft);">
+          --ink-soft
+          <span class="foundations__swatch-hex">#2A2925 &middot; body copy</span>
         </div>
         <div class="foundations__swatch" style="background: var(--paper); color: var(--ink);">
           --paper
-          <span class="foundations__swatch-hex">#F6F1E8</span>
+          <span class="foundations__swatch-hex">#F6F1E8 &middot; background</span>
         </div>
         <div class="foundations__swatch" style="background: var(--paper-soft); color: var(--ink);">
           --paper-soft
-          <span class="foundations__swatch-hex">#FAF5EC</span>
+          <span class="foundations__swatch-hex">#FAF5EC &middot; card surfaces</span>
         </div>
         <div class="foundations__swatch" style="background: var(--ochre); color: var(--paper); border-color: var(--ochre);">
           --ochre
-          <span class="foundations__swatch-hex">#B8862F</span>
+          <span class="foundations__swatch-hex">#B8862F &middot; accent, sparingly</span>
         </div>
         <div class="foundations__swatch" style="background: var(--ochre-deep); color: var(--paper); border-color: var(--ochre-deep);">
           --ochre-deep
-          <span class="foundations__swatch-hex">#9A6F23</span>
+          <span class="foundations__swatch-hex">#9A6F23 &middot; accent hover</span>
         </div>
         <div class="foundations__swatch" style="background: var(--stone); color: var(--paper); border-color: var(--stone);">
           --stone
-          <span class="foundations__swatch-hex">#6B6660</span>
+          <span class="foundations__swatch-hex">#6B6660 &middot; secondary text</span>
+        </div>
+        <div class="foundations__swatch" style="background: var(--stone-soft); color: var(--paper); border-color: var(--stone-soft);">
+          --stone-soft
+          <span class="foundations__swatch-hex">#8F8A82 &middot; tertiary text</span>
         </div>
         <div class="foundations__swatch" style="background: var(--rule); color: var(--ink);">
           --rule
-          <span class="foundations__swatch-hex">#D9D2C5</span>
+          <span class="foundations__swatch-hex">#D9D2C5 &middot; hairline dividers</span>
         </div>
       </div>
     </section>
 
     <hr>
 
-    <!-- ====== BUTTONS ====== -->
-    <section class="section--tight">
-      <p class="eyebrow">03 &mdash; Actions</p>
+    <!-- ====== 05 SPACING & MOTION ====== -->
+    <section class="section--tight" id="space">
+      <p class="eyebrow">05 &mdash; Spacing &amp; motion</p>
+      <h2>The rhythm of the page.</h2>
+      <p style="max-width: 60ch;">A single spacing scale governs all gaps and padding. Use the tokens &mdash; never arbitrary pixel values.</p>
+
+      <div class="foundations__scale">
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-1);"></span><span class="foundations__scale-label">--s-1 &middot; 0.5rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-2);"></span><span class="foundations__scale-label">--s-2 &middot; 1rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-3);"></span><span class="foundations__scale-label">--s-3 &middot; 1.5rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-4);"></span><span class="foundations__scale-label">--s-4 &middot; 2rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-5);"></span><span class="foundations__scale-label">--s-5 &middot; 3rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-6);"></span><span class="foundations__scale-label">--s-6 &middot; 4.5rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-7);"></span><span class="foundations__scale-label">--s-7 &middot; 7rem</span></div>
+        <div class="foundations__scale-row"><span class="foundations__scale-bar" style="width: var(--s-8);"></span><span class="foundations__scale-label">--s-8 &middot; 10rem</span></div>
+      </div>
+
+      <h3 style="margin-top: var(--s-5);">Motion</h3>
+      <p style="max-width: 60ch;">If motion is used at all: slow, considered, eased. Fades and minor positional shifts only. Nothing bounces, nothing spins. Hover the swatch to feel the standard transition.</p>
+      <div class="foundations__motion">
+        <div class="foundations__motion-box foundations__motion-box--hover">hover me<br>--dur-base 400ms</div>
+        <div class="foundations__motion-box">--ease<br>cubic-bezier(.2,.7,.2,1)</div>
+        <div class="foundations__motion-box">--dur-fast 200ms<br>--dur-slow 600ms</div>
+      </div>
+      <p class="small muted" style="margin-top: var(--s-3);">All motion respects <code class="mono">prefers-reduced-motion</code> &mdash; reduce it in your OS and transitions collapse to near-zero.</p>
+    </section>
+
+    <hr>
+
+    <!-- ====== 06 COMPONENTS ====== -->
+    <section class="section--tight" id="components">
+      <p class="eyebrow">06 &mdash; Components</p>
+      <h2>Real components, live.</h2>
+
+      <h3>Navigation</h3>
+      <div class="foundations__specimen">
+        <p class="foundations__specimen-label">.site-nav &mdash; sticky, paper blur, hairline base. Mobile collapses to a full-screen overlay.</p>
+        <div class="foundations__specimen-body" style="padding: 0;">
+          <div class="site-nav" style="position: static;">
+            <div class="container-hoi site-nav__inner">
+              <a class="site-nav__brand" href="#">House of Ideas</a>
+              <nav aria-label="Primary (specimen)">
+                <ul class="site-nav__links">
+                  <li><a href="#" aria-current="page">The Studio</a></li>
+                  <li><a href="#">Fellowship</a></li>
+                  <li><a href="#">Ideas</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Insights</a></li>
+                </ul>
+              </nav>
+              <a class="btn-hoi btn-primary-hoi site-nav__cta" href="#">
+                Apply
+                <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+              </a>
+              <button class="site-nav__toggle" type="button" aria-label="Open menu (specimen)">
+                <svg viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M2 6h18M2 11h18M2 16h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--s-5);">Cards</h3>
+      <div class="home-fellows__cards" style="margin-bottom: var(--s-4);">
+        <article class="home-fellows__card">
+          <span class="home-fellows__card-label">During college</span>
+          <h3 class="home-fellows__card-title">The infrastructure to actually build.</h3>
+          <ul class="home-fellows__list">
+            <li>Monthly stipend (amount communicated at offer)</li>
+            <li>Direct access to the HoI team for decisions</li>
+            <li>Step-by-step execution roadmap</li>
+            <li>Operational infrastructure &mdash; HoI runs ops</li>
+          </ul>
+        </article>
+        <article class="home-fellows__card">
+          <span class="home-fellows__card-label">After college</span>
+          <h3 class="home-fellows__card-title">A path back, on terms agreed upfront.</h3>
+          <ul class="home-fellows__list">
+            <li>Option to return to the venture full-time</li>
+            <li>Pre-agreed equity stake</li>
+            <li>A defined role in the next phase of growth</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="studio-pull">
+        <p class="studio-pull__label">Open to</p>
+        <ul class="studio-pull__list">
+          <li>IIT students</li>
+          <li>NIT students</li>
+          <li>Other premier institutions</li>
+          <li>Second year and above (preferred)</li>
+        </ul>
+      </div>
+
+      <h3 style="margin-top: var(--s-5);">Editorial primitives</h3>
+      <p class="eyebrow">A standard eyebrow</p>
+      <p class="eyebrow eyebrow--ochre">An ochre eyebrow &mdash; used sparingly</p>
+      <p class="section-number">01 &mdash; The Studio</p>
+      <hr>
+      <p>Hairline rules separate ideas. They do not decorate.</p>
+
+      <h3 style="margin-top: var(--s-5);">Footer</h3>
+      <div class="foundations__specimen">
+        <p class="foundations__specimen-label">.site-footer &mdash; ink ground, ochre column titles, the standing statement.</p>
+        <div class="foundations__specimen-body" style="padding: 0;">
+          <footer class="site-footer" style="margin-top: 0;">
+            <div class="container-hoi">
+              <div class="site-footer__top">
+                <p class="site-footer__statement">
+                  We bring the idea, the capital, the plan, and the mentorship. The Fellow brings the execution.
+                </p>
+                <a class="btn-hoi btn-ghost-hoi" href="#"
+                   style="--bs-link-color: var(--paper); color: var(--paper); border-color: var(--paper);">
+                  Apply to the Fellowship
+                  <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="site-footer__grid">
+                <div class="site-footer__brand-block">
+                  <p class="site-footer__brand">House of Ideas</p>
+                  <p class="small muted" style="color: var(--stone-soft); max-width: 36ch;">
+                    A venture studio building with India&rsquo;s sharpest minds.
+                  </p>
+                </div>
+                <div>
+                  <p class="site-footer__col-title">Studio</p>
+                  <ul class="site-footer__list">
+                    <li><a href="#">The Studio</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Insights</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="site-footer__col-title">Programs</p>
+                  <ul class="site-footer__list">
+                    <li><a href="#">Founders Fellowship</a></li>
+                    <li><a href="#">Idea Catalogue</a></li>
+                    <li><a href="#">Apply</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="site-footer__col-title">Contact</p>
+                  <ul class="site-footer__list">
+                    <li><a href="#">hello@houseofideas.in</a></li>
+                    <li><a href="#">Book a call</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="site-footer__col-title">Elsewhere</p>
+                  <ul class="site-footer__list">
+                    <li><a href="#" rel="noopener">LinkedIn</a></li>
+                    <li><a href="#" rel="noopener">X / Twitter</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="site-footer__bottom">
+                <span>&copy; 2026 House of Ideas. All rights reserved.</span>
+                <span class="site-footer__legal">
+                  <a href="#">Privacy</a>
+                  <a href="#">Terms</a>
+                </span>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ====== 07 ACTIONS ====== -->
+    <section class="section--tight" id="actions">
+      <p class="eyebrow">07 &mdash; Actions</p>
       <h2>Buttons &amp; links</h2>
 
       <div class="foundations__btn-grid">
@@ -144,22 +471,49 @@
           </svg>
         </a>
       </div>
+
+      <table class="foundations__table" style="margin-top: var(--s-4);">
+        <tbody>
+          <tr><th>.btn-primary-hoi</th><td>The default action &mdash; one per view. Ink fill, inverts on hover.</td></tr>
+          <tr><th>.btn-ghost-hoi</th><td>Secondary action beside a primary. Outline, fills on hover.</td></tr>
+          <tr><th>.btn-ochre-hoi</th><td>The rare signal CTA. Use only when the accent is earned.</td></tr>
+          <tr><th>.link-arrow</th><td>Inline, low-emphasis &mdash; &ldquo;read more&rdquo; within prose.</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <hr>
 
-    <!-- ====== RULES + EYEBROWS ====== -->
-    <section class="section--tight">
-      <p class="eyebrow">04 &mdash; Editorial primitives</p>
-      <h2>Rules, eyebrows, numbers</h2>
+    <!-- ====== 08 DO / DON'T ====== -->
+    <section class="section--tight" id="dodont">
+      <p class="eyebrow eyebrow--ochre">08 &mdash; Do &amp; don&rsquo;t</p>
+      <h2>The line we hold.</h2>
 
-      <p class="eyebrow">A standard eyebrow</p>
-      <p class="eyebrow eyebrow--ochre">An ochre eyebrow &mdash; used sparingly</p>
-      <p class="section-number">01 &mdash; The Studio</p>
+      <div class="foundations__dodont">
+        <div class="foundations__dodont-col foundations__dodont-col--do">
+          <p class="foundations__dodont-title">Do</p>
+          <ul>
+            <li>Lead with specificity &mdash; numbers, names, mechanisms.</li>
+            <li>Let white space and silence do work.</li>
+            <li>Treat the Fellow as the protagonist of every external story.</li>
+            <li>Reference the upstream research as proof of seriousness.</li>
+          </ul>
+        </div>
+        <div class="foundations__dodont-col foundations__dodont-col--dont">
+          <p class="foundations__dodont-title">Don&rsquo;t</p>
+          <ul>
+            <li>Use startup clich&eacute;s &mdash; &ldquo;disrupt&rdquo;, &ldquo;unicorn&rdquo;, &ldquo;10x&rdquo;, &ldquo;rockstar&rdquo;, &ldquo;ninja&rdquo;.</li>
+            <li>Promise outcomes &mdash; &ldquo;guaranteed exit&rdquo;, &ldquo;first unicorn from our batch&rdquo;.</li>
+            <li>Use the IIT/NIT filter to mock other institutions.</li>
+            <li>Use saffron-white-green together &mdash; heritage cues stay subtle.</li>
+            <li>Over-explain the model in every piece of copy. Trust the reader.</li>
+          </ul>
+        </div>
+      </div>
 
-      <hr>
-
-      <p>Hairline rules separate ideas. They do not decorate.</p>
+      <p class="small muted" style="margin-top: var(--s-5);">
+        Source of truth for tokens: <code class="mono">assets/css/tokens.css</code>. Strategic rationale: <a href="brand/brand-outline.md">brand/brand-outline.md</a>.
+      </p>
     </section>
   </main>
 
