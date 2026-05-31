@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Social calendar &mdash; House of Ideas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <style>
+    /* Page-scoped — production view of brand/social-calendar.md */
+    .sc-main { max-width: 1040px; }
+
+    .sc-month {
+      font-family: var(--font-serif); font-size: var(--t-h2);
+      margin: var(--s-6) 0 var(--s-1);
+    }
+    .sc-month__sub { color: var(--stone); margin: 0 0 var(--s-4); max-width: 60ch; }
+    .sc-week {
+      font-family: var(--font-mono); font-size: var(--t-small);
+      letter-spacing: 0.06em; color: var(--ochre);
+      margin: var(--s-5) 0 var(--s-3); padding-bottom: var(--s-1);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Post card */
+    .post { border: 1px solid var(--rule); margin-bottom: var(--s-3); background: var(--paper-soft); }
+    .post__meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2);
+      padding: var(--s-2) var(--s-3); border-bottom: 1px solid var(--rule);
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--stone);
+    }
+    .post__date { color: var(--ink); font-weight: 500; }
+    .badge {
+      font-family: var(--font-sans); font-weight: 500; font-size: 0.65rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 2px 8px; border: 1px solid currentColor;
+    }
+    .badge--li   { color: #0A66C2; }
+    .badge--x    { color: var(--ink); }
+    .badge--ig   { color: #C13584; }
+    .badge--news { color: var(--ochre-deep); }
+    .post__pillar { margin-left: auto; }
+
+    .post__body { display: grid; grid-template-columns: 1fr; }
+    @media (min-width: 760px) {
+      .post__body { grid-template-columns: 300px 1fr; }
+    }
+    .post__creative {
+      padding: var(--s-3); border-bottom: 1px solid var(--rule);
+      display: flex; flex-direction: column; gap: var(--s-2);
+      background: var(--paper);
+    }
+    @media (min-width: 760px) {
+      .post__creative { border-bottom: none; border-right: 1px solid var(--rule); }
+    }
+    .post__caption { padding: var(--s-3); }
+    .post__label {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone);
+      margin: 0 0 var(--s-2);
+    }
+    .post__caption p { font-size: var(--t-small); margin: 0 0 var(--s-2); max-width: none; color: var(--ink-soft); }
+    .post__caption p:last-child { margin-bottom: 0; }
+    .post__tags { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ochre-deep); margin-top: var(--s-2) !important; }
+    .post__thread { list-style: none; padding: 0; margin: 0; counter-reset: t; }
+    .post__thread li {
+      font-size: var(--t-small); color: var(--ink-soft);
+      padding: var(--s-1) 0 var(--s-1) 2.2em; position: relative; border-bottom: 1px dotted var(--rule);
+    }
+    .post__thread li:last-child { border-bottom: none; }
+    .post__thread li::before {
+      counter-increment: t; content: counter(t) "/";
+      position: absolute; left: 0; font-family: var(--font-mono);
+      font-size: 0.7rem; color: var(--ochre); top: 0.55em;
+    }
+
+    /* ---- Rendered creatives (the actual publishable graphics) ---- */
+    .gfx { aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: center;
+           padding: var(--s-3); border: 1px solid var(--rule); }
+    .gfx--paper { background: var(--paper); color: var(--ink); }
+    .gfx--ink   { background: var(--ink); color: var(--paper); }
+    .gfx__kicker { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
+                   text-transform: uppercase; opacity: 0.6; margin-bottom: auto; }
+    .gfx__line  { font-family: var(--font-serif); font-weight: 400;
+                  font-size: clamp(1.1rem, 4.5vw, 1.6rem); line-height: 1.15; letter-spacing: -0.01em; }
+    .gfx__dot   { color: var(--ochre); }
+    .gfx__foot  { font-family: var(--font-serif); font-size: 0.8rem; margin-top: auto; opacity: 0.7; }
+
+    /* carousel — full frame deck (every slide rendered as its own image) */
+    .gfx-deck { display: grid; grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: var(--s-1); }
+    .gfx-frame {
+      aspect-ratio: 1 / 1; border: 1px solid var(--rule); padding: var(--s-2);
+      display: flex; flex-direction: column; background: var(--paper); color: var(--ink); overflow: hidden;
+    }
+    .gfx-frame--ink { background: var(--ink); color: var(--paper); }
+    .gfx-frame__n {
+      font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.1em;
+      color: var(--ochre); margin-bottom: auto;
+    }
+    .gfx-frame__kicker {
+      font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.14em;
+      text-transform: uppercase; opacity: 0.6; margin-bottom: auto;
+    }
+    .gfx-frame__line {
+      font-family: var(--font-serif); font-size: clamp(0.72rem, 2.1vw, 0.95rem);
+      line-height: 1.14; letter-spacing: -0.01em;
+    }
+    .gfx-frame__dot { color: var(--ochre); }
+
+    .gfx-note { font-family: var(--font-mono); font-size: 0.68rem; color: var(--stone); }
+
+    .sc-status {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.65rem;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; margin-left: var(--s-2);
+    }
+    .sc-status--ready { color: var(--ink); border: 1px solid var(--ink); }
+    .sc-status--seed  { color: var(--ochre-deep); border: 1px solid var(--ochre); }
+  </style>
+</head>
+
+<body>
+  <header class="site-nav">
+    <div class="container-hoi site-nav__inner">
+      <a class="site-nav__brand" href="../foundations.html">House of Ideas</a>
+      <span class="small muted mono">brand / social calendar &mdash; production view</span>
+    </div>
+  </header>
+
+  <main class="container-hoi section sc-main">
+    <p class="eyebrow eyebrow--ochre">Internal &mdash; June&ndash;August 2026</p>
+    <h1 class="display" style="max-width: 16ch;">Posts &amp; captions.</h1>
+    <p class="lede" style="max-width: 60ch;">
+      Every scheduled post with its creative on the left and the exact caption to publish on the right. Quote cards and carousels are rendered with the live brand CSS &mdash; what you see is the asset.
+    </p>
+    <p class="small muted" style="max-width: 62ch;">
+      Strategy, pillars, and cadence live in <a href="social-calendar.md">social-calendar.md</a>. Visual rules in the <a href="../foundations.html">style guide</a>.
+      <span class="sc-status sc-status--ready">June: publish-ready</span>
+      <span class="sc-status sc-status--seed">Jul&ndash;Aug: caption seeds</span>
+    </p>
+
+    <hr>
+
+    <!-- ===================== JUNE ===================== -->
+    <h2 class="sc-month">June &mdash; Arrival</h2>
+    <p class="sc-month__sub">Establish that House of Ideas exists and what category it owns. Define the voice. Soft CTA: follow / read the concept.</p>
+
+    <!-- WEEK 1 -->
+    <p class="sc-week">Week 1 &middot; Jun 1&ndash;7 &mdash; The opening statement</p>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jun 1</span><span class="badge badge--li">LinkedIn</span><span>anchor &middot; text</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">We do the upstream work<span class="gfx__dot">.</span></span><span class="gfx__foot">A venture studio</span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>House of Ideas is a venture studio.</p>
+          <p>We don&rsquo;t wait for founders to pitch us. We do the upstream work ourselves: research the domain, find an idea with real market potential, build the execution roadmap &mdash; and then find the right person to run it.</p>
+          <p>We bring the idea, the capital, the plan, and the mentorship. The Fellow brings the execution.</p>
+          <p>This is the first thing you&rsquo;ll hear from us. There&rsquo;s a lot more to say, and we&rsquo;ll say it plainly over the coming weeks. Follow along.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 2</span><span class="badge badge--x">X</span><span>thread</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">Thread</span><span class="gfx__line">Not the kind that waits for a pitch<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption &mdash; thread</p>
+          <ol class="post__thread">
+            <li>House of Ideas is a venture studio. But not the kind that waits for founders to pitch.</li>
+            <li>We do the upstream work ourselves &mdash; research the domain, validate the idea, build the roadmap.</li>
+            <li>Then we find the operator: a student from one of India&rsquo;s premier institutions.</li>
+            <li>We bring the idea, the capital, the plan, and the mentorship. They bring the execution.</li>
+            <li>Conviction before capital. We don&rsquo;t back a pitch &mdash; we build on research.</li>
+            <li>This is the first you&rsquo;re hearing of us. Follow along; we&rsquo;re just getting started.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 2</span><span class="badge badge--ig">Instagram</span><span>carousel</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (6 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame"><span class="gfx-frame__kicker">Swipe &rarr;</span><span class="gfx-frame__line">The idea. The capital. The plan. The mentorship<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">The idea<span class="gfx-frame__dot">.</span> Researched, not guessed.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">The capital<span class="gfx-frame__dot">.</span> Real, deployed.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">The plan<span class="gfx-frame__dot">.</span> A phased roadmap.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">05</span><span class="gfx-frame__line">The mentorship<span class="gfx-frame__dot">.</span> People who&rsquo;ve built.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">06</span><span class="gfx-frame__line">The Fellow brings the execution<span class="gfx-frame__dot">.</span></span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We bring the idea, the capital, the plan, and the mentorship. The Fellow brings the execution.</p>
+          <p>A venture studio for India&rsquo;s sharpest minds. Follow along.</p>
+          <p class="post__tags">#HouseOfIdeas #VentureStudio #BuildInIndia</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jun 3</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (5 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__kicker">What a studio is</span><span class="gfx-frame__line">Not a fund. Not an incubator. Not an accelerator<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">A fund waits and writes cheques.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">An incubator offers space and advice.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">An accelerator runs cohorts to a demo day.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">05</span><span class="gfx-frame__line">A studio builds the venture itself<span class="gfx-frame__dot">.</span></span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>A venture studio is not a fund. Not an incubator. Not an accelerator.</p>
+          <p>A fund waits for founders and writes cheques. An incubator offers space and advice. An accelerator runs cohorts toward a demo day.</p>
+          <p>A studio builds the venture itself &mdash; and brings in the operator once the idea is already de-risked. That difference is the whole point of House of Ideas.</p>
+          <p>Read the concept &rarr; houseofideas.in</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Thu Jun 4</span><span class="badge badge--x">X</span><span>short</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <p class="gfx-note">Text-only. Optional cover: &ldquo;building feels structureless.&rdquo;</p>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>Most brilliant students walk into placements. Not because they don&rsquo;t want to build &mdash; because building feels structureless.</p>
+          <p>We removed the structure problem.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 5</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P5 Ecosystem</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">India</span><span class="gfx__line">Tens of thousands of brilliant minds. Most of them place<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>India produces tens of thousands of exceptional graduates every year. The overwhelming majority walk into placements.</p>
+          <p>It isn&rsquo;t a lack of ambition. It&rsquo;s that building a company from zero &mdash; the blank page, the missing capital, the loneliness &mdash; is a brutal first job.</p>
+          <p>We think that&rsquo;s a solvable problem. It&rsquo;s the reason House of Ideas exists. Follow along.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 5</span><span class="badge badge--ig">Instagram</span><span>quote card</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">Conviction before capital<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>Conviction before capital. We do the research first.</p>
+          <p class="post__tags">#HouseOfIdeas #VentureStudio</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- WEEK 2 -->
+    <p class="sc-week">Week 2 &middot; Jun 8&ndash;14 &mdash; How we work</p>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jun 8</span><span class="badge badge--li">LinkedIn</span><span>anchor &middot; carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (5 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame"><span class="gfx-frame__kicker">Day one</span><span class="gfx-frame__line">Four things we hand a Fellow<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">The idea<span class="gfx-frame__dot">.</span> Validated.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">The capital<span class="gfx-frame__dot">.</span> Deployed.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">The plan<span class="gfx-frame__dot">.</span> A phased roadmap.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">05</span><span class="gfx-frame__line">The people<span class="gfx-frame__dot">.</span> Mentors and ops.</span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>On a Fellow&rsquo;s first day, four things are already in place: the idea, the capital, the plan, and the people.</p>
+          <p>The idea is researched and validated. The capital is committed. The plan is a phased roadmap, not a blank page. And the people &mdash; mentors and an operations team &mdash; are there from the start.</p>
+          <p>The Fellow inherits structure, then drives the product and the customer. Read the concept &rarr; houseofideas.in</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 9</span><span class="badge badge--x">X</span><span>thread</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">Thread</span><span class="gfx__line">How an idea becomes a venture<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption &mdash; thread</p>
+          <ol class="post__thread">
+            <li>How an idea becomes a venture at House of Ideas:</li>
+            <li>Research. We study a domain until we understand where the real, unmet need is.</li>
+            <li>Validation. The idea has to clear a bar &mdash; market, timing, feasibility &mdash; before it goes further.</li>
+            <li>Roadmap. We write the phased plan a small team can actually execute.</li>
+            <li>Operator. Only then do we bring in the Fellow to run it.</li>
+            <li>Capital follows conviction, not the other way around.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 9</span><span class="badge badge--ig">Instagram</span><span>carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (5 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame"><span class="gfx-frame__kicker">The pipeline</span><span class="gfx-frame__line">Research &rarr; idea &rarr; roadmap &rarr; operator<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">Research the domain.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">Validate the idea.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">Build the roadmap.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">05</span><span class="gfx-frame__line">Find the Fellow<span class="gfx-frame__dot">.</span></span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>From a domain to a venture, in four steps. The Fellow joins once the hard upstream work is done.</p>
+          <p class="post__tags">#HouseOfIdeas #VentureStudio #StartupIndia</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jun 10</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">Capital follows conviction<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>&ldquo;Conviction before capital&rdquo; is more than a phrase for us. It&rsquo;s the order of operations.</p>
+          <p>Most early-stage money chases a compelling founder and a pitch. We do it the other way around: we earn conviction through research first, and the capital follows that conviction.</p>
+          <p>It&rsquo;s slower upstream. It&rsquo;s far less fragile downstream.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Thu Jun 11</span><span class="badge badge--news">Newsletter #1</span><span>founding letter</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">Issue 01</span><span class="gfx__line">Why we built House of Ideas<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Subject line + opening</p>
+          <p><strong>Subject:</strong> Why we built House of Ideas</p>
+          <p>A founding letter. The problem we kept seeing &mdash; brilliant students choosing placement over building, not for lack of ambition but for lack of structure &mdash; and the studio we built to change the default. Sets the voice for everything that follows. ~700 words. Ends: <em>subscribe to follow the build.</em></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Thu Jun 11</span><span class="badge badge--x">X</span><span>short</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <p class="gfx-note">Text-only.</p>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We validate the idea before a Fellow ever sees it. Capital follows conviction, not the other way around.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 12</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P5 Ecosystem</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <p class="gfx-note">Text-only. Optional cover: &ldquo;We build, we don&rsquo;t bet.&rdquo;</p>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>The studio model isn&rsquo;t new. Atomic, eFounders, and Expa have built dozens of companies this way.</p>
+          <p>What changes in the Indian context is the talent. There is an extraordinary, under-served pool of operators in our premier institutions &mdash; people who would build, if building came with structure.</p>
+          <p>That&rsquo;s the version of the model we&rsquo;re building. We build, we don&rsquo;t bet.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 12</span><span class="badge badge--ig">Instagram</span><span>quote card</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">We build, we don&rsquo;t bet<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We build, we don&rsquo;t bet. The studio runs operations; the Fellow drives the product.</p>
+          <p class="post__tags">#HouseOfIdeas #VentureStudio</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- WEEK 3 -->
+    <p class="sc-week">Week 3 &middot; Jun 15&ndash;21 &mdash; The filter</p>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jun 15</span><span class="badge badge--li">LinkedIn</span><span>anchor &middot; text</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">The filter is the differentiation<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We work only with students from India&rsquo;s premier institutions &mdash; the IITs, the NITs, and a defined set of others. This is deliberate, not arbitrary.</p>
+          <p>It isn&rsquo;t about prestige. It&rsquo;s about a specific kind of raw material: people who think rigorously, learn fast, and aren&rsquo;t afraid of ambiguity. The filter is a structural advantage no fund can replicate.</p>
+          <p>The filter is the differentiation.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 16</span><span class="badge badge--x">X</span><span>thread</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">Thread</span><span class="gfx__line">The talent thesis<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption &mdash; thread</p>
+          <ol class="post__thread">
+            <li>Every venture studio competes on the same thing: the quality of the operators it can attract.</li>
+            <li>Most compete in an open market. We start from a filtered one.</li>
+            <li>Students from India&rsquo;s premier institutions &mdash; rigorous, fast, comfortable with hard problems.</li>
+            <li>We don&rsquo;t ask them to also be the idea-generator and fundraiser and ops lead on day one.</li>
+            <li>We hand them a de-risked idea and let them do the part they&rsquo;re built for: execute.</li>
+            <li>The filter is the differentiation.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 16</span><span class="badge badge--ig">Instagram</span><span>carousel</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (5 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__kicker">Why a filter</span><span class="gfx-frame__line">The filter is the point<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">Rigorous thinkers.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">Fast learners.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">Comfortable with ambiguity.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">05</span><span class="gfx-frame__line">An advantage no fund can copy<span class="gfx-frame__dot">.</span></span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>The filter isn&rsquo;t snobbery. It&rsquo;s a structural advantage &mdash; and the reason our ventures start ahead.</p>
+          <p class="post__tags">#HouseOfIdeas #IIT #NIT #BuildInIndia</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jun 17</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (4 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame"><span class="gfx-frame__kicker">Who runs it</span><span class="gfx-frame__line">The Fellow drives product. HoI runs ops<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">Fellow<span class="gfx-frame__dot">.</span> Product and customer.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">HoI<span class="gfx-frame__dot">.</span> Finance, legal, hiring, compliance.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">Shared<span class="gfx-frame__dot">.</span> Strategy and capital.</span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>A common question: if HoI brings the idea and the capital, what does the Fellow actually own?</p>
+          <p>The thing that matters most &mdash; the product and the customer. We run the operational machinery (finance, legal, hiring, compliance) so the Fellow spends their hours where judgment compounds.</p>
+          <p>Read the concept &rarr; houseofideas.in</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Thu Jun 18</span><span class="badge badge--x">X</span><span>short</span><span class="post__pillar">P5 Ecosystem</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <p class="gfx-note">Text-only.</p>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>A safe career and building something real shouldn&rsquo;t be a binary. We removed the parts that usually break student founders.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 19</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">Why now</span><span class="gfx__line">A domain we&rsquo;re watching<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption <span class="gfx-note">[pick one high-scoring sector from the catalogue]</span></p>
+          <p>One domain on our desk this month: [sector]. The &ldquo;why now&rdquo; is specific &mdash; [the recent shift: a regulation, an infrastructure layer, a cost curve].</p>
+          <p>We won&rsquo;t name the idea yet. But this is the kind of signal that earns a place in our catalogue: a real change in the world that opens a real, buildable gap.</p>
+          <p>Follow along &mdash; we&rsquo;ll share more from the engine over the summer.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 19</span><span class="badge badge--ig">Instagram</span><span>quote card</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">From the engine</span><span class="gfx__line">[A striking market stat]<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>[One verified market stat from the researched idea.] The kind of number that makes us look twice.</p>
+          <p class="post__tags">#HouseOfIdeas #StartupIndia</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- WEEK 4 -->
+    <p class="sc-week">Week 4 &middot; Jun 22&ndash;28 &mdash; The promise, restated</p>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jun 22</span><span class="badge badge--li">LinkedIn</span><span>anchor &middot; carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (5 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame"><span class="gfx-frame__kicker">No blank page</span><span class="gfx-frame__line">The Fellow inherits structure, not a blank page<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">A validated idea.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">A phased roadmap.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">Capital and an ops team.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">05</span><span class="gfx-frame__line">Day one looks like month three elsewhere<span class="gfx-frame__dot">.</span></span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>The blank page is where most first-time founders stall. Every venture we start comes with a phased roadmap instead.</p>
+          <p>The Fellow inherits structure, not a blank page. That doesn&rsquo;t make the work easy &mdash; it makes the work the <em>right</em> work, from day one.</p>
+          <p>Read the concept &rarr; houseofideas.in</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 23</span><span class="badge badge--x">X</span><span>thread</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">Thread</span><span class="gfx__line">What we remove<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption &mdash; thread</p>
+          <ol class="post__thread">
+            <li>Three things usually break a student founder. We remove all three.</li>
+            <li>The blank page. You get a researched idea and a roadmap, not a void.</li>
+            <li>The capital gap. The money is committed before you start.</li>
+            <li>The loneliness. A team and mentors are there from day one.</li>
+            <li>What&rsquo;s left is the part worth doing: building. A real path, not a pitch deck.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 23</span><span class="badge badge--ig">Instagram</span><span>carousel</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image &mdash; carousel (4 frames)</p>
+          <div class="gfx-deck">
+            <div class="gfx-frame"><span class="gfx-frame__kicker">For the builder</span><span class="gfx-frame__line">A real path, not a pitch deck<span class="gfx-frame__dot">.</span></span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">02</span><span class="gfx-frame__line">No blank page.</span></div>
+            <div class="gfx-frame"><span class="gfx-frame__n">03</span><span class="gfx-frame__line">No capital gap.</span></div>
+            <div class="gfx-frame gfx-frame--ink"><span class="gfx-frame__n">04</span><span class="gfx-frame__line">No going it alone<span class="gfx-frame__dot">.</span></span></div>
+          </div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We removed the parts that usually break student founders. What&rsquo;s left is the building. A real path, not a pitch deck.</p>
+          <p class="post__tags">#HouseOfIdeas #StudentFounders #BuildInIndia</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jun 24</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P5 Ecosystem</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <p class="gfx-note">Text-only. Optional cover: &ldquo;Patient, not slow.&rdquo;</p>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We describe ourselves as patient, not slow. The two get confused.</p>
+          <p>Patient means we&rsquo;ll spend weeks researching a domain before committing. Slow would mean hesitating once we have. We move deliberately upstream so we can move decisively downstream.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Thu Jun 25</span><span class="badge badge--news">Newsletter #2</span><span>the thesis</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">Issue 02</span><span class="gfx__line">Conviction before capital<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Subject line + opening</p>
+          <p><strong>Subject:</strong> Conviction before capital</p>
+          <p>The full thesis: why we invert the usual order, what &ldquo;upstream work&rdquo; actually costs us, and why a pre-validated idea fails less often than a cold pitch. The intellectual backbone of the studio. ~800 words.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Thu Jun 25</span><span class="badge badge--x">X</span><span>short</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <p class="gfx-note">Text-only.</p>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>Considered. Selective. Builder. Three words we chose carefully &mdash; each one costs us something, and earns us something.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 26</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--paper"><span class="gfx__kicker">From the engine</span><span class="gfx__line">A problem worth solving<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption <span class="gfx-note">[de-identified problem statement from catalogue]</span></p>
+          <p>A problem we keep coming back to: [the specific, verifiable pain point, de-identified].</p>
+          <p>It&rsquo;s the kind of thing that looks small until you sit with the people living it. We&rsquo;re not announcing a venture &mdash; just showing the type of problem that earns our attention. Follow along.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jun 26</span><span class="badge badge--ig">Instagram</span><span>quote card</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative">
+          <p class="post__label">Post / image</p>
+          <div class="gfx gfx--ink"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">We do the upstream work<span class="gfx__dot">.</span></span></div>
+        </div>
+        <div class="post__caption">
+          <p class="post__label">Caption</p>
+          <p>We don&rsquo;t wait for founders to pitch us. We do the upstream work.</p>
+          <p class="post__tags">#HouseOfIdeas #VentureStudio</p>
+        </div>
+      </div>
+    </article>
+
+    <hr style="margin: var(--s-6) 0;">
+
+    <!-- ===================== JULY ===================== -->
+    <h2 class="sc-month">July &mdash; Conviction <span class="sc-status sc-status--seed">caption seeds</span></h2>
+    <p class="sc-month__sub">Depth and proof: the model in detail and the Idea Engine goes public (de-identified). Captions below are seeds &mdash; expand to full length before scheduling, following June&rsquo;s voice. CTA shifts to <em>explore the model</em> / request catalogue access.</p>
+
+    <p class="sc-week">Week 5 &middot; Jun 29&ndash;Jul 5 &mdash; Inside the engine</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jun 29</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">The bar</span><span class="gfx__line">How an idea earns its place<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>The five tests an idea has to pass to enter our catalogue: specific, buildable by a small team, India-relevant, timely, and with a real &ldquo;why now&rdquo;. Carousel walks each one. CTA: request catalogue access.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Jun 30</span><span class="badge badge--x">X</span><span>thread</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">Thread</span><span class="gfx__line">Anatomy of an idea<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Thread: problem &rarr; market &rarr; why now &rarr; India fit &rarr; feasibility. Walk one de-identified idea through the exact lens our analyst uses.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jul 1</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><p class="gfx-note">Text-only. Cover: &ldquo;The research comes first.&rdquo;</p></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>What &ldquo;upstream work&rdquo; actually involves &mdash; weeks of domain research before a single line of pitch. CTA: explore the model.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jul 3</span><span class="badge badge--li">LinkedIn</span><span>text &middot; Idea drop #1</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Idea drop 01</span><span class="gfx__line">[De-identified problem]<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>First public Idea drop: a de-identified problem + the market signal behind it. CTA: request catalogue access. <span class="gfx-note">+ Tue IG carousel, Fri IG quote card, Thu X short, Fri X one-liner (repurpose).</span></p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 6 &middot; Jul 6&ndash;12 &mdash; The model, in the open</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jul 6</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">Lower failure</span><span class="gfx__line">Why validated beats cold<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Why pre-validated ideas fail less often than cold founder pitches &mdash; the studio&rsquo;s core risk argument, for the investor-curious. CTA: explore the model.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jul 9</span><span class="badge badge--news">Newsletter #3</span><span>the pipeline</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Issue 03</span><span class="gfx__line">How an idea becomes a venture<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Seed</p><p>End-to-end walkthrough of the pipeline, with one anonymised example. ~800 words.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jul 11</span><span class="badge badge--li">LinkedIn</span><span>text &middot; Idea drop #2</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Idea drop 02</span><span class="gfx__line">[De-identified problem]<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Second Idea drop. CTA: catalogue access. <span class="gfx-note">+ standard repurposes (Tue thread/carousel, Thu/Fri shorts, Fri quote card).</span></p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 7 &middot; Jul 13&ndash;19 &mdash; Who we build with</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jul 13</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P5 Ecosystem</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><p class="gfx-note">Text-only. Cover: &ldquo;The people around the Fellow.&rdquo;</p></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>The mentors and operators we partner with &mdash; and why serious people say yes to a studio. Sets up August&rsquo;s Fellow focus.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jul 15</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">IP + ops</span><span class="gfx__line">Why HoI owning ops is a feature<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Address the obvious question head-on: HoI owns the IP and runs ops &mdash; here&rsquo;s why that&rsquo;s a feature for the Fellow, not a catch. CTA: explore the model.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jul 17</span><span class="badge badge--li">LinkedIn</span><span>text &middot; Idea drop #3</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Idea drop 03</span><span class="gfx__line">[De-identified problem]<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Third Idea drop, tied to a recent India market shift. CTA: catalogue access. <span class="gfx-note">+ repurposes.</span></p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 8 &middot; Jul 20&ndash;26 &mdash; The talent thesis, expanded</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jul 20</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">The moat</span><span class="gfx__line">The filter is a moat, not a line<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Why the institutional filter is a defensible moat, not a marketing slogan &mdash; expanded with the studio-economics angle.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Jul 23</span><span class="badge badge--news">Newsletter #4</span><span>the filter</span><span class="post__pillar">P1 Manifesto</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Issue 04</span><span class="gfx__line">The filter, explained<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Seed</p><p>The talent thesis without the snobbery: what the filter is, what it isn&rsquo;t, and why it&rsquo;s positioning rather than elitism. Also speaks to placement cells / E-cells.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jul 25</span><span class="badge badge--li">LinkedIn</span><span>text &middot; Idea drop #4</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Idea drop 04</span><span class="gfx__line">[De-identified problem]<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Fourth Idea drop. CTA: catalogue access. <span class="gfx-note">+ repurposes.</span></p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 9 &middot; Jul 27&ndash;Aug 2 &mdash; Bridge to the Fellow</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Jul 27</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">What we look for</span><span class="gfx__line">Not a perfect r&eacute;sum&eacute;<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>What we actually look for in a Fellow: curiosity, commercial sense, thinking under ambiguity, the urge to build. CTA: see the Fellowship.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Jul 31</span><span class="badge badge--li">LinkedIn</span><span>text &middot; Idea drop #5</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">Idea drop 05</span><span class="gfx__line">What a Fellow could build<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Fifth Idea drop, framed as &ldquo;what a Fellow could build&rdquo; &mdash; the pivot into August. CTA: see the Fellowship.</p></div>
+      </div>
+    </article>
+
+    <hr style="margin: var(--s-6) 0;">
+
+    <!-- ===================== AUGUST ===================== -->
+    <h2 class="sc-month">August &mdash; The Builders <span class="sc-status sc-status--seed">caption seeds</span></h2>
+    <p class="sc-month__sub">Make the Fellow the hero; warm the audience toward the Fellowship. CTA: register interest (no hard deadline unless applications are confirmed open). Photography, if commissioned, unlocks here.</p>
+
+    <p class="sc-week">Week 10 &middot; Aug 3&ndash;9 &mdash; Build vs. place</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Aug 3</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">Two yeses</span><span class="gfx__line">Placement is a safe yes<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Placement is a safe yes; here&rsquo;s the other yes we offer &mdash; with the structure that makes it less of a leap. CTA: register interest.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Aug 6</span><span class="badge badge--news">Newsletter #5</span><span>a letter to the student</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Issue 05</span><span class="gfx__line">Build vs. place<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Seed</p><p>A direct letter to the student deciding between placement and building. Warm, mentor-like. CTA: register interest.</p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 11 &middot; Aug 10&ndash;16 &mdash; The path, in detail</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Aug 10</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">The journey</span><span class="gfx__line">During college / after college<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Exactly what a Fellow gets at each stage: stipend + infrastructure during college; an option to return full-time, with pre-agreed equity, after. CTA: register interest.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Aug 14</span><span class="badge badge--li">LinkedIn</span><span>text &middot; Idea drop #6</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Idea drop 06</span><span class="gfx__line">[De-identified problem]<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Sixth Idea drop, tied to a current market shift. CTA: catalogue access. <span class="gfx-note">+ repurposes.</span></p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 12 &middot; Aug 17&ndash;23 &mdash; Proof &amp; momentum</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Aug 17</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P2 How it works</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">Quarter one</span><span class="gfx__line">What we shipped in public<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>The studio&rsquo;s own build-in-public recap: what we shared, what we learned, what&rsquo;s next. Honest, no inflation.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Wed Aug 20</span><span class="badge badge--news">Newsletter #6</span><span>meet the engine</span><span class="post__pillar">P3 Idea engine</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Issue 06</span><span class="gfx__line">Meet the engine<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Seed</p><p>The catalogue so far &mdash; what the research is teaching us about India &mdash; and what comes next. CTA: catalogue access.</p></div>
+      </div>
+    </article>
+
+    <p class="sc-week">Week 13 &middot; Aug 24&ndash;31 &mdash; The invitation</p>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Mon Aug 24</span><span class="badge badge--li">LinkedIn</span><span>carousel</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">An invitation</span><span class="gfx__line">Who should put their name forward<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>An invitation, not a pitch: who this is for, and how to register interest. The quarter&rsquo;s clearest call. CTA: register interest.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Tue Aug 25</span><span class="badge badge--x">X</span><span>thread</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--paper"><span class="gfx__kicker">Thread</span><span class="gfx__line">Three months, in one place<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>Recap thread: everything HoI is, with links to concept, studio, Fellowship, catalogue. The evergreen pinned thread. CTA: register interest.</p></div>
+      </div>
+    </article>
+    <article class="post">
+      <div class="post__meta"><span class="post__date">Fri Aug 28</span><span class="badge badge--li">LinkedIn</span><span>text</span><span class="post__pillar">P4 The Fellow</span></div>
+      <div class="post__body">
+        <div class="post__creative"><p class="post__label">Post / image</p><div class="gfx gfx--ink"><span class="gfx__kicker">House of Ideas</span><span class="gfx__line">Conviction before capital<span class="gfx__dot">.</span></span></div></div>
+        <div class="post__caption"><p class="post__label">Caption seed</p><p>&ldquo;Where to go from here&rdquo; &mdash; concept, studio, Fellowship, catalogue, in one tidy post. Closes the launch loop. CTA: register interest.</p></div>
+      </div>
+    </article>
+
+    <hr>
+    <p class="small muted" style="max-width: 62ch;">
+      June is copy-paste ready. July&ndash;August carry seeds plus their rendered creatives &mdash; say the word and I&rsquo;ll expand any week to full June-quality captions, or render the full carousel frames for a given post.
+    </p>
+  </main>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
