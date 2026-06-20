@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>The Idea Catalogue &mdash; House of Ideas</title>
-  <meta name="description" content="The HoI Idea Catalogue. Researched, validated ideas across 10 active domains &mdash; currently in private preview. Request access.">
+  <meta name="description" content="30 research-backed startup ideas across 10 active domains. Each scored, sourced, and execution-mapped by the HoI research engine.">
 
-  <link rel="canonical" href="https://houseofideas.in/ideas">
+  <link rel="canonical" href="https://houseofideas.site/ideas">
   <meta property="og:title" content="The Idea Catalogue &mdash; House of Ideas">
-  <meta property="og:description" content="Researched ideas across 10 active domains. Private preview.">
+  <meta property="og:description" content="30 research-backed startup ideas across 10 active domains. Each scored, sourced, and execution-mapped.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://houseofideas.site/ideas">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
@@ -81,19 +82,46 @@
   </div>
 
   <main id="main">
+
     <!-- ====== HERO ====== -->
     <section class="ideas-hero">
       <div class="container-hoi">
-        <p class="ideas-state reveal">In private preview</p>
-        <h1 class="display ideas-hero__display reveal reveal--delay-1">
+        <h1 class="display ideas-hero__display reveal">
           The Idea Catalogue.
         </h1>
-        <p class="lede ideas-hero__lede reveal reveal--delay-2">
-          A growing set of researched, validated ideas across 10 active domains. Each comes with a hypothesis, a competitive landscape assessment, and a phased execution roadmap &mdash; the kind of brief a Fellow can pick up and run with.
+        <p class="lede ideas-hero__lede reveal reveal--delay-1">
+          30 research-backed opportunities across 10 domains. Each idea is scored, sourced, and execution-mapped &mdash; the kind of brief a Fellow can pick up and run with.
         </p>
-        <p class="reveal reveal--delay-3" style="margin-top: var(--s-4); max-width: 56ch;">
-          <span class="italic-serif" style="color: var(--stone);">The catalogue is not yet public. To explore listed ideas, request access below.</span>
+        <p class="reveal reveal--delay-2" style="margin-top: var(--s-3); max-width: 60ch;">
+          <span class="italic-serif" style="color: var(--stone);">Browse by domain below. Full briefs &mdash; market opportunity, competitive landscape, execution roadmap &mdash; are available on request.</span>
         </p>
+      </div>
+    </section>
+
+    <!-- ====== DOMAIN FILTER RAIL ====== -->
+    <div class="catalogue-rail" role="navigation" aria-label="Filter by domain">
+      <div class="container-hoi">
+        <div class="catalogue-rail__inner" id="domain-pills">
+          <!-- Pills rendered by catalogue.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== CATALOGUE GRID ====== -->
+    <section class="catalogue-section" id="catalogue" aria-label="Idea catalogue">
+      <div class="container-hoi">
+        <div class="catalogue-header">
+          <h2 class="h3" style="font-family: var(--font-sans); font-weight: 500; font-size: var(--t-small); letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone);">Current catalogue</h2>
+          <span class="catalogue-count" id="catalogue-count" aria-live="polite"></span>
+        </div>
+
+        <div class="catalogue-grid" id="catalogue-grid" aria-label="Idea cards">
+          <p class="catalogue-loading">Loading ideas&hellip;</p>
+        </div>
+
+        <div class="catalogue-empty" id="catalogue-empty" hidden>
+          No ideas in this domain yet &mdash; we&rsquo;re still researching.
+        </div>
       </div>
     </section>
 
@@ -105,7 +133,7 @@
         <p class="eyebrow eyebrow--ochre">01 &mdash; How an idea makes the catalogue</p>
         <h2 class="reveal" style="max-width: 22ch;">Six dimensions. Every idea is tested against all of them.</h2>
         <p class="reveal reveal--delay-1" style="max-width: 56ch;">
-          Ideas surface continuously from our research operation. Only those that pass a structured six-dimension review reach the catalogue.
+          Ideas surface continuously from our research operation. Only those that pass a structured six-dimension review reach the catalogue &mdash; and only the top scores go into a full brief.
         </p>
 
         <div class="ideas-evaluation">
@@ -143,139 +171,29 @@
       </div>
     </section>
 
-    <!-- ====== 02 — DOMAINS ====== -->
-    <section class="section" style="background: var(--paper-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
-      <div class="container-hoi">
-        <p class="eyebrow eyebrow--ochre">02 &mdash; Active research domains</p>
-        <h2 class="reveal" style="max-width: 22ch;">Ten domains. Continuously researched.</h2>
-        <p class="reveal reveal--delay-1" style="max-width: 56ch;">
-          Every domain has been chosen for market timing, structural tailwind, India relevance, execution feasibility, and IP potential. The catalogue draws from these.
-        </p>
-
-        <div class="ideas-grid">
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">01</p>
-            <h3 class="ideas-card__title">AI &amp; Intelligent Systems</h3>
-            <p class="ideas-card__subs">AI agents &middot; Voice &amp; conversational AI &middot; Document intelligence &middot; Predictive systems</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">02</p>
-            <h3 class="ideas-card__title">EdTech &amp; Learning Infrastructure</h3>
-            <p class="ideas-card__subs">Assessment &amp; proctoring &middot; Credentialing &middot; Institutional tooling &middot; Vernacular education</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">03</p>
-            <h3 class="ideas-card__title">HealthTech &amp; BioTech</h3>
-            <p class="ideas-card__subs">Preventive health &middot; Mental health &middot; Hospital ops &middot; AI diagnostics &middot; Rural delivery</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">04</p>
-            <h3 class="ideas-card__title">FinTech &amp; Financial Infrastructure</h3>
-            <p class="ideas-card__subs">Credit access &middot; Insurance automation &middot; B2B payments &middot; Embedded finance &middot; Wealth</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">05</p>
-            <h3 class="ideas-card__title">AgriTech &amp; Rural Infrastructure</h3>
-            <p class="ideas-card__subs">Precision farming &middot; Cold chain &middot; Farm-to-market &middot; Credit &amp; insurance &middot; Inputs</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">06</p>
-            <h3 class="ideas-card__title">Climate Tech &amp; Sustainability</h3>
-            <p class="ideas-card__subs">Carbon tracking &middot; EV infrastructure &middot; Circular economy &middot; Green building &middot; Resource efficiency</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">07</p>
-            <h3 class="ideas-card__title">Enterprise SaaS &amp; B2B Tools</h3>
-            <p class="ideas-card__subs">Workflow &middot; Compliance &middot; Supply chain visibility &middot; HR &amp; people ops &middot; Field service</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">08</p>
-            <h3 class="ideas-card__title">GovTech &amp; Civic Infrastructure</h3>
-            <p class="ideas-card__subs">Civic feedback &middot; Municipal ops &middot; Procurement transparency &middot; ID &amp; document mgmt</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">09</p>
-            <h3 class="ideas-card__title">Legal Tech &amp; Compliance</h3>
-            <p class="ideas-card__subs">Contract automation &middot; Compliance tracking &middot; RFP automation &middot; Legal research &middot; MSME tooling</p>
-            <div class="ideas-card__meta">
-              <span>5 sub-domains</span>
-              <span class="ideas-card__status">Researching</span>
-            </div>
-          </article>
-
-          <article class="ideas-card reveal">
-            <p class="ideas-card__num">10</p>
-            <h3 class="ideas-card__title">Consumer &amp; Community Platforms</h3>
-            <p class="ideas-card__subs">Niche communities &middot; Creator infrastructure &middot; Hyperlocal &middot; Social commerce</p>
-            <div class="ideas-card__meta">
-              <span>4 sub-domains</span>
-              <span class="ideas-card__status">Selective</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====== 03 — REQUEST ACCESS ====== -->
+    <!-- ====== 02 — REQUEST FULL BRIEF ====== -->
     <section class="ideas-access">
       <div class="container-hoi">
-        <p class="eyebrow">03 &mdash; Request access</p>
+        <p class="eyebrow">02 &mdash; Request a full brief</p>
 
         <div class="ideas-access__grid">
           <div>
             <p class="ideas-access__display reveal">
-              The catalogue is in private preview. Tell us who you are, and we&rsquo;ll open the door.
+              The cards show the surface. The brief goes six layers deep.
             </p>
           </div>
 
           <div class="reveal reveal--delay-1">
             <p class="ideas-access__body">
-              Access is offered to students at premier institutions exploring a Fellowship, and to partners under NDA. Each idea brief includes the research hypothesis, market opportunity, competitive landscape, and a phased execution roadmap &mdash; the kind of detail we would never publish openly while ideas are still pre-allocation.
+              Each full brief includes the research hypothesis, addressable market with sizing, competitive landscape, why-now analysis, India-specific execution factors, and a phased six-month roadmap &mdash; the kind of detail we would not publish openly while ideas are still pre-allocation.
+            </p>
+            <p class="ideas-access__body" style="margin-top: var(--s-3);">
+              Access is open to students at premier institutions exploring a Fellowship, and to partners under NDA.
             </p>
 
             <div class="ideas-access__actions">
-              <a class="btn-hoi btn-ghost-hoi" href="mailto:hello@houseofideas.in?subject=Catalogue%20access%20request">
-                Request catalogue access
+              <a class="btn-hoi btn-ghost-hoi" href="mailto:hello@houseofideas.in?subject=Catalogue%20brief%20request">
+                Request a brief
                 <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                   <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
                 </svg>
@@ -291,6 +209,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -358,8 +277,11 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/catalogue.js" defer></script>
   <script>
-    document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+    document.querySelectorAll('[data-year]').forEach(function (el) {
+      el.textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>

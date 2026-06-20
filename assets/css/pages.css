@@ -1857,3 +1857,286 @@
   margin-top: var(--s-6);
   max-width: 64ch;
 }
+
+/* =========================================================
+   Ideas: Catalogue — domain filter rail + dossier cards
+   ========================================================= */
+
+/* Sticky domain filter rail */
+.catalogue-rail {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 80;
+  background: rgba(246, 241, 232, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  padding-block: var(--s-2);
+}
+
+.catalogue-rail__inner {
+  display: flex;
+  gap: var(--s-1);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-block: 2px;
+}
+
+.catalogue-rail__inner::-webkit-scrollbar { display: none; }
+
+.catalogue-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--stone);
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 0;
+  transition: background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+
+.catalogue-pill:hover {
+  color: var(--ink);
+  border-color: var(--stone);
+}
+
+.catalogue-pill.is-active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.catalogue-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Catalogue section wrapper */
+.catalogue-section {
+  padding-block: var(--s-5) var(--s-7);
+}
+
+.catalogue-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--s-4);
+  gap: var(--s-3);
+}
+
+.catalogue-header h2 {
+  margin: 0;
+}
+
+.catalogue-count {
+  font-family: var(--font-mono);
+  font-size: var(--t-small);
+  color: var(--stone);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-3);
+}
+
+@media (min-width: 768px) {
+  .catalogue-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.catalogue-loading {
+  padding: var(--s-6) 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--t-small);
+  letter-spacing: 0.1em;
+  color: var(--stone-soft);
+}
+
+/* Dossier card */
+.dossier-card {
+  background: var(--paper-soft);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--domain-color, var(--rule));
+  padding: var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  transition: box-shadow var(--dur-base) var(--ease),
+              transform var(--dur-base) var(--ease);
+}
+
+.dossier-card:hover {
+  box-shadow: 0 6px 28px rgba(14, 14, 12, 0.07);
+  transform: translateY(-2px);
+}
+
+.dossier-card__domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.dossier-card__domain-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--domain-color, var(--stone-soft));
+  flex-shrink: 0;
+}
+
+.dossier-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.0625rem, 0.5vw + 0.95rem, 1.25rem);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.dossier-card__problem {
+  font-size: var(--t-small);
+  line-height: var(--lh-loose);
+  color: var(--stone);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dossier-card__signal {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-2);
+  padding: var(--s-2);
+  background: var(--paper);
+  border-left: 2px solid var(--domain-color, var(--ochre));
+}
+
+.dossier-card__signal-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  white-space: nowrap;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.dossier-card__signal-text {
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+.dossier-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-2);
+  padding-top: var(--s-2);
+  border-top: 1px solid var(--rule);
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.dossier-card__score {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dossier-card__score-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone-soft);
+}
+
+.dossier-card__score-bar {
+  display: flex;
+  gap: 2px;
+}
+
+.dossier-card__score-seg {
+  width: 12px;
+  height: 3px;
+  background: var(--rule);
+}
+
+.dossier-card__score-seg.is-filled {
+  background: var(--domain-color, var(--ink));
+}
+
+.dossier-card__score-num {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--stone);
+}
+
+.dossier-card__cta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+
+.dossier-card__cta:hover {
+  color: var(--ochre);
+  border-color: var(--ochre);
+}
+
+.dossier-card__cta svg {
+  width: 11px;
+  height: 11px;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.dossier-card__cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* Empty / error state */
+.catalogue-empty {
+  padding: var(--s-7) 0;
+  text-align: center;
+  color: var(--stone);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
+}
