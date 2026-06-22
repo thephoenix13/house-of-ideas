@@ -4,14 +4,13 @@ import uuid
 from datetime import date
 from pathlib import Path
 from anthropic import Anthropic
-from tavily import TavilyClient
+from duckduckgo_search import DDGS
 from dotenv import load_dotenv
 from domains import DOMAINS
 
-load_dotenv()
+load_dotenv(Path(__file__).parent / ".env")
 
 anthropic = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-tavily = TavilyClient(api_key=os.environ["TAVILY_API_KEY"])
 
 OUTPUT_DIR = Path(__file__).parent / "output" / "ideas"
 INDEX_PATH = Path(__file__).parent / "output" / "index.json"
@@ -44,16 +43,18 @@ Return a JSON array of exactly 2-3 ideas. No markdown, no explanation — only t
 
 def search_domain(domain_name, queries):
     all_results = []
-    for query in queries:
-        try:
-            response = tavily.search(
-                query=query,
-                search_depth="advanced",
-                max_results=5,
-            )
-            all_results.extend(response.get("results", []))
-        except Exception as e:
-            print(f"    Search error for '{query}': {e}")
+    with DDGS() as ddgs:
+        for query in queries:
+            try:
+                results = list(ddgs.text(query, max_results=5))
+                for r in results:
+                    all_results.append({
+                        "url":     r.get("href", ""),
+                        "title":   r.get("title", ""),
+                        "content": r.get("body", ""),
+                    })
+            except Exception as e:
+                print(f"    Search error for '{query}': {e}")
     return all_results
 
 
