@@ -66,9 +66,8 @@
     grid.hidden = false;
 
     ideas.forEach(function (idea) {
-      var color  = DOMAIN_COLORS[idea.domain] || '#6B6660';
-      var mailto = 'mailto:hello@houseofideas.in?subject=' +
-        encodeURIComponent('Brief request: ' + idea.title);
+      var color      = DOMAIN_COLORS[idea.domain] || '#6B6660';
+      var contactUrl = 'contact.html?type=catalogue';
 
       var card = document.createElement('article');
       card.className = 'dossier-card';
@@ -91,7 +90,7 @@
             '<div class="dossier-card__score-bar">' + buildScoreBar(idea.score, color) + '</div>' +
             '<span class="dossier-card__score-num">' + idea.score + '/10</span>' +
           '</div>' +
-          '<a href="' + mailto + '" class="dossier-card__cta">' +
+          '<a href="' + contactUrl + '" class="dossier-card__cta">' +
             'Request brief' +
             '<svg viewBox="0 0 14 14" fill="none" aria-hidden="true">' +
               '<path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>' +
