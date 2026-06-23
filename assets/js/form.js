@@ -52,6 +52,7 @@
         .then(function (res) {
           if (res.ok) {
             form.style.display = 'none';
+            success.removeAttribute('hidden');
             success.classList.add('is-visible');
             success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           } else {
@@ -59,6 +60,7 @@
           }
         })
         .catch(function () {
+          error.removeAttribute('hidden');
           error.classList.add('is-visible');
           submit.disabled  = false;
           submit.innerHTML = originalLabel;

@@ -2164,9 +2164,8 @@
   color: var(--stone);
 }
 
-.hoi-form__label abbr {
+.hoi-form__req {
   color: var(--ochre);
-  text-decoration: none;
   margin-left: 2px;
 }
 

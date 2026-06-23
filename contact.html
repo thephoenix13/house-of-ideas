@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=2">
 </head>
 
 <body>
@@ -104,21 +104,21 @@
           <div>
             <p class="eyebrow eyebrow--ochre" style="margin-bottom: var(--s-4);">Send us a message</p>
 
-            <div class="hoi-form__banner hoi-form__banner--success" id="form-success" role="alert">
+            <div class="hoi-form__banner hoi-form__banner--success" id="form-success" role="alert" hidden>
               Thank you &mdash; we&rsquo;ve received your message and will be in touch within three working days.
             </div>
-            <div class="hoi-form__banner hoi-form__banner--error" id="form-error" role="alert">
+            <div class="hoi-form__banner hoi-form__banner--error" id="form-error" role="alert" hidden>
               Something went wrong &mdash; please try again in a moment.
             </div>
 
             <form class="hoi-form" id="contact-form" novalidate>
               <div class="hoi-form__group">
-                <label class="hoi-form__label" for="cf-name">Name <abbr title="required">*</abbr></label>
+                <label class="hoi-form__label" for="cf-name">Name <span class="hoi-form__req" aria-hidden="true">*</span></label>
                 <input class="hoi-form__input" type="text" id="cf-name" name="name" autocomplete="name" required>
               </div>
 
               <div class="hoi-form__group">
-                <label class="hoi-form__label" for="cf-email">Email <abbr title="required">*</abbr></label>
+                <label class="hoi-form__label" for="cf-email">Email <span class="hoi-form__req" aria-hidden="true">*</span></label>
                 <input class="hoi-form__input" type="email" id="cf-email" name="email" autocomplete="email" required>
               </div>
 
@@ -128,7 +128,7 @@
               </div>
 
               <div class="hoi-form__group">
-                <label class="hoi-form__label" for="cf-type">Enquiry type <abbr title="required">*</abbr></label>
+                <label class="hoi-form__label" for="cf-type">Enquiry type <span class="hoi-form__req" aria-hidden="true">*</span></label>
                 <select class="hoi-form__select" id="cf-type" name="enquiry_type" required>
                   <option value="">Select one&hellip;</option>
                   <option value="Fellowship Application">Fellowship Application</option>
@@ -140,7 +140,7 @@
               </div>
 
               <div class="hoi-form__group">
-                <label class="hoi-form__label" for="cf-message">Message <abbr title="required">*</abbr></label>
+                <label class="hoi-form__label" for="cf-message">Message <span class="hoi-form__req" aria-hidden="true">*</span></label>
                 <textarea class="hoi-form__textarea" id="cf-message" name="message" rows="5" required></textarea>
               </div>
 

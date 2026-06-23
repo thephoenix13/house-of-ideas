@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>House of Ideas — For Mentors &amp; Advisors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0E0E0C;--paper:#F6F1E8;--ochre:#B8862F;--stone:#6B6660;--rule:#D9D2C5;--serif:'Source Serif 4',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+  *{margin:0;padding:0;box-sizing:border-box;}html,body{height:100%;}
+  body{font-family:var(--sans);color:var(--ink);background:#111;-webkit-font-smoothing:antialiased;}
+  .deck{height:100vh;overflow:hidden;}
+  .slide{display:none;height:100vh;width:100vw;background:var(--paper);padding:8vh 9vw 9vh;flex-direction:column;position:relative;}
+  .slide.active{display:flex;}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:.9rem;margin-bottom:auto;}
+  .wordmark{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.16em;text-transform:uppercase;}
+  .folio{font-family:var(--mono);font-size:.78rem;color:var(--stone);letter-spacing:.05em;}
+  .body-area{margin:auto 0;max-width:62rem;}
+  .eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--ochre);margin-bottom:1.4rem;}
+  h1{font-family:var(--serif);font-weight:700;font-size:4.4rem;line-height:1.04;letter-spacing:-.015em;}
+  h2{font-family:var(--serif);font-weight:700;font-size:2.9rem;line-height:1.08;letter-spacing:-.01em;margin-bottom:1.6rem;max-width:26ch;}
+  h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;line-height:1.3;}
+  p{font-size:1.18rem;line-height:1.62;color:var(--ink);max-width:60ch;}
+  p.lead{font-size:1.5rem;line-height:1.5;color:var(--ink);max-width:44ch;}
+  p + p{margin-top:1.1rem;}.stone{color:var(--stone);}em{font-style:italic;}.accent{color:var(--ochre);}
+  .footnote{font-family:var(--mono);font-size:.72rem;color:var(--stone);letter-spacing:.04em;border-top:1px solid var(--rule);padding-top:.8rem;margin-top:auto;display:flex;justify-content:space-between;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+  .rows{display:grid;gap:0;}
+  .row{display:grid;grid-template-columns:3.2rem 1fr;gap:1.4rem;padding:1.15rem 0;border-bottom:1px solid var(--rule);align-items:baseline;}
+  .row:first-child{border-top:1px solid var(--rule);}
+  .row .n{font-family:var(--mono);font-size:.95rem;color:var(--ochre);padding-top:.15rem;}
+  .row h3{margin-bottom:.25rem;}.row p{font-size:1.02rem;color:var(--stone);max-width:64ch;}
+  .domgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);margin-top:.5rem;}
+  .domgrid div{padding:.85rem 1rem .85rem 0;border-bottom:1px solid var(--rule);font-size:1.05rem;font-family:var(--serif);}
+  .cover h1{font-size:4.8rem;}
+  .cover .sub{font-size:1.6rem;color:var(--stone);margin-top:1.6rem;max-width:36ch;font-family:var(--serif);}
+  .rule-mark{width:64px;height:2px;background:var(--ochre);margin:2.2rem 0;}
+  .closing{background:var(--ink);}.closing .masthead{border-color:#333;}
+  .closing .wordmark,.closing h2,.closing p{color:var(--paper);}.closing .footnote{color:#8a857c;border-color:#333;}.closing .eyebrow{color:var(--ochre);}.closing .lead{color:var(--paper);}
+  .nav{position:fixed;bottom:16px;right:20px;display:flex;gap:6px;z-index:50;}
+  .nav button{background:var(--paper);border:1px solid var(--rule);color:var(--ink);width:34px;height:34px;font-size:1rem;cursor:pointer;font-family:var(--serif);}
+  @media print{body{background:#fff;}.deck{height:auto;overflow:visible;}.slide{display:flex !important;page-break-after:always;height:100vh;}.nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1. Cover -->
+  <section class="slide cover active">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">For Mentors &amp; Advisors</span></div>
+    <div class="body-area">
+      <h1>Leave a fingerprint<br/>on India's next<br/>generation of builders.</h1>
+      <div class="rule-mark"></div>
+      <p class="sub">A serious, well-funded effort to build real ventures with the best young talent in the country — and a chance to shape the people who matter.</p>
+    </div>
+    <div class="footnote"><span>House of Ideas</span><span>For domain experts, operators &amp; advisors</span></div>
+  </section>
+
+  <!-- 2. The premise -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">02 — The Premise</span></div>
+    <div class="body-area">
+      <div class="eyebrow">The premise</div>
+      <h2>We research the ideas, fund them, and recruit exceptional students to build them.</h2>
+      <p class="lead">House of Ideas is a venture studio. We do the upstream work — research, capital, roadmap — and place a Fellow from a premier institution at the centre of each venture.</p>
+      <p class="stone" style="margin-top:1.2rem;">What turns a sharp student into a real operator is judgement. That's where you come in.</p>
+    </div>
+    <div class="footnote"><span>Researched ideas · premier-institution talent · structured execution.</span><span>02</span></div>
+  </section>
+
+  <!-- 3. Why mentors matter -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">03 — Why It Matters</span></div>
+    <div class="body-area">
+      <div class="eyebrow">Mentorship is a core pillar, not a perk</div>
+      <h2>Fellows inherit structure. You give them judgement.</h2>
+      <p class="lead">Every venture comes with a roadmap. What it can't come with is the instinct that only experience provides.</p>
+      <p style="margin-top:1.2rem;" class="stone">Advisors help Fellows read a market, avoid a known mistake, make the right call under ambiguity, and open a door at the right moment. Your fingerprint compounds across the portfolio.</p>
+    </div>
+    <div class="footnote"><span>A roadmap can be written. Judgement has to be lent.</span><span>03</span></div>
+  </section>
+
+  <!-- 4. Where your expertise fits -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">04 — Where You Fit</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Ten active domains</div>
+      <h2 style="max-width:none;">Wherever your depth is, there's a venture that needs it.</h2>
+      <div class="domgrid">
+        <div>AI &amp; Intelligent Systems</div>
+        <div>EdTech &amp; Learning</div>
+        <div>HealthTech &amp; BioTech</div>
+        <div>FinTech &amp; Financial Infra</div>
+        <div>AgriTech &amp; Rural Infra</div>
+        <div>Climate Tech</div>
+        <div>Enterprise SaaS &amp; B2B</div>
+        <div>GovTech &amp; Civic</div>
+        <div>Legal Tech &amp; Compliance</div>
+      </div>
+      <p class="stone" style="margin-top:1.4rem;">Advisors also help shape the research itself — pressure-testing ideas against the six-point framework before they're ever listed.</p>
+    </div>
+    <div class="footnote"><span>Shape the ventures — and the ideas before them.</span><span>04</span></div>
+  </section>
+
+  <!-- 5. What we ask -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">05 — What We Ask</span></div>
+    <div class="body-area">
+      <div class="eyebrow">What we'd ask of you</div>
+      <h2>Light, structured, and high-signal.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">—</span><div><h3>Periodic guidance to Fellows</h3><p>In your domain — on a cadence that respects your time.</p></div></div>
+        <div class="row"><span class="n">—</span><div><h3>A read on ideas and markets</h3><p>Help us validate before we commit capital and a Fellow.</p></div></div>
+        <div class="row"><span class="n">—</span><div><h3>The occasional introduction</h3><p>A door opened at the right moment is often worth more than the advice.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>We respect that your time is the scarce resource.</span><span>05</span></div>
+  </section>
+
+  <!-- 6. What you get -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">06 — What You Get</span></div>
+    <div class="body-area">
+      <div class="eyebrow">What advisors get</div>
+      <h2>A front-row seat to ventures built deliberately.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">—</span><div><h3>Influence over what gets built</h3><p>Shape ventures early, when direction is still being set.</p></div></div>
+        <div class="row"><span class="n">—</span><div><h3>Access to the portfolio &amp; its people</h3><p>The Fellows, the ideas, and the HoI network.</p></div></div>
+        <div class="row"><span class="n">—</span><div><h3>Association with a serious effort</h3><p>A studio defined by the quality of who it works with.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>The most deliberate studio, not the biggest fund.</span><span>06</span></div>
+  </section>
+
+  <!-- 7. Closing -->
+  <section class="slide closing">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">Join us</span></div>
+    <div class="body-area">
+      <div class="eyebrow">The invitation</div>
+      <h2 style="max-width:30ch;">Help the best young builders in India make fewer wrong turns.</h2>
+      <p class="lead" style="max-width:46ch;">If shaping the next generation of Indian operators is something you'd want your name on, we'd like to talk.</p>
+    </div>
+    <div class="footnote"><span>House of Ideas</span><span>Advisor &amp; mentor network</span></div>
+  </section>
+
+</div>
+
+<div class="nav"><button id="prev">‹</button><button id="next">›</button></div>
+<script>
+  const slides=Array.from(document.querySelectorAll('.slide'));let i=0;
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,x)=>s.classList.toggle('active',x===i));}
+  document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+  show(0);
+</script>
+</body>
+</html>

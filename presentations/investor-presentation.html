@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>House of Ideas — Investor Presentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E0C; --paper:#F6F1E8; --ochre:#B8862F; --stone:#6B6660; --rule:#D9D2C5;
+    --serif:'Source Serif 4',Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{font-family:var(--sans);color:var(--ink);background:#111;-webkit-font-smoothing:antialiased;}
+  .deck{height:100vh;overflow:hidden;}
+  .slide{
+    display:none;height:100vh;width:100vw;background:var(--paper);
+    padding:8vh 9vw 9vh;flex-direction:column;position:relative;
+  }
+  .slide.active{display:flex;}
+  /* masthead */
+  .masthead{
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid var(--rule);padding-bottom:.9rem;margin-bottom:auto;
+  }
+  .wordmark{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.16em;text-transform:uppercase;}
+  .folio{font-family:var(--mono);font-size:.78rem;color:var(--stone);letter-spacing:.05em;}
+  .body-area{margin:auto 0;max-width:62rem;}
+  .eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--ochre);margin-bottom:1.4rem;}
+  h1{font-family:var(--serif);font-weight:700;font-size:4.4rem;line-height:1.04;letter-spacing:-.015em;}
+  h2{font-family:var(--serif);font-weight:700;font-size:2.9rem;line-height:1.08;letter-spacing:-.01em;margin-bottom:1.6rem;max-width:24ch;}
+  h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;line-height:1.3;}
+  p{font-size:1.18rem;line-height:1.62;color:var(--ink);max-width:60ch;}
+  p.lead{font-size:1.5rem;line-height:1.5;color:var(--ink);max-width:42ch;}
+  p + p{margin-top:1.1rem;}
+  .stone{color:var(--stone);}
+  em{font-style:italic;}
+  .accent{color:var(--ochre);}
+  .footnote{font-family:var(--mono);font-size:.72rem;color:var(--stone);letter-spacing:.04em;border-top:1px solid var(--rule);padding-top:.8rem;margin-top:auto;display:flex;justify-content:space-between;}
+  /* two-column prose */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+  .cols-asym{display:grid;grid-template-columns:0.85fr 1.15fr;gap:3.5rem;align-items:start;}
+  /* numbered list (engine / steps) */
+  .rows{display:grid;gap:0;}
+  .row{display:grid;grid-template-columns:3.2rem 1fr;gap:1.4rem;padding:1.15rem 0;border-bottom:1px solid var(--rule);align-items:baseline;}
+  .row:first-child{border-top:1px solid var(--rule);}
+  .row .n{font-family:var(--mono);font-size:.95rem;color:var(--ochre);padding-top:.15rem;}
+  .row h3{margin-bottom:.25rem;}
+  .row p{font-size:1.02rem;color:var(--stone);max-width:64ch;}
+  /* table */
+  table{width:100%;border-collapse:collapse;margin-top:.5rem;}
+  th,td{text-align:left;padding:.85rem 1rem;border-bottom:1px solid var(--rule);font-size:1.05rem;vertical-align:top;}
+  thead th{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--stone);}
+  tbody td:first-child{font-weight:500;}
+  td.accent-col{color:var(--ink);}
+  table.compare td:nth-child(3){color:var(--ink);}
+  table.compare td:nth-child(2){color:var(--stone);}
+  /* stat band */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:1rem;}
+  .stat .fig{font-family:var(--serif);font-weight:700;font-size:3.2rem;line-height:1;letter-spacing:-.02em;}
+  .stat .lab{font-size:1rem;color:var(--stone);margin-top:.6rem;max-width:24ch;}
+  .stat .fig .accent{color:var(--ochre);}
+  /* portfolio bars */
+  .bars{display:grid;gap:1rem;margin-top:.5rem;max-width:46rem;}
+  .bar-row{display:grid;grid-template-columns:16rem 1fr 3rem;gap:1rem;align-items:center;font-size:1.05rem;}
+  .bar-track{height:10px;background:var(--rule);position:relative;}
+  .bar-fill{height:10px;background:var(--ink);}
+  .bar-fill.o{background:var(--ochre);}
+  .bar-row .pct{font-family:var(--mono);font-size:.9rem;color:var(--stone);text-align:right;}
+  /* pull quote / cover */
+  .cover h1{font-size:5rem;}
+  .cover .sub{font-size:1.6rem;color:var(--stone);margin-top:1.6rem;max-width:30ch;font-family:var(--serif);}
+  .rule-mark{width:64px;height:2px;background:var(--ochre);margin:2.2rem 0;}
+  .closing{background:var(--ink);}
+  .closing .masthead{border-color:#333;}
+  .closing .wordmark,.closing h2,.closing p{color:var(--paper);}
+  .closing .footnote{color:#8a857c;border-color:#333;}
+  .closing .eyebrow{color:var(--ochre);}
+  .closing .lead{color:var(--paper);}
+  .disclaimer{font-family:var(--mono);font-size:.7rem;color:var(--stone);max-width:70ch;line-height:1.6;}
+  /* nav */
+  .nav{position:fixed;bottom:16px;right:20px;display:flex;gap:6px;z-index:50;}
+  .nav button{background:var(--paper);border:1px solid var(--rule);color:var(--ink);width:34px;height:34px;font-size:1rem;cursor:pointer;font-family:var(--serif);}
+  @media print{
+    body{background:#fff;}
+    .deck{height:auto;overflow:visible;}
+    .slide{display:flex !important;page-break-after:always;height:100vh;}
+    .nav{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1. Cover -->
+  <section class="slide cover active">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">Confidential · For Partners &amp; Advisors</span></div>
+    <div class="body-area">
+      <h1>The ideas are<br/>researched. The talent<br/>is the best in India.</h1>
+      <div class="rule-mark"></div>
+      <p class="sub">A venture studio that researches ideas, funds them, and recruits exceptional students from India's premier institutions to build them.</p>
+    </div>
+    <div class="footnote"><span>House of Ideas</span><span>Investor Presentation · v1.0</span></div>
+  </section>
+
+  <!-- 2. Thesis -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">02 — Thesis</span></div>
+    <div class="body-area">
+      <div class="eyebrow">The thesis</div>
+      <h2>We don't wait for founders to pitch us. We do the upstream work.</h2>
+      <p class="lead">House of Ideas sources the idea, deploys the capital, builds the execution roadmap, and finds the right person to run each venture.</p>
+    </div>
+    <div class="footnote"><span>Conviction before capital.</span><span>02</span></div>
+  </section>
+
+  <!-- 3. The gap -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">03 — The Gap</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">The problem</div>
+      <h2>Two halves of the same gap.</h2>
+      <div class="cols">
+        <div>
+          <h3 class="accent" style="margin-bottom:.6rem;">Talent without a path</h3>
+          <p class="stone">India's IITs, NITs and top colleges produce tens of thousands of exceptional engineers and thinkers every year. Most walk into placements — not because they don't want to build, but because building feels structureless, underfunded, and lonely.</p>
+        </div>
+        <div>
+          <h3 class="accent" style="margin-bottom:.6rem;">Ideas without operators</h3>
+          <p class="stone">At the same time, thoroughly researched, validated ideas sit unbuilt across AI, HealthTech, EdTech, AgriTech, FinTech and ClimaTech — because no one has the capital, the structure, and the right people in place at the same time.</p>
+        </div>
+      </div>
+      <p style="margin-top:2rem;font-family:var(--serif);font-size:1.4rem;">House of Ideas sits in that gap — and closes both sides at once.</p>
+    </div>
+    <div class="footnote"><span>The gap is not talent. The gap is structured opportunity.</span><span>03</span></div>
+  </section>
+
+  <!-- 4. What HoI is -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">04 — What We Are</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">What we are</div>
+      <h2>A venture studio. Not a fund, not an accelerator.</h2>
+      <div class="cols">
+        <div>
+          <p style="font-family:var(--serif);font-size:1.25rem;margin-bottom:1rem;">House of Ideas brings:</p>
+          <div class="rows">
+            <div class="row"><span class="n">—</span><div><h3>The idea</h3><p>Researched and validated before a Fellow ever sees it.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>The capital</h3><p>Deployed in phases, from Angel to VC scale.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>The plan</h3><p>A step-by-step execution roadmap, not a blank page.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>The infrastructure</h3><p>HoI runs legal, finance, vendors and basic GTM.</p></div></div>
+          </div>
+        </div>
+        <div style="align-self:center;">
+          <p style="font-family:var(--serif);font-size:1.25rem;margin-bottom:1rem;">The Fellow brings:</p>
+          <div class="rows">
+            <div class="row"><span class="n">—</span><div><h3>Execution capability</h3></div></div>
+            <div class="row"><span class="n">—</span><div><h3>Domain instinct</h3></div></div>
+            <div class="row"><span class="n">—</span><div><h3>The hunger to build something real</h3></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote"><span>We build, we don't bet.</span><span>04</span></div>
+  </section>
+
+  <!-- 5. The engine -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">05 — The Engine</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">How HoI creates value</div>
+      <h2>A repeatable engine for producing fundable ventures.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">01</span><div><h3>Idea origination</h3><p>A continuous research operation across 10 active domains. Every idea is validated against a six-point framework — problem clarity, market size, timing, execution path, competitive landscape, India fit — before it is listed or assigned.</p></div></div>
+        <div class="row"><span class="n">02</span><div><h3>Capital deployment</h3><p>Capital deployed in phases tied to execution milestones, not in a single upfront tranche.</p></div></div>
+        <div class="row"><span class="n">03</span><div><h3>Talent acquisition</h3><p>Ventures are listed on the platform. Students from premier institutions apply to build them. Selection is rigorous — execution mindset over academic record.</p></div></div>
+        <div class="row"><span class="n">04</span><div><h3>Operational infrastructure</h3><p>HoI runs day-to-day operations so the Fellow focuses entirely on product and customers.</p></div></div>
+        <div class="row"><span class="n">05</span><div><h3>Mentorship &amp; roadmap</h3><p>Active mentorship from HoI partners and domain advisors, against a roadmap the Fellow inherits rather than invents.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Ideas are validated before a Fellow ever sees them.</span><span>05</span></div>
+  </section>
+
+  <!-- 6. The Fellow journey -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">06 — The Fellow's Path</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">The Founders Fellowship</div>
+      <h2>From researched idea to full-time operator.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">01</span><div><h3>Idea research</h3><p>HoI researches markets and whitespace; each Idea ships with a validated hypothesis, competitive read, and phased roadmap.</p></div></div>
+        <div class="row"><span class="n">02</span><div><h3>The platform</h3><p>Ideas are listed. Builders from premier institutions explore, read the brief, and apply — or bring an existing idea into the portfolio.</p></div></div>
+        <div class="row"><span class="n">03</span><div><h3>Selection</h3><p>Reviewed by the HoI team. Intellectual sharpness, execution mindset, and genuine commitment — not just credentials.</p></div></div>
+        <div class="row"><span class="n">04</span><div><h3>The build phase</h3><p>Fellows build during college on a stipend, with mentoring and operating support. HoI runs ops; the Fellow drives product.</p></div></div>
+        <div class="row"><span class="n">05</span><div><h3>Post-college</h3><p>On graduation, the Fellow can return full-time at a pre-agreed equity stake — real entry, with skin in the game.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Stipend now. A path to equity post-college.</span><span>06</span></div>
+  </section>
+
+  <!-- 7. Studio vs VC -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">07 — Model</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">The studio model vs. traditional VC</div>
+      <h2 style="max-width:none;">Where a fund stops, the studio begins.</h2>
+      <table class="compare">
+        <thead><tr><th></th><th>Traditional VC</th><th>House of Ideas</th></tr></thead>
+        <tbody>
+          <tr><td>Idea source</td><td>Founder</td><td>HoI research</td></tr>
+          <tr><td>Operational support</td><td>Limited</td><td>Full — HoI runs ops</td></tr>
+          <tr><td>Mentorship</td><td>Advisory</td><td>Active, embedded</td></tr>
+          <tr><td>IP ownership</td><td>Founder</td><td>House of Ideas</td></tr>
+          <tr><td>Fellow's upside</td><td>Via equity</td><td>Stipend now + equity option post-college</td></tr>
+          <tr><td>Talent filter</td><td>Open</td><td>Premier institutions only</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footnote"><span>We do the upstream work ourselves and select the operator afterwards.</span><span>07</span></div>
+  </section>
+
+  <!-- 8. The moat -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">08 — The Moat</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Why this works, and why now</div>
+      <h2>The filter is the differentiation.</h2>
+      <div class="cols">
+        <p class="stone">The studio model is proven globally — Atomic, eFounders, Expa — but it has not been applied at scale to India's institutional talent pool. HoI works exclusively with students from IITs, NITs and a defined set of top institutions. Just as certain consulting firms and banks build their identity around where they hire from, HoI builds its identity around who it builds with.</p>
+        <div class="rows">
+          <div class="row"><span class="n">—</span><div><h3>A structural talent advantage</h3><p>A consistently high bar across every venture — one no open fund can replicate.</p></div></div>
+          <div class="row"><span class="n">—</span><div><h3>A self-reinforcing brand</h3><p>The best students want the HoI association, which raises the bar further.</p></div></div>
+          <div class="row"><span class="n">—</span><div><h3>Early-mover regulatory tailwinds</h3><p>India rewards early movers across AI, HealthTech and AgriTech.</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote"><span>Globally proven model · India's untapped institutional talent.</span><span>08</span></div>
+  </section>
+
+  <!-- 9. IP & economics -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">09 — Ownership</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">IP &amp; ownership structure</div>
+      <h2>The IP sits at the studio. That is the model.</h2>
+      <div class="cols">
+        <div>
+          <p>All intellectual property developed within HoI-backed ventures is owned by House of Ideas. This is foundational — it gives the studio:</p>
+          <div class="rows" style="margin-top:1rem;">
+            <div class="row"><span class="n">—</span><div><h3>Continuity</h3><p>Ventures survive Fellow transitions.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>Control</h3><p>Directional decisions without founder conflict.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>Portfolio value</h3><p>IP held at studio level, appreciating with each venture.</p></div></div>
+          </div>
+        </div>
+        <div style="align-self:start;">
+          <h3 style="margin-bottom:.6rem;">Fellow compensation</h3>
+          <p class="stone">Fellows are not employees. They earn a monthly stipend during the fellowship, and a pre-agreed equity stake — activated if and when they return post-graduation to run the venture full-time. The equity framework is agreed upfront and documented in the Fellowship Agreement.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footnote"><span>Continuity · Control · Portfolio value.</span><span>09</span></div>
+  </section>
+
+  <!-- 10. Portfolio construction -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">10 — Portfolio</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Portfolio construction</div>
+      <h2>8–12 active ventures. A portfolio, not a bet.</h2>
+      <p class="stone" style="margin-bottom:1.5rem;">Each venture is sized to its stage and capital needs; follow-on capital is evaluated per venture as milestones are hit. Indicative target mix:</p>
+      <div class="bars">
+        <div class="bar-row"><span>AI &amp; Intelligent Systems</span><span class="bar-track"><span class="bar-fill o" style="width:40%"></span></span><span class="pct">40%</span></div>
+        <div class="bar-row"><span>EdTech / HealthTech</span><span class="bar-track"><span class="bar-fill" style="width:20%"></span></span><span class="pct">20%</span></div>
+        <div class="bar-row"><span>FinTech / Enterprise SaaS</span><span class="bar-track"><span class="bar-fill" style="width:20%"></span></span><span class="pct">20%</span></div>
+        <div class="bar-row"><span>Emerging (Agri, Clima, Gov, Legal)</span><span class="bar-track"><span class="bar-fill" style="width:20%"></span></span><span class="pct">20%</span></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Capital follows conviction, deployed against milestones.</span><span>10</span></div>
+  </section>
+
+  <!-- 11. Risk & mitigants -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">11 — Risk</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Risk factors &amp; mitigants</div>
+      <h2 style="max-width:none;">The model is built to absorb the obvious failures.</h2>
+      <table>
+        <thead><tr><th>Risk</th><th>Mitigant</th></tr></thead>
+        <tbody>
+          <tr><td>Fellow drops out mid-build</td><td>HoI owns IP and runs operations; the venture continues with a new Fellow</td></tr>
+          <tr><td>Idea fails market validation</td><td>Validated before listing; phased capital limits downside</td></tr>
+          <tr><td>Talent quality variance</td><td>Strict institutional filter and multi-stage selection</td></tr>
+          <tr><td>Operational load across ventures</td><td>HoI is structured as a studio operator, not a passive investor</td></tr>
+          <tr><td>Dilution at post-college return</td><td>Equity framework agreed upfront in the Fellowship Agreement</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footnote"><span>Phased capital · IP continuity · institutional filter.</span><span>11</span></div>
+  </section>
+
+  <!-- 12. Use of capital -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">12 — Use of Capital</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Use of capital</div>
+      <h2>Where the capital goes.</h2>
+      <table>
+        <thead><tr><th>Allocation</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Venture capital pool</td><td>Direct investment into portfolio companies — Angel to VC scale, per venture</td></tr>
+          <tr><td>Operations</td><td>The HoI team running day-to-day operations for portfolio ventures</td></tr>
+          <tr><td>Research &amp; intelligence</td><td>Idea discovery, domain research, market validation</td></tr>
+          <tr><td>Fellow stipends</td><td>Monthly stipends across active Fellows</td></tr>
+          <tr><td>Platform &amp; infrastructure</td><td>The HoI platform, tooling, and technology infrastructure</td></tr>
+        </tbody>
+      </table>
+      <p class="disclaimer" style="margin-top:1.4rem;">Round size, instrument, and the percentage split across these categories to be confirmed with current figures before circulation.</p>
+    </div>
+    <div class="footnote"><span>Capital deployed in phases, tied to milestones.</span><span>12</span></div>
+  </section>
+
+  <!-- 13. The long view + ask -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">13 — The Long View</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">The long view</div>
+      <h2 style="max-width:26ch;">In five years, the studio itself is the asset.</h2>
+      <div class="stats">
+        <div class="stat"><div class="fig">8&ndash;12</div><div class="lab">active ventures at any given time</div></div>
+        <div class="stat"><div class="fig"><span class="accent">20&ndash;30</span></div><div class="lab">ventures across stages within five years — some exited, some scaling, some early</div></div>
+        <div class="stat"><div class="fig">1</div><div class="lab">research operation, talent pipeline, and IP-backed portfolio, under one roof</div></div>
+      </div>
+      <p style="margin-top:2rem;font-family:var(--serif);font-size:1.35rem;max-width:48ch;">The goal is not to be the biggest fund. The goal is to be the most deliberate one.</p>
+    </div>
+    <div class="footnote"><span>Researched ideas · structured execution · the best institutional talent.</span><span>13</span></div>
+  </section>
+
+  <!-- 14. Closing -->
+  <section class="slide closing">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">Confidential</span></div>
+    <div class="body-area">
+      <div class="eyebrow">What we are looking for</div>
+      <h2 style="max-width:30ch;">Partners who back the engine, not a single venture.</h2>
+      <p class="lead" style="max-width:48ch;">Long-term conviction in Indian institutional talent, a portfolio mindset, and the ability to contribute network, domain depth, or operating guidance beyond capital.</p>
+    </div>
+    <div class="footnote"><span>House of Ideas</span><span>Let's talk.</span></div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="Previous">‹</button>
+  <button id="next" aria-label="Next">›</button>
+</div>
+
+<script>
+  const slides=Array.from(document.querySelectorAll('.slide'));let i=0;
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,x)=>s.classList.toggle('active',x===i));}
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1);}
+    if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}
+    if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+  });
+  show(0);
+</script>
+</body>
+</html>
