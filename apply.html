@@ -211,55 +211,72 @@
       </div>
     </section>
 
-    <!-- ====== 04 — BOOK A CALL ====== -->
+    <!-- ====== 04 — APPLY NOW ====== -->
     <section class="apply-book">
       <div class="container-hoi">
-        <p class="eyebrow eyebrow--ochre">04 &mdash; Book a call</p>
+        <p class="eyebrow eyebrow--ochre">04 &mdash; Start the conversation</p>
 
         <div class="apply-book__inner">
           <div>
-            <h2 class="apply-book__display reveal">A 30-minute conversation, on your timezone.</h2>
+            <h2 class="apply-book__display reveal">Tell us about yourself.</h2>
             <p class="reveal reveal--delay-1">
-              Pick a slot below. One of the HoI team will join the call. No need to prepare materials &mdash; we&rsquo;ll talk about you, your work, and what you&rsquo;d want to build.
+              Fill in the form and we&rsquo;ll be in touch within three working days. No need to prepare materials &mdash; just tell us who you are, where you study, and what you&rsquo;d want to build.
             </p>
             <p class="reveal reveal--delay-2 small muted" style="margin-top: var(--s-3);">
-              Calls are held over Google Meet. We&rsquo;ll send the link when you confirm.
+              We read every submission. We respond to every one &mdash; even if the answer is no.
             </p>
           </div>
 
-          <div>
-            <!--
-              Calendly placeholder.
-              Replace the href below with your Calendly URL once set up:
-              e.g. https://calendly.com/houseofideas/fellowship-intro
-            -->
-            <article class="apply-book__panel reveal reveal--delay-1">
-              <p class="apply-book__panel-label">Primary</p>
-              <h3 class="apply-book__panel-title">Book a Fellowship intro call</h3>
-              <p class="apply-book__panel-meta">30 min &middot; with the HoI team &middot; Google Meet</p>
+          <div class="reveal reveal--delay-1">
+            <div class="hoi-form__banner hoi-form__banner--success" id="apply-form-success" role="alert">
+              Thank you &mdash; we&rsquo;ve received your application and will be in touch within three working days.
+            </div>
+            <div class="hoi-form__banner hoi-form__banner--error" id="apply-form-error" role="alert">
+              Something went wrong. Please try again or write to us via the <a href="contact.html">contact page</a>.
+            </div>
 
-              <a class="btn-hoi btn-primary-hoi" href="https://calendly.com/your-handle/fellowship-intro" target="_blank" rel="noopener" style="align-self: flex-start;">
-                Open booking
-                <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-                </svg>
-              </a>
-            </article>
+            <form class="hoi-form" id="apply-form" novalidate>
+              <input type="hidden" name="enquiry_type" value="Fellowship Application">
 
-            <p class="apply-book__divider">or</p>
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="af-name">Name <abbr title="required">*</abbr></label>
+                <input class="hoi-form__input" type="text" id="af-name" name="name" autocomplete="name" required>
+              </div>
 
-            <article class="apply-book__panel reveal reveal--delay-2">
-              <p class="apply-book__panel-label">Alternative</p>
-              <h3 class="apply-book__panel-title">Write to us directly</h3>
-              <p class="apply-book__panel-meta">Reply within 3 working days &middot; for Track B and partnership questions</p>
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="af-email">Email <abbr title="required">*</abbr></label>
+                <input class="hoi-form__input" type="email" id="af-email" name="email" autocomplete="email" required>
+              </div>
 
-              <a class="btn-hoi btn-ghost-hoi" href="mailto:hello@houseofideas.in?subject=Fellowship%20application" style="align-self: flex-start;">
-                hello@houseofideas.in
-                <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
-                </svg>
-              </a>
-            </article>
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="af-institution">Institution &amp; year <abbr title="required">*</abbr></label>
+                <input class="hoi-form__input" type="text" id="af-institution" name="institution" placeholder="e.g. IIT Bombay, 3rd year" required>
+              </div>
+
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="af-track">Track <abbr title="required">*</abbr></label>
+                <select class="hoi-form__select" id="af-track" name="track" required>
+                  <option value="">Select one&hellip;</option>
+                  <option value="Track A — Build an HoI idea">Track A &mdash; Build an HoI idea</option>
+                  <option value="Track B — Bring my own problem">Track B &mdash; Bring my own problem</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="af-message">Tell us about yourself and what you&rsquo;d build <abbr title="required">*</abbr></label>
+                <textarea class="hoi-form__textarea" id="af-message" name="message" rows="5" required></textarea>
+              </div>
+
+              <div class="hoi-form__footer">
+                <button class="btn-hoi btn-primary-hoi" type="submit" id="af-submit">
+                  Submit application
+                  <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -321,8 +338,7 @@
         <div>
           <p class="site-footer__col-title">Contact</p>
           <ul class="site-footer__list">
-            <li><a href="mailto:hello@houseofideas.in">hello@houseofideas.in</a></li>
-            <li><a href="contact.html">Book a call</a></li>
+            <li><a href="contact.html">Get in touch</a></li>
           </ul>
         </div>
 
@@ -349,7 +365,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/reveal.js" defer></script>
-
+  <script src="assets/js/form.js" defer></script>
   <script>
     document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
   </script>

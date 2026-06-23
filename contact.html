@@ -88,77 +88,93 @@
           The simplest paths are usually the best.
         </h1>
         <p class="lede reveal reveal--delay-2" style="max-width: 56ch;">
-          Email us, book a call, or write to us on LinkedIn. Whatever&rsquo;s easiest. We read everything, and we respond.
+          Use the form below. Select what your enquiry is about and we&rsquo;ll route it to the right person. We read everything and we respond.
         </p>
-
-        <div class="contact-grid">
-          <article class="contact-card contact-card--accent reveal">
-            <p class="contact-card__label">Direct</p>
-            <p class="contact-card__primary">
-              <a href="mailto:hello@houseofideas.in">hello@houseofideas.in</a>
-            </p>
-            <p class="contact-card__meta">Best for general enquiries, partnerships, press.</p>
-          </article>
-
-          <article class="contact-card reveal reveal--delay-1">
-            <p class="contact-card__label">Conversation</p>
-            <p class="contact-card__primary">
-              <a href="apply.html">Book a 30-min call</a>
-            </p>
-            <p class="contact-card__meta">Fellowship intros and partner conversations. Google Meet.</p>
-          </article>
-
-          <article class="contact-card reveal reveal--delay-2">
-            <p class="contact-card__label">Elsewhere</p>
-            <p class="contact-card__primary">
-              <a href="#" rel="noopener">LinkedIn</a>
-              &nbsp;&middot;&nbsp;
-              <a href="#" rel="noopener">X</a>
-            </p>
-            <p class="contact-card__meta">Quieter channels &mdash; for asides, dispatches, links.</p>
-          </article>
-        </div>
       </div>
     </section>
 
     <hr class="rule">
 
-    <!-- ====== SPECIFIC ENQUIRIES ====== -->
+    <!-- ====== CONTACT FORM ====== -->
     <section class="section">
       <div class="container-hoi">
-        <p class="eyebrow eyebrow--ochre">Specific enquiries</p>
+        <div class="contact-form-wrap">
 
-        <div class="studio-grid">
-          <h2 class="reveal" style="max-width: 18ch;">Use the right line, get a faster answer.</h2>
+          <!-- Form -->
+          <div>
+            <p class="eyebrow eyebrow--ochre" style="margin-bottom: var(--s-4);">Send us a message</p>
 
-          <ul class="apply-check reveal reveal--delay-1">
-            <li>
-              <span class="apply-check__mark">FW</span>
-              <span><a href="mailto:hello@houseofideas.in?subject=Fellowship%20application">Fellowship application</a> &mdash; for prospective Fellows. Mention your institution and year.</span>
-            </li>
-            <li>
-              <span class="apply-check__mark">PR</span>
-              <span><a href="mailto:hello@houseofideas.in?subject=Partnership%20enquiry">Partnership enquiry</a> &mdash; for investors, family offices, and institutional partners.</span>
-            </li>
-            <li>
-              <span class="apply-check__mark">CT</span>
-              <span><a href="mailto:hello@houseofideas.in?subject=Catalogue%20access">Catalogue access</a> &mdash; if you&rsquo;d like to explore the private idea catalogue.</span>
-            </li>
-            <li>
-              <span class="apply-check__mark">PS</span>
-              <span><a href="mailto:hello@houseofideas.in?subject=Press">Press &amp; media</a> &mdash; for interviews, quotes, and editorial collaborations.</span>
-            </li>
-          </ul>
+            <div class="hoi-form__banner hoi-form__banner--success" id="form-success" role="alert">
+              Thank you &mdash; we&rsquo;ve received your message and will be in touch within three working days.
+            </div>
+            <div class="hoi-form__banner hoi-form__banner--error" id="form-error" role="alert">
+              Something went wrong. Please try again or email us directly at hello@houseofideas.in
+            </div>
+
+            <form class="hoi-form" id="contact-form" novalidate>
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="cf-name">Name <abbr title="required">*</abbr></label>
+                <input class="hoi-form__input" type="text" id="cf-name" name="name" autocomplete="name" required>
+              </div>
+
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="cf-email">Email <abbr title="required">*</abbr></label>
+                <input class="hoi-form__input" type="email" id="cf-email" name="email" autocomplete="email" required>
+              </div>
+
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="cf-org">Institution or Organisation</label>
+                <input class="hoi-form__input" type="text" id="cf-org" name="organisation" autocomplete="organization">
+              </div>
+
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="cf-type">Enquiry type <abbr title="required">*</abbr></label>
+                <select class="hoi-form__select" id="cf-type" name="enquiry_type" required>
+                  <option value="">Select one&hellip;</option>
+                  <option value="Fellowship Application">Fellowship Application</option>
+                  <option value="Partnership Enquiry">Partnership Enquiry</option>
+                  <option value="Catalogue Access">Catalogue Access</option>
+                  <option value="Press &amp; Media">Press &amp; Media</option>
+                  <option value="General">General</option>
+                </select>
+              </div>
+
+              <div class="hoi-form__group">
+                <label class="hoi-form__label" for="cf-message">Message <abbr title="required">*</abbr></label>
+                <textarea class="hoi-form__textarea" id="cf-message" name="message" rows="5" required></textarea>
+              </div>
+
+              <div class="hoi-form__footer">
+                <button class="btn-hoi btn-primary-hoi" type="submit" id="cf-submit">
+                  Send message
+                  <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                </button>
+                <p class="hoi-form__note">We respond within three working days.</p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Aside -->
+          <aside class="contact-aside reveal reveal--delay-1">
+            <div class="contact-aside__block">
+              <p class="contact-aside__label">Elsewhere</p>
+              <p>
+                <a href="#" rel="noopener">LinkedIn</a>
+                &nbsp;&middot;&nbsp;
+                <a href="#" rel="noopener">X&nbsp;/&nbsp;Twitter</a>
+              </p>
+              <p class="contact-aside__note">Quieter channels &mdash; for asides, dispatches, and links we find worth sharing.</p>
+            </div>
+
+            <div class="contact-aside__block">
+              <p class="contact-aside__label">A quiet note</p>
+              <p class="contact-aside__note">We respect inbox real estate. We will not subscribe you to anything, follow up six times, or wrap a sales pitch around your reply.</p>
+            </div>
+          </aside>
+
         </div>
-      </div>
-    </section>
-
-    <!-- ====== A QUIET NOTE ====== -->
-    <section class="section--tight">
-      <div class="container-hoi">
-        <p class="italic-serif" style="color: var(--stone); max-width: 56ch; font-size: 1.125rem;">
-          We respect inbox real estate. We will not subscribe you to anything, follow up six times, or wrap a sales pitch around your reply.
-        </p>
       </div>
     </section>
   </main>
@@ -202,8 +218,7 @@
         <div>
           <p class="site-footer__col-title">Contact</p>
           <ul class="site-footer__list">
-            <li><a href="mailto:hello@houseofideas.in">hello@houseofideas.in</a></li>
-            <li><a href="contact.html">Book a call</a></li>
+            <li><a href="contact.html">Get in touch</a></li>
           </ul>
         </div>
         <div>
@@ -228,6 +243,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/form.js" defer></script>
   <script>
     document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
   </script>

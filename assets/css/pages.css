@@ -2140,3 +2140,150 @@
   font-style: italic;
   font-size: 1.125rem;
 }
+
+
+/* ---------- Contact / Apply form ---------- */
+
+.hoi-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.hoi-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--s-1) * 0.75);
+}
+
+.hoi-form__label {
+  font-size: var(--t-small);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.hoi-form__label abbr {
+  color: var(--ochre);
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.hoi-form__input,
+.hoi-form__select,
+.hoi-form__textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: var(--t-body);
+  color: var(--ink);
+  transition: border-color var(--dur-fast) var(--ease),
+              box-shadow  var(--dur-fast) var(--ease);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.hoi-form__input::placeholder,
+.hoi-form__textarea::placeholder {
+  color: var(--stone-soft);
+}
+
+.hoi-form__input:focus,
+.hoi-form__select:focus,
+.hoi-form__textarea:focus {
+  outline: none;
+  border-color: var(--ochre);
+  box-shadow: 0 0 0 3px rgba(184, 134, 47, 0.12);
+}
+
+.hoi-form__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6660' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.hoi-form__textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: var(--lh-loose);
+}
+
+.hoi-form__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.hoi-form__note {
+  font-size: var(--t-small);
+  color: var(--stone-soft);
+}
+
+/* Success / error banners */
+.hoi-form__banner {
+  display: none;
+  padding: var(--s-3) var(--s-3);
+  border: 1px solid var(--rule);
+  font-size: var(--t-small);
+}
+
+.hoi-form__banner--success {
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+}
+
+.hoi-form__banner--error {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.hoi-form__banner.is-visible { display: block; }
+
+/* Contact page layout */
+.contact-form-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-6);
+  align-items: start;
+}
+
+@media (min-width: 800px) {
+  .contact-form-wrap {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.contact-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.contact-aside__block {
+  padding: var(--s-3);
+  border: 1px solid var(--rule);
+  background: var(--paper-soft);
+}
+
+.contact-aside__label {
+  font-size: var(--t-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: var(--s-1);
+}
+
+.contact-aside__note {
+  font-size: var(--t-small);
+  color: var(--stone-soft);
+  margin-top: var(--s-2);
+  line-height: var(--lh-loose);
+}
