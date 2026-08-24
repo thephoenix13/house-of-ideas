@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>House of Ideas — For Companies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E0C; --paper:#F6F1E8; --ochre:#B8862F; --stone:#6B6660; --rule:#D9D2C5;
+    --serif:'Source Serif 4',Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{font-family:var(--sans);color:var(--ink);background:#111;-webkit-font-smoothing:antialiased;}
+  .deck{height:100vh;overflow:hidden;}
+  .slide{display:none;height:100vh;width:100vw;background:var(--paper);padding:8vh 9vw 9vh;flex-direction:column;position:relative;}
+  .slide.active{display:flex;}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:.9rem;margin-bottom:auto;}
+  .wordmark{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.16em;text-transform:uppercase;}
+  .folio{font-family:var(--mono);font-size:.78rem;color:var(--stone);letter-spacing:.05em;}
+  .body-area{margin:auto 0;max-width:62rem;}
+  .eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--ochre);margin-bottom:1.4rem;}
+  h1{font-family:var(--serif);font-weight:700;font-size:4.4rem;line-height:1.04;letter-spacing:-.015em;}
+  h2{font-family:var(--serif);font-weight:700;font-size:2.9rem;line-height:1.08;letter-spacing:-.01em;margin-bottom:1.6rem;max-width:24ch;}
+  h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;line-height:1.3;}
+  p{font-size:1.18rem;line-height:1.62;color:var(--ink);max-width:60ch;}
+  p.lead{font-size:1.5rem;line-height:1.5;color:var(--ink);max-width:44ch;}
+  p + p{margin-top:1.1rem;}
+  .stone{color:var(--stone);}
+  em{font-style:italic;}
+  .accent{color:var(--ochre);}
+  .footnote{font-family:var(--mono);font-size:.72rem;color:var(--stone);letter-spacing:.04em;border-top:1px solid var(--rule);padding-top:.8rem;margin-top:auto;display:flex;justify-content:space-between;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+  .rows{display:grid;gap:0;}
+  .row{display:grid;grid-template-columns:3.2rem 1fr;gap:1.4rem;padding:1.15rem 0;border-bottom:1px solid var(--rule);align-items:baseline;}
+  .row:first-child{border-top:1px solid var(--rule);}
+  .row .n{font-family:var(--mono);font-size:.95rem;color:var(--ochre);padding-top:.15rem;}
+  .row h3{margin-bottom:.25rem;}
+  .row p{font-size:1.02rem;color:var(--stone);max-width:64ch;}
+  .domgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--rule);margin-top:.5rem;}
+  .domgrid div{padding:.9rem 1rem .9rem 0;border-bottom:1px solid var(--rule);font-size:1.05rem;font-family:var(--serif);}
+  .cover h1{font-size:5rem;}
+  .cover .sub{font-size:1.6rem;color:var(--stone);margin-top:1.6rem;max-width:34ch;font-family:var(--serif);}
+  .rule-mark{width:64px;height:2px;background:var(--ochre);margin:2.2rem 0;}
+  .closing{background:var(--ink);}
+  .closing .masthead{border-color:#333;}
+  .closing .wordmark,.closing h2,.closing p{color:var(--paper);}
+  .closing .footnote{color:#8a857c;border-color:#333;}
+  .closing .eyebrow{color:var(--ochre);}
+  .closing .lead{color:var(--paper);}
+  .closing .rows{margin-top:2rem;}
+  .closing .row{border-color:#2a2a28;}
+  .closing .row:first-child{border-top-color:#2a2a28;}
+  .closing .row h3{color:var(--paper);}
+  .closing .row p{color:#8a857c;}
+  .closing .row .n{color:var(--ochre);}
+  .nav{position:fixed;bottom:16px;right:20px;display:flex;gap:6px;z-index:50;}
+  .nav button{background:var(--paper);border:1px solid var(--rule);color:var(--ink);width:34px;height:34px;font-size:1rem;cursor:pointer;font-family:var(--serif);}
+  @media print{body{background:#fff;}.deck{height:auto;overflow:visible;}.slide{display:flex !important;page-break-after:always;height:100vh;}.nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1. Cover -->
+  <section class="slide cover active">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">For Companies</span></div>
+    <div class="body-area">
+      <h1>We work inside<br/>your problem.</h1>
+      <div class="rule-mark"></div>
+      <p class="sub">A thinking partner across Ops, Tech, GTM, and investment readiness — until the thing is actually moving.</p>
+    </div>
+    <div class="footnote"><span>House of Ideas</span><span>Venture Studio &amp; Advisory</span></div>
+  </section>
+
+  <!-- 2. The problem with advisory -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">02 — The Problem</span></div>
+    <div class="body-area">
+      <div class="eyebrow">What's broken in advisory</div>
+      <h2>Most advisory relationships produce a document and a follow-up email.</h2>
+      <p class="lead">The gap isn't insight. It's execution. Advisors give you frameworks. Nobody stays in the room when it's time to use them.</p>
+      <p class="stone" style="margin-top:1.2rem;">We don't hand over a slide deck and call it consulting. We work inside the problem with you, and we're responsible for what actually happens.</p>
+    </div>
+    <div class="footnote"><span>The gap is not insight. The gap is accountability.</span><span>02</span></div>
+  </section>
+
+  <!-- 3. Four areas overview -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">03 — What We Do</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Four engagement areas</div>
+      <h2 style="max-width:none;">One team, across every function where companies tend to get stuck.</h2>
+      <div class="domgrid">
+        <div>Operations &amp; Strategy</div>
+        <div>Technology &amp; Product</div>
+        <div>Go-to-Market &amp; Growth</div>
+        <div>Investment Readiness</div>
+      </div>
+      <p class="stone" style="margin-top:1.4rem;">Each area is run by people who've done the specific work before, not generalists who cover everything. You can engage us on one area or all four. One contact throughout.</p>
+    </div>
+    <div class="footnote"><span>Practitioners, not consultants.</span><span>03</span></div>
+  </section>
+
+  <!-- 4. The four areas in detail -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">04 — The Work</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">What each area covers</div>
+      <h2>Four areas. One engagement if you need it.</h2>
+      <div class="cols">
+        <div>
+          <div class="rows">
+            <div class="row"><span class="n">01</span><div><h3>Operations &amp; Strategy</h3><p>Business &amp; growth strategy, process design, org structure, OKR frameworks, financial planning.</p></div></div>
+            <div class="row"><span class="n">02</span><div><h3>Technology &amp; Product</h3><p>Product roadmap, architecture decisions, where and how to use AI, MVP scope, team structure.</p></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="rows">
+            <div class="row"><span class="n">03</span><div><h3>GTM &amp; Growth</h3><p>Figuring out who actually buys this — positioning, sales approach, channel strategy, pitch preparation.</p></div></div>
+            <div class="row"><span class="n">04</span><div><h3>Investment Readiness</h3><p>Investor narrative, financial model, due diligence prep, cap table guidance, warm introductions.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote"><span>Each area is a real function, not a category on a slide.</span><span>04</span></div>
+  </section>
+
+  <!-- 5. How it works -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">05 — How It Works</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">The engagement</div>
+      <h2>No retainer before we understand the problem.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">01</span><div><h3>Send us the brief</h3><p>30 minutes. Tell us the problem, the constraints, and what good looks like. We don't bring slides to this call — we bring questions.</p></div></div>
+        <div class="row"><span class="n">02</span><div><h3>We scope the work</h3><p>Within a few days you get a tight proposal — the right people, a plan, timeline, and price. Usually with a pilot scope you can start with before committing to the full thing.</p></div></div>
+        <div class="row"><span class="n">03</span><div><h3>We stay in it with you</h3><p>Weekly check-ins, clear milestones, one contact. You see the work, not just a summary of it. If something isn't going well, we say so.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>The first call is free. We come back with a direct answer on whether we're the right fit.</span><span>05</span></div>
+  </section>
+
+  <!-- 6. Who this is for -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">06 — Who It's For</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Who we work with</div>
+      <h2>Any stage. Any sector. One condition.</h2>
+      <div class="cols">
+        <div>
+          <div class="rows">
+            <div class="row"><span class="n">—</span><div><h3>The problem is real</h3><p>Not a theoretical exercise. Something the business is actually stuck on.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>You're serious about solving it</h3><p>We don't work with companies looking for someone to validate what they've already decided. If the fit isn't there, we say so on call one.</p></div></div>
+            <div class="row"><span class="n">—</span><div><h3>One decision-maker in the room</h3><p>We work faster and better when there's someone who can move.</p></div></div>
+          </div>
+        </div>
+        <div>
+          <p class="stone" style="font-size:1rem;margin-bottom:1.2rem;">We work with:</p>
+          <div class="rows">
+            <div class="row"><span class="n">—</span><div><h3>Pre-seed to Series B startups</h3></div></div>
+            <div class="row"><span class="n">—</span><div><h3>AI, SaaS, Fintech, GovTech, Healthcare, EdTech</h3></div></div>
+            <div class="row"><span class="n">—</span><div><h3>India · UAE · USA</h3></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote"><span>We filter for fit, not for size.</span><span>06</span></div>
+  </section>
+
+  <!-- 7. Currently active -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">07 — In Practice</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">What we're working on</div>
+      <h2>Three companies we're inside right now.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">01</span><div><h3>AI GovTech platform</h3><p>Product strategy, go-to-market approach, and investor readiness for an AI platform selling into government contracts.</p></div></div>
+        <div class="row"><span class="n">02</span><div><h3>AI fintech super app</h3><p>Ops structure, tech decisions, and fundraising narrative for a finance platform built on the Account Aggregator framework.</p></div></div>
+        <div class="row"><span class="n">03</span><div><h3>AI talent marketplace</h3><p>Go-to-market entry and pitch work for a talent platform with enterprise clients. The product exists — they needed help with who to sell it to and how.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Currently active, not available in theory.</span><span>07</span></div>
+  </section>
+
+  <!-- 8. Closing / Contact -->
+  <section class="slide closing">
+    <div class="masthead"><span class="wordmark">House of Ideas</span><span class="folio">Tell Us Your Problem</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Start here</div>
+      <h2 style="max-width:28ch;">Tell us what you're working on.</h2>
+      <p class="lead" style="max-width:46ch;">The first call is free. We come back with a direct answer on whether we can help — and what that would actually look like.</p>
+      <div class="rows">
+        <div class="row"><span class="n">✉</span><div><h3>hello@houseofideas.site</h3></div></div>
+        <div class="row"><span class="n">↗</span><div><h3>+91 XXXXX XXXXX</h3><p>Call or WhatsApp</p></div></div>
+        <div class="row"><span class="n">⌘</span><div><h3>houseofideas.site</h3></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>House of Ideas · Venture Studio &amp; Advisory</span><span>Powered by the Round Peg 13 network</span></div>
+  </section>
+
+</div>
+
+<div class="nav"><button id="prev">‹</button><button id="next">›</button></div>
+<script>
+  const slides=Array.from(document.querySelectorAll('.slide'));let i=0;
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,x)=>s.classList.toggle('active',x===i));}
+  document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+  show(0);
+</script>
+</body>
+</html>
