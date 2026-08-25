@@ -218,76 +218,40 @@
 
         <div class="apply-book__inner">
           <div>
-            <h2 class="apply-book__display reveal">Tell us about yourself.</h2>
+            <h2 class="apply-book__display reveal">Talk to our consultants.</h2>
             <p class="reveal reveal--delay-1">
-              Fill in the form and we&rsquo;ll be in touch within three working days. No need to prepare materials &mdash; just tell us who you are, where you study, and what you&rsquo;d want to build.
+              No forms. Find us on LinkedIn, tell us who you are, where you study, and what you want to build. We read every message and respond to every one.
             </p>
             <p class="reveal reveal--delay-2 small muted" style="margin-top: var(--s-3);">
-              We read every submission. We respond to every one &mdash; even if the answer is no.
+              The bar holds, but the door is open.
             </p>
           </div>
 
-          <div>
-            <div class="hoi-form__banner hoi-form__banner--success" id="apply-form-success" role="alert" hidden>
-              Thank you &mdash; we&rsquo;ve received your application and will be in touch within three working days.
-            </div>
-            <div class="hoi-form__banner hoi-form__banner--error" id="apply-form-error" role="alert" hidden>
-              Something went wrong &mdash; please try again in a moment.
-            </div>
-
-            <form class="hoi-form" id="apply-form" novalidate>
-              <input type="hidden" name="enquiry_type" value="Fellowship Application">
-
-              <div class="hoi-form__group">
-                <label class="hoi-form__label" for="af-name">Name <span class="hoi-form__req" aria-hidden="true">*</span></label>
-                <input class="hoi-form__input" type="text" id="af-name" name="name" autocomplete="name" required>
-              </div>
-
-              <div class="hoi-form__group">
-                <label class="hoi-form__label" for="af-email">Email <span class="hoi-form__req" aria-hidden="true">*</span></label>
-                <input class="hoi-form__input" type="email" id="af-email" name="email" autocomplete="email" required>
-              </div>
-
-              <div class="hoi-form__group">
-                <label class="hoi-form__label" for="af-institution">Institution &amp; year <span class="hoi-form__req" aria-hidden="true">*</span></label>
-                <input class="hoi-form__input" type="text" id="af-institution" name="institution" placeholder="e.g. IIT Bombay, 3rd year" required>
-              </div>
-
-              <div class="hoi-form__group">
-                <label class="hoi-form__label" for="af-track">Track <span class="hoi-form__req" aria-hidden="true">*</span></label>
-                <select class="hoi-form__select" id="af-track" name="track" required>
-                  <option value="">Select one&hellip;</option>
-                  <option value="Track A — Build an HoI idea">Track A &mdash; Build an HoI idea</option>
-                  <option value="Track B — Bring my own problem">Track B &mdash; Bring my own problem</option>
-                  <option value="Not sure yet">Not sure yet</option>
-                </select>
-              </div>
-
-              <div class="hoi-form__group">
-                <label class="hoi-form__label" for="af-message">Tell us about yourself and what you&rsquo;d build <span class="hoi-form__req" aria-hidden="true">*</span></label>
-                <textarea class="hoi-form__textarea" id="af-message" name="message" rows="5" required></textarea>
-              </div>
-
-              <div class="hoi-form__footer">
-                <button class="btn-hoi btn-primary-hoi" type="submit" id="af-submit">
-                  Submit application
-                  <svg class="btn-hoi__arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <div class="reveal reveal--delay-1">
+            <div class="hoi-partner-cards">
+              <div class="hoi-partner-card">
+                <p class="hoi-partner-card__name">Pratik Gade</p>
+                <p class="hoi-partner-card__role">Partner, House of Ideas</p>
+                <a class="link-arrow" href="https://www.linkedin.com/in/pratikgade13/" target="_blank" rel="noopener">
+                  LinkedIn
+                  <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
                   </svg>
-                </button>
+                </a>
               </div>
-            </form>
+              <div class="hoi-partner-card">
+                <p class="hoi-partner-card__name">Aashish Thawrani</p>
+                <p class="hoi-partner-card__role">Partner, House of Ideas</p>
+                <a class="link-arrow" href="https://www.linkedin.com/in/ashish-thawrani/" target="_blank" rel="noopener">
+                  LinkedIn
+                  <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ====== CLOSING NOTE (small, paper) ====== -->
-    <section class="section--tight">
-      <div class="container-hoi">
-        <p class="italic-serif" style="color: var(--stone); max-width: 56ch; font-size: 1.125rem;">
-          We read every application. We respond to every one &mdash; even if the answer is no. The bar holds, but the door is open.
-        </p>
       </div>
     </section>
   </main>
@@ -365,7 +329,7 @@
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/reveal.js" defer></script>
-  <script src="assets/js/form.js" defer></script>
+
   <script>
     document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
   </script>

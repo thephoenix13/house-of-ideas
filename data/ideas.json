@@ -1,242 +1,242 @@
-[
-  {
-    "id": "5a95b02f",
-    "title": "Agentic AI Recruiting Platform for Blue-Collar and Gig Hiring",
-    "domain": "AI & Intelligent Systems",
-    "problem": "India's gig and blue-collar hiring market processes millions of applications through job boards, agencies, and manual phone screens. Employers face 40–60% candidate drop-off before Day 1 joining; HR teams spend 60–70% of their time on repetitive screening instead of evaluation.",
-    "signal": "UPI-linked DigiLocker now enables instant background verification at near-zero cost",
-    "score": 9
-  },
-  {
-    "id": "4eb59056",
-    "title": "Vernacular Voice AI Agent Platform for MSME Collections",
-    "domain": "AI & Intelligent Systems",
-    "problem": "India's 63M MSMEs are managed by NBFCs whose collections operations are manual, high-cost, and language-fragmented — navigating 12+ regional languages and RBI compliance simultaneously. Existing voice AI targets large enterprises; the sub-enterprise NBFC and fintech segment remains unserved.",
-    "signal": "RBI's 2024 lending guidelines mandate auditable borrower communication that manual call centres can't satisfy",
-    "score": 8
-  },
-  {
-    "id": "f28e7167",
-    "title": "AI Workflow Automation Co-pilot for Indian SMB Back-Office",
-    "domain": "AI & Intelligent Systems",
-    "problem": "Indian SMBs manage vendor reconciliation, GST prep, and employee onboarding through WhatsApp threads and Excel sheets. Off-the-shelf SaaS captures data but doesn't execute tasks autonomously — and SMB owners lack the capacity to configure horizontal tools like Zapier.",
-    "signal": "GST e-invoicing mandates have forced SMBs onto digital rails that AI agents can now act on",
-    "score": 8
-  },
-  {
-    "id": "212e0d8a",
-    "title": "SkillProof: Blockchain-Anchored Micro-Credentials for Vocational Graduates",
-    "domain": "EdTech & Learning Infrastructure",
-    "problem": "India produces 2M ITI/vocational graduates annually, but paper certificates are widely distrusted due to rampant forgery and no standardised competency benchmarking. A welder certified in Bhopal cannot easily prove her skills to a factory in Pune.",
-    "signal": "BharatSkills e-CS v1.0 and DigiLocker now provide the standards layer startups can build on",
-    "score": 9
-  },
-  {
-    "id": "b0f9efc0",
-    "title": "VernacularLearn: Offline-First Adaptive Learning for Tier-2/3 India",
-    "domain": "EdTech & Learning Infrastructure",
-    "problem": "65%+ of India's 265M students live in Tier-2/3 cities where internet is unreliable and quality content is predominantly English. EdTech giants were built for urban, English-proficient users — systematically excluding the 120M-student segment most in need.",
-    "signal": "NEP 2020 enforcement is accelerating regional language instruction mandates through 2024–25",
-    "score": 8
-  },
-  {
-    "id": "560bce0c",
-    "title": "ExamShield Lite: Low-Cost AI Proctoring for Mid-Tier Universities",
-    "domain": "EdTech & Learning Infrastructure",
-    "problem": "India's 1,000+ state universities are transitioning to online exams, but enterprise proctoring costs ₹200–800 per candidate — unaffordable when total exam fees are ₹500–1,500. Institutions revert to paper exams or run zero-security tests rife with academic fraud.",
-    "signal": "Edge AI now makes sub-₹50/session proctoring viable — no incumbent targets this price band",
-    "score": 8
-  },
-  {
-    "id": "c437264d",
-    "title": "Vernacular AI-Powered Digital CBT Platform for Mental Health",
-    "domain": "HealthTech & BioTech",
-    "problem": "India bears 15% of the global mental health burden, yet existing apps — Wysa, Amaha — are English-first and urban-centric, inaccessible to the 400M+ population in Tier-2/3 cities. The government's Tele-MANAS launch validates the need but leaves the private sector without a credible product.",
-    "signal": "LLM costs have fallen 80% since 2023, making vernacular conversational CBT viable for the first time",
-    "score": 9
-  },
-  {
-    "id": "cd0ad4f6",
-    "title": "Family-Coordinated Chronic Disease Management Platform",
-    "domain": "HealthTech & BioTech",
-    "problem": "India has 77M diabetics and 220M hypertensives — yet no digital platform is designed around the 'family health manager' model that drives 77% of chronic care decisions. Existing apps are built for the individual patient, ignoring the household dynamic that actually determines outcomes.",
-    "signal": "ABDM now enables consent-based health record sharing across family members on a single platform",
-    "score": 8
-  },
-  {
-    "id": "4b044f36",
-    "title": "AI-Assisted Preventive Screening Navigator for Rural PHCs",
-    "domain": "HealthTech & BioTech",
-    "problem": "India's 30,000+ Health and Wellness Centres are mandated to deliver NCD screenings, but a single Community Health Officer serves 5,000+ patients with no clinical decision support. Fewer than 20% of at-risk adults in rural India receive recommended preventive screenings.",
-    "signal": "ABDM Health IDs reached 670M+ registrations, enabling longitudinal screening records for the first time",
-    "score": 8
-  },
-  {
-    "id": "2af5f080",
-    "title": "ULI-Native MSME Credit Underwriting for Rural Kirana Traders",
-    "domain": "FinTech & Financial Infrastructure",
-    "problem": "60M+ MSMEs — particularly kirana stores in Tier-2/3 towns — are excluded from formal credit because they lack income proofs or credit history. Traditional lenders cannot assess their creditworthiness affordably at this ticket size.",
-    "signal": "RBI's Unified Lending Interface (2024) creates an alternative-data rail that very few lenders have built on yet",
-    "score": 9
-  },
-  {
-    "id": "61da827a",
-    "title": "Automated Health Insurance Claims Reconciliation for Hospitals",
-    "domain": "FinTech & Financial Infrastructure",
-    "problem": "Indian hospitals face 15–25% claim denial rates from insurers with 30–90 day settlement cycles. Mid-sized hospitals manage this manually with no affordable automation layer — severe cash flow stress drives up administrative headcount across 70,000+ empanelled facilities.",
-    "signal": "IRDAI's 2024 mandate requires cashless settlement within 3 hours, forcing digitisation across the sector",
-    "score": 8
-  },
-  {
-    "id": "39879685",
-    "title": "B2B Payments Reconciliation and FEMA Compliance Copilot",
-    "domain": "FinTech & Financial Infrastructure",
-    "problem": "Indian MSMEs in cross-border trade spend 15–20% of finance team time manually reconciling foreign remittances against invoices and filing FEMA paperwork. A single missed compliance filing can result in RBI penalties — and no affordable India-specific tool automates this end-to-end.",
-    "signal": "Bharat Connect for Business now enables invoice-level B2B payment tagging that Tally hasn't integrated yet",
-    "score": 8
-  },
-  {
-    "id": "c54fc6ba",
-    "title": "KrishiSense: Precision Farming-as-a-Service for Smallholders",
-    "domain": "AgriTech & Rural Infrastructure",
-    "problem": "India's 100M+ smallholder farmers can't afford imported precision farming hardware or enterprise agri-AI tools. They make irrigation and fertilisation decisions based on habit, leading to 25–35% over-use of water and fertiliser and avoidable crop losses worth $6–10B annually.",
-    "signal": "Budget 2026–27 proposed Bharat-VISTAAR — an open AI advisory layer startups can build directly on",
-    "score": 9
-  },
-  {
-    "id": "9c7399de",
-    "title": "FrostMile: Asset-Light First-Mile Cold Chain for Smallholder Farmers",
-    "domain": "AgriTech & Rural Infrastructure",
-    "problem": "India's cold chain covers only 5–11% of perishable produce needs, with a near-total gap at the farm gate. Smallholders lose 30–40% of their harvest to spoilage before it enters any cold chain system — a $14B annual waste in the F&V sector alone.",
-    "signal": "Ecozen's 2.5x growth to ₹1,150 crore in FY25 proves rural cold infrastructure is a profitable model",
-    "score": 8
-  },
-  {
-    "id": "7b495913",
-    "title": "AgriCredit Rail: Embedded Credit for Agri-Input Retailers",
-    "domain": "AgriTech & Rural Infrastructure",
-    "problem": "India's 700,000 agri-input retailers extend 60–90 day credit to farmers but receive only 15–30 day credit from distributors. Formal credit is inaccessible — forcing retailers to stock less and pass credit costs down to farmers.",
-    "signal": "B2B agri-commerce platforms are now generating transaction data rich enough to underwrite credit at this scale",
-    "score": 8
-  },
-  {
-    "id": "04b0946f",
-    "title": "Scope 3 Emissions Tracker for Indian MSME Supply Chains",
-    "domain": "Climate Tech & Sustainability",
-    "problem": "Large Indian corporates under BRSR mandates are demanding Scope 3 emissions data from MSME suppliers — but 63M MSMEs lack the tools or affordable platforms to measure and report in an auditable format acceptable to global buyers and auditors.",
-    "signal": "SEBI BRSR Core became mandatory for top 150 listed companies in FY2024–25, cascading to their supply chains",
-    "score": 9
-  },
-  {
-    "id": "941af3d1",
-    "title": "Fleet Depot Charging-as-a-Service for Last-Mile Logistics EVs",
-    "domain": "Climate Tech & Sustainability",
-    "problem": "Last-mile logistics operators electrifying their fleets can't afford or navigate the upfront capex, DISCOM approvals, and load management complexity of depot charging — stalling EV adoption despite strong vehicle-side demand from e-commerce growth.",
-    "signal": "PM E-DRIVE subsidies expire March 2026, creating a narrow window to capture incentives now",
-    "score": 8
-  },
-  {
-    "id": "4da7e0b8",
-    "title": "Urban Organic Waste-to-Biogas Micro-Plants for Apartments",
-    "domain": "Climate Tech & Sustainability",
-    "problem": "India generates 62M tonnes of municipal solid waste annually. Apartment complexes and campuses are legally mandated to process organic waste on-site but lack affordable solutions — sending waste to landfills while simultaneously paying high LPG/PNG bills.",
-    "signal": "NGT fines are now being imposed on large waste generators in Bengaluru, Delhi, and Pune",
-    "score": 8
-  },
-  {
-    "id": "c24db816",
-    "title": "ComplianceOS: AI-Native Regulatory Tracker for Indian SMEs",
-    "domain": "Enterprise SaaS & B2B Tools",
-    "problem": "Indian enterprises navigate 8,600+ compliance requirements annually — tracked on spreadsheets, with accountability tied to individuals rather than systems. Nearly 40% of compliance audit time is spent cleaning data; missed deadlines result in penalties and board-level exposure.",
-    "signal": "DPDPA enforcement, 4 new Labour Codes, and BRSR Core create three simultaneous re-mapping obligations in 2024–25",
-    "score": 9
-  },
-  {
-    "id": "89f56eb3",
-    "title": "ESGProof: BRSR & ESG Data Collection SaaS for Listed Companies",
-    "domain": "Enterprise SaaS & B2B Tools",
-    "problem": "SEBI's BRSR Core mandate requires third-party verified ESG data from India's top 150 listed companies — expanding to 1,000. Nearly 40% of ESG audit time is spent cleaning disconnected plant-level spreadsheets; global platforms aren't built for BRSR's specific KPI structure.",
-    "signal": "The window to become the default BRSR data infrastructure before Big-4 build proprietary portals is 18–24 months",
-    "score": 9
-  },
-  {
-    "id": "b08a9135",
-    "title": "SupplyLens: Real-Time Supply Chain Visibility for Manufacturers",
-    "domain": "Enterprise SaaS & B2B Tools",
-    "problem": "Indian mid-market manufacturers lack real-time visibility into their multi-tier supplier networks. They rely on WhatsApp and spreadsheets — leading to production stoppages, excess safety stock, and no ability to respond to demand shocks. Global visibility platforms are built for MNC shippers, not Indian SMEs.",
-    "signal": "GST e-way bill mandates have for the first time created a structured data layer across informal logistics players",
-    "score": 8
-  },
-  {
-    "id": "1ff1f9da",
-    "title": "MunicipalMind: AI-Powered Grievance-to-Resolution SaaS for ULBs",
-    "domain": "GovTech & Civic Infrastructure",
-    "problem": "India's 4,500+ Urban Local Bodies receive millions of civic complaints via fragmented channels — WhatsApp, CPGRAMS, walk-ins — with no structured categorisation, auto-routing, or SLA enforcement. Citizens remain uninformed; officers lack analytics to identify systemic issues.",
-    "signal": "CPGRAMS issued a 2025 tender to rebuild with AI — institutional acknowledgment at the highest level",
-    "score": 9
-  },
-  {
-    "id": "036ff721",
-    "title": "AssetLedger: Accrual-Ready Municipal Asset Registry for ULBs",
-    "domain": "GovTech & Civic Infrastructure",
-    "problem": "Most Indian municipalities lack a digitised, GPS-tagged register of public assets — roads, streetlights, water pipelines. This makes maintenance budgeting opaque and blocks access to Finance Commission grants that require accrual accounting compliance.",
-    "signal": "The 16th Finance Commission cycle (2026) is expected to attach stricter asset-reporting conditions to ULB grants",
-    "score": 8
-  },
-  {
-    "id": "4476aaa7",
-    "title": "GrantOS: Government Grant Discovery Platform for Indian Startups",
-    "domain": "GovTech & Civic Infrastructure",
-    "problem": "India has 30+ active central grant schemes and 100+ state-level programs, each with distinct eligibility criteria and application windows. Founders spend weeks researching, miss deadlines, and submit non-compliant applications — there is no intelligence layer that maps founder profiles to fundable schemes.",
-    "signal": "Budget 2025 introduced new schemes simultaneously, but Startup India's portal was last updated June 2023",
-    "score": 8
-  },
-  {
-    "id": "7f0fd5c0",
-    "title": "AI-Native Contract Intelligence for Indian MSMEs",
-    "domain": "Legal Tech & Compliance",
-    "problem": "Most Indian MSMEs and mid-market firms manage contracts through email threads and Word documents, lacking India-specific clause libraries or GST/labour law compliance checks. They're exposed to hidden risks, missed renewals, and regulatory penalties — and global CLM tools aren't built for India's legal context.",
-    "signal": "DPDPA 2023 enforcement in 2025 creates urgent compliance obligations that flow directly into vendor contracts",
-    "score": 9
-  },
-  {
-    "id": "0d5f51ce",
-    "title": "Domain-Specific AI Legal Agent for Startup Regulatory Compliance",
-    "domain": "Legal Tech & Compliance",
-    "problem": "Indian startups in fintech, healthtech, and edtech face a constantly shifting compliance landscape — DPDPA, RBI lending guidelines, SEBI AIF regulations. Founders spend ₹3–8L/year on retainers that give generic advice with 3–5 day turnaround, while missing real-time regulatory changes.",
-    "signal": "DPDPA rules entering enforcement in 2025 — every startup processing user data needs always-on regulatory intelligence",
-    "score": 9
-  },
-  {
-    "id": "622dbe34",
-    "title": "AI-Powered ODR Platform for B2B MSME Payment Disputes",
-    "domain": "Legal Tech & Compliance",
-    "problem": "India's MSMEs are owed over ₹10,000 crore in delayed payments at any given time. Enforcement requires filing with MSME Samadhaan (low resolution rate) or approaching courts — a 3–7 year process most small businesses can't survive.",
-    "signal": "Courts are actively promoting ODR to reduce India's 50M+ pending case backlog; MSME Samadhaan 2.0 launched in 2024",
-    "score": 8
-  },
-  {
-    "id": "76ee6a6f",
-    "title": "Vernacular Creator Commerce Platform for Tier-2/3 India",
-    "domain": "Consumer & Community Platforms",
-    "problem": "100M+ content creators operate in regional languages, yet social commerce infrastructure is built for Hindi/English metro audiences. Micro and nano-influencers in smaller cities can't convert their engaged regional audiences into commerce revenue — the infrastructure doesn't exist for them.",
-    "signal": "UPI and ONDC now provide open payment and catalog rails a startup can plug into without building commerce infra from scratch",
-    "score": 9
-  },
-  {
-    "id": "aae89f10",
-    "title": "Kirana-Anchored Q-Commerce Enablement SaaS for Tier-2/3 Cities",
-    "domain": "Consumer & Community Platforms",
-    "problem": "Kirana store owners in Tier-2/3 cities cannot participate in Q-commerce because no affordable SaaS turns their shop into a digital fulfillment node — with inventory management, order handling, and delivery dispatch. Existing platforms serve large operators or urban markets.",
-    "signal": "ONDC now allows any store to become a discoverable seller node without exclusive platform tie-ins",
-    "score": 8
-  },
-  {
-    "id": "bb017ccc",
-    "title": "AI-Powered ROI and Brand-Safety Platform for Influencer Marketing",
-    "domain": "Consumer & Community Platforms",
-    "problem": "BCG's 2025 report — based on 60+ brand interviews — identifies fake engagement, ROI measurement gaps, and brand safety as the top three unresolved challenges blocking further influencer investment. Brand managers have no India-specific tool to verify authentic reach or measure downstream attribution.",
-    "signal": "Generative AI now makes real-time vernacular content moderation and attribution feasible for a small team",
-    "score": 8
-  }
+﻿[
+    {
+        "id":  "036ff721",
+        "title":  "AssetLedger: Accrual-Ready Municipal Asset Registry for Indian ULBs",
+        "domain":  "GovTech \u0026 Civic Infrastructure",
+        "problem":  "NITI Aayog\u0027s 2023 report explicitly identifies that Indian municipalities suffer from \u0027poor expenditure and asset management\u0027 and \u0027limited understanding of fiscal sustainability.\u0027 Most ULBs lack a digitized, GPS-tagged, lifecycle-tracked register of public assets — roads, streetlights, water pipelines, public buildings. This makes maintenance budgeting opaque, CAG audits painful, and prevents access to municipal bonds or Finance Commission grants that require accrual accounting compliance.",
+        "signal":  "The NITI Aayog transition-to-accrual-accounting report (2023) and the cityfinance.in portal of MoHUA are actively pushing ULBs toward asset-backed accrual accounting. Madhya Pradesh\u0027s PAM portal (pamportal.mp.gov.in) is a proven state-level precedent that other states now want to replicate. The 16th Finance Commission cycle (beginning 2026) will likely attach stricter asset-reporting conditions to ULB grants. The window to become the default platform before state governments build in-house is 18–24 months.",
+        "score":  8
+    },
+    {
+        "id":  "04b0946f",
+        "title":  "Scope 3 Emissions Tracker for Indian MSME Supply Chains",
+        "domain":  "Climate Tech \u0026 Sustainability",
+        "problem":  "Large Indian corporates (listed under BRSR mandates) and MNC buyers are increasingly demanding Scope 3 emissions data from their MSME suppliers. However, 63 million Indian MSMEs lack the tools, literacy, or affordable platforms to measure and report emissions in a format acceptable to auditors and global buyers. Existing solutions like SAMCorporate and Bevolve target mid-to-large enterprises and are priced out of reach for MSMEs.",
+        "signal":  "SEBI\u0027s BRSR Core framework became mandatory for top 150 listed companies in FY2023-24, with expansion to top 1000 by FY2026-27. EU CBAM on steel, cement, and aluminium began transitional reporting in October 2023. Global MNCs are now contractually requiring Scope 3 data from Indian suppliers. The SME Climate Hub India chapter launched free tools in 2023-24, validating demand but leaving a gap for localised, vernacular, audit-ready paid solutions.",
+        "score":  9
+    },
+    {
+        "id":  "0d5f51ce",
+        "title":  "Domain-Specific AI Legal Agent for Startup Regulatory Compliance (DPDPA + SEBI + RBI Sandbox)",
+        "domain":  "Legal Tech \u0026 Compliance",
+        "problem":  "Indian startups operating in fintech, healthtech, and edtech face a constantly shifting compliance landscape: DPDPA 2023 data fiduciary obligations, RBI\u0027s lending guidelines, SEBI\u0027s AIF/VC regulations, and sector-specific rules. Founders spend ₹3-8L/year on retainer lawyers who give generic advice with 3-5 day turnaround, while missing real-time regulatory changes that can result in show-cause notices or operational shutdowns.",
+        "signal":  "DPDPA 2023 rules are being finalized and enforced in 2025 — every startup processing user data needs a Data Protection Officer function and privacy policy compliance. RBI\u0027s digital lending guidelines (2022, updated 2024) have already shut down several fintech models. SEBI\u0027s increased scrutiny of unlisted fundraising (angel tax, AIF structures) has created acute compliance anxiety. Startups need always-on regulatory intelligence, not quarterly retainers.",
+        "score":  9
+    },
+    {
+        "id":  "1ff1f9da",
+        "title":  "MunicipalMind: AI-Powered Grievance-to-Resolution SaaS for Urban Local Bodies",
+        "domain":  "GovTech \u0026 Civic Infrastructure",
+        "problem":  "India\u0027s 4,500+ Urban Local Bodies (ULBs) receive millions of civic complaints annually via fragmented channels (WhatsApp, CPGRAMS, local apps, walk-ins). Complaints lack structured categorization, auto-routing, and SLA enforcement. CPGRAMS itself has issued a tender to rebuild with AI features, signaling institutional acknowledgment of this gap. Citizens remain uninformed about status, and municipal officers lack analytics to identify systemic issues versus one-off complaints.",
+        "signal":  "CPGRAMS issued a tender in 2025 to rebuild with AI. The World Bank\u0027s CIVIC design sprint (June 2025, New Delhi) produced open-source GRM prototypes explicitly for India. Goa\u0027s DPG is rolling out a new grievance app in 2025. MoHUA\u0027s National Urban Digital Mission mandates digital financial and service management for ULBs. There is a rare alignment of top-down mandate and bottom-up demand.",
+        "score":  9
+    },
+    {
+        "id":  "212e0d8a",
+        "title":  "SkillProof: Blockchain-Anchored, Employer-Verified Micro-Credential Platform for ITI and Vocational Graduates",
+        "domain":  "EdTech \u0026 Learning Infrastructure",
+        "problem":  "India produces over 2 million ITI/vocational graduates annually, but their paper certificates are widely distrusted by employers due to rampant forgery, no standardized competency benchmarking, and no portability. A welder certified in Bhopal cannot easily prove her competency to a factory in Pune. Employers resort to redundant in-house testing, wasting time and money. Meanwhile, graduates lose jobs or wages because their credentials carry no verifiable signal — a direct economic loss for India\u0027s blue-collar workforce.",
+        "signal":  "The Government of India\u0027s BharatSkills Electronic Skill Credential Standard (e-CS v1.0) was released as an open specification, creating an interoperability foundation for startups to build on. Skill India Digital Hub (launched August 2023) has 60 lakh registered learners — a ready dataset of uncredentialed graduates. DigiLocker now supports skill credential storage, lowering integration friction. Wipro\u0027s DICE ID and Skill Passport (skillpassport.io) signal enterprise and VC interest in this infrastructure layer. The gig economy boom (Swiggy, Zomato, Urban Company) creates urgent employer demand for fast, trusted worker verification.",
+        "score":  9
+    },
+    {
+        "id":  "2af5f080",
+        "title":  "ULI-Native MSME Credit Underwriting Engine for Rural Kirana and Micro-Traders",
+        "domain":  "FinTech \u0026 Financial Infrastructure",
+        "problem":  "Over 60 million MSMEs in India, particularly kirana stores and micro-traders in Tier-2/3 towns, are excluded from formal credit because they lack income proofs or credit history. Traditional lenders cannot assess their creditworthiness affordably. The Unified Lending Interface (ULI), launched by RBI in 2024, creates a new data-sharing rail — but very few lenders have built underwriting logic natively on top of it to serve this segment.",
+        "signal":  "RBI officially launched ULI in 2024, enabling lenders to pull alternative data — land records, GST filings, UPI transaction history, satellite data — via a single consent-based API. This infrastructure did not exist before 2023. PhonePe/Paytm QR transaction histories are now accessible as formal credit signals. The regulatory framework for digital KYC and flow-based lending has also matured in the last 18 months.",
+        "score":  9
+    },
+    {
+        "id":  "39879685",
+        "title":  "B2B Payments Reconciliation and Compliance Copilot for Indian Exporters and Import-Substituting MSMEs",
+        "domain":  "FinTech \u0026 Financial Infrastructure",
+        "problem":  "Indian MSMEs engaged in cross-border trade — exporters of software services, handicrafts, auto components — spend 15-20% of finance team time manually reconciling foreign inward remittances against invoices, filing FEMA compliance paperwork, and managing multi-currency AR/AP across Tally or Zoho Books. A single missed compliance filing can result in RBI penalties. No affordable, India-specific tool automates this end-to-end workflow.",
+        "signal":  "RBI\u0027s FEMA compliance requirements have tightened with new reporting norms for service exporters introduced in 2023-24. India\u0027s UPI is being extended to 20 countries by FY2029, creating new inbound payment rails with new reconciliation complexity. Bharat Connect for Business (NPCI, 2024) now enables invoice-level B2B payment tagging — a capability that existing accounting tools like Tally have not yet natively integrated. The infrastructure just became available; the tooling layer has not caught up.",
+        "score":  8
+    },
+    {
+        "id":  "4476aaa7",
+        "title":  "GrantOS: Government Grant Discovery and Application Intelligence Platform for Indian Startups",
+        "domain":  "GovTech \u0026 Civic Infrastructure",
+        "problem":  "India\u0027s startup ecosystem has 30+ active central government grant schemes (TIDE 2.0, NIDHI-PRAYAS, MeitY GENESIS, iDEX, BHASHINI, etc.) plus 100+ state-level schemes, each with distinct eligibility criteria, documentation requirements, and application windows. Founders — especially those from Tier-2/3 cities and first-time builders — spend weeks researching eligibility, miss deadlines, and submit non-compliant applications. There is no structured intelligence layer that maps a founder\u0027s profile to fundable schemes in real time.",
+        "signal":  "The 2025 Union Budget introduced new schemes (Startup Fund of Funds ₹10,000 crore, iDEX expansion, BHASHINI APIs, semiconductor DLI). Multiple programs have simultaneous open windows in 2025 (AIC IIT Delhi Bharat Byte, MeitY GENESIS, Ignition Grant). DPIIT\u0027s Startup India portal is acknowledged as hard to navigate — its \u0027Government Schemes\u0027 page requires login and shows a last-updated date of June 2023, signaling a structural information gap that a private intelligence layer can fill.",
+        "score":  8
+    },
+    {
+        "id":  "4b044f36",
+        "title":  "AI-Assisted Preventive Screening Navigator for Rural and Peri-Urban Primary Health Centres",
+        "domain":  "HealthTech \u0026 BioTech",
+        "problem":  "India\u0027s 30,000+ Health and Wellness Centres (HWCs) under Ayushman Bharat are mandated to deliver preventive screenings for NCDs (diabetes, hypertension, cancer) but are chronically understaffed — a single Community Health Officer (CHO) serves 5,000+ patients with no clinical decision support tool. As a result, fewer than 20% of at-risk adults in rural India receive recommended preventive screenings. Paper-based referral systems mean most flagged patients never reach secondary care. The treatment gap for conditions like cervical cancer and hypertension in rural India remains above 60%.",
+        "signal":  "ABDM\u0027s Health ID and ABHA infrastructure reached 670M+ registrations by mid-2025, making it technically viable to link screening records to a patient\u0027s longitudinal digital health ID for the first time. The National Programme for Non-Communicable Diseases (NPNCD) mandates screening protocols but provides no digital tool to CHOs for protocol adherence or referral tracking. State governments (Karnataka, Rajasthan, MP) are actively tendering for digital CHO support tools in 2025. PATH India\u0027s ASPIRE project (2024-2027) in Karnataka demonstrates government appetite for tech-assisted community health worker tools.",
+        "score":  8
+    },
+    {
+        "id":  "4da7e0b8",
+        "title":  "Urban Organic Waste-to-Biogas Micro-Plants for Apartment Complexes and Hostels",
+        "domain":  "Climate Tech \u0026 Sustainability",
+        "problem":  "India generates 62 million tonnes of municipal solid waste annually, with wet/organic waste comprising 50-60%. Large apartment complexes (200+ units), college hostels, and institutional campuses are mandated under SWM Rules 2016 to process organic waste on-site but lack affordable, low-maintenance solutions. Existing biogas plants are either too large (community scale) or require skilled operators. Wet waste sent to landfills generates methane — a potent GHG — while these facilities simultaneously pay high LPG/PNG bills.",
+        "signal":  "SWM Rules 2016 compliance enforcement has tightened in major cities post-2022. NGT orders in Bengaluru, Delhi, and Pune have imposed fines on large waste generators. LPG prices have risen 40%+ since 2020, improving biogas ROI. Modular prefabricated biogas technology costs have dropped significantly. Nikhil Kamath\u0027s Namma Bengaluru Challenge 2026 explicitly targets waste management startups with pilot grants — a direct early-customer acquisition opportunity for a Bengaluru-based team.",
+        "score":  8
+    },
+    {
+        "id":  "4eb59056",
+        "title":  "Vernacular Voice AI Agent Platform for MSME Collections \u0026 Recoveries",
+        "domain":  "AI \u0026 Intelligent Systems",
+        "problem":  "India has 63 million MSMEs, and a significant portion of lending to this segment is managed by NBFCs and fintechs whose collections operations are manual, high-cost, and language-fragmented. Collections agents must navigate 12+ regional languages, high attrition, and RBI compliance requirements simultaneously. Existing voice AI solutions (Gnani, GreyLabs) target large BFSI enterprises with complex integrations; the sub-enterprise NBFC and fintech segment (ticket sizes ₹50K–₹5L) remains underserved with no affordable, compliant, multilingual voice agent product.",
+        "signal":  "RBI\u0027s updated digital lending guidelines (2023–2024) mandate documented, auditable borrower communication — creating compliance pressure that manual call centers cannot satisfy. Simultaneously, open-source multilingual STT models (Sarvam, Vakyansh) and low-cost LLM inference have collapsed the cost of building production-grade Indic voice agents. YC-backed Bolna AI raised $6.3M in Jan 2025 proving investor appetite; the MSME collections vertical remains unclaimed.",
+        "score":  8
+    },
+    {
+        "id":  "560bce0c",
+        "title":  "ExamShield Lite: Low-Cost AI Proctoring-as-a-Service for Mid-Tier Indian Universities and State Exam Boards",
+        "domain":  "EdTech \u0026 Learning Infrastructure",
+        "problem":  "India\u0027s 1,000+ state universities and 40,000+ affiliated colleges are transitioning to online and hybrid examinations under NEP 2020, but enterprise AI proctoring platforms (Mercer Mettl, Talview, ProctorU) are priced at Rs 200-800 per candidate per exam — unaffordable for institutions where exam fees are Rs 500-1,500 total. These institutions either revert to paper-based exams (defeating digital transformation goals) or use zero-security online exams rife with malpractice. The result: devalued degrees, employer distrust, and systemic academic fraud.",
+        "signal":  "Multiple state boards and national bodies are formally shifting to application-based, descriptive, AI-scored assessments in 2024-25 (per AICTE and UGC guidelines). NEP 2020 implementation deadlines are forcing institutions to act. Post-COVID, 60%+ of Indian universities have some online exam infrastructure but lack integrity tools. New edge AI capabilities (on-device face detection, browser lockdown) have reduced server costs dramatically, making a sub-Rs 50/session price point viable for the first time. No incumbent has specifically targeted the sub-Rs 100/session price band for bulk institutional contracts.",
+        "score":  8
+    },
+    {
+        "id":  "5a95b02f",
+        "title":  "Agentic AI Recruiting Platform for High-Volume Blue-Collar and Gig Hiring in India",
+        "domain":  "AI \u0026 Intelligent Systems",
+        "problem":  "India\u0027s gig and blue-collar hiring market (delivery, retail, manufacturing, hospitality, BPO) processes millions of applications monthly through inefficient channels: job boards, placement agencies, and manual HR phone screens. Employers face 40–60% candidate drop-off between application and Day 1 joining due to poor follow-through. Candidates — often first-time job seekers with low digital literacy — abandon text-based application flows. HR teams spend 60–70% of their time on repetitive screening, scheduling, and document collection rather than evaluation and retention.",
+        "signal":  "Dialflo.ai\u0027s founder cited massive market opportunity for voice agents in recruiting in Jan 2025 ET coverage. JobsUPI is actively fundraising in the same space — validating the thesis but leaving room for a more verticalized, voice-native product. UPI-linked identity (ONDC, DigiLocker) now enables instant background verification at near-zero cost, removing a key hiring friction. Post-COVID gig economy normalization has made employers far more open to tech-mediated hiring than pre-2020.",
+        "score":  9
+    },
+    {
+        "id":  "61da827a",
+        "title":  "Automated Health Insurance Claims Reconciliation Platform for Indian Hospitals and TPAs",
+        "domain":  "FinTech \u0026 Financial Infrastructure",
+        "problem":  "Indian hospitals, especially mid-sized and smaller ones, face 15-25% claim denial rates from insurers and TPAs, with settlement cycles of 30-90 days. The claims process involves manual document submission, inconsistent medical coding, and no real-time visibility into rejection reasons. This creates severe cash flow stress for hospitals and drives up administrative headcount. No affordable, purpose-built automation layer exists for sub-200-bed hospitals.",
+        "signal":  "IRDAI\u0027s 2024 mandate requiring cashless settlement within 3 hours for planned hospitalisation has created urgent compliance pressure on both insurers and hospitals. The National Health Claims Exchange (NHCX) launched by NHA in 2023 is creating a standardised digital claims rail for the first time. Hospitals that cannot integrate will face revenue loss. This regulatory inflection point is forcing digitisation now.",
+        "score":  8
+    },
+    {
+        "id":  "622dbe34",
+        "title":  "AI-Powered Online Dispute Resolution (ODR) Platform for B2B MSME Payment Disputes",
+        "domain":  "Legal Tech \u0026 Compliance",
+        "problem":  "India\u0027s MSMEs are owed over ₹10,000 crore in delayed payments from larger buyers at any given time. The MSMED Act mandates 45-day payment cycles, but enforcement requires filing with MSME Samadhaan (a government portal with low resolution rates) or approaching courts (expensive, 3-7 year timelines). Existing ODR platforms like Presolv360 focus on consumer financial disputes (loans, insurance); no platform specifically serves B2B MSME payment recovery with AI-assisted evidence packaging and arbitration.",
+        "signal":  "The Ministry of MSME launched the revised MSME Samadhaan 2.0 portal in 2024, signaling government intent to digitize dispute resolution. The Arbitration and Conciliation (Amendment) Act updates have made institutional arbitration faster and more enforceable. Courts are actively promoting ODR to reduce backlog (India has 50M+ pending cases). Post-COVID, digital-first dispute resolution has gained acceptance among SME owners who previously required in-person proceedings.",
+        "score":  8
+    },
+    {
+        "id":  "76ee6a6f",
+        "title":  "Vernacular Creator Commerce Platform for Tier-2/3 India",
+        "domain":  "Consumer \u0026 Community Platforms",
+        "problem":  "Over 100 million content creators in India operate in regional languages (Bengali, Tamil, Bhojpuri, Marathi, etc.), yet existing social commerce infrastructure — Meesho, Shopsy, Instagram Shops — is built for Hindi/English audiences and metro consumer behavior. Micro and nano-influencers in smaller cities cannot convert their engaged regional audiences into commerce revenue because there is no platform that combines vernacular content discovery, trust-based influencer storefronts, and last-mile fulfillment suited to Tier-2/3 logistics realities.",
+        "signal":  "Three forces converged in 2024–25: (1) CNBC and BCG both report that influencer-to-entrepreneur transition is a brand-new and accelerating trend in India, reversing the historical entrepreneur-to-influencer pattern; (2) Seekho scaled to 25M MAUs on vernacular edutainment, proving regional-language digital products can achieve massive scale; (3) UPI and ONDC have created open payment and catalog rails that a startup can plug into without building commerce infrastructure from scratch.",
+        "score":  9
+    },
+    {
+        "id":  "7b495913",
+        "title":  "AgriCredit Rail: Embedded Working Capital Credit for Agri-Input Retailers via B2B Commerce Data",
+        "domain":  "AgriTech \u0026 Rural Infrastructure",
+        "problem":  "India has ~700,000 agri-input retailers (selling seeds, fertilisers, pesticides) who are the last-mile touchpoint for 140 million farmers. These retailers are chronically underfinanced — they extend 60-90 day credit to farmers but receive only 15-30 day credit from distributors, creating a working capital gap of Rs 50,000 to Rs 5 lakh per retailer per season. Formal credit is inaccessible due to lack of transaction history, collateral, and financial documentation. This forces retailers to stock less, limit SKUs, and pass on credit costs to farmers.",
+        "signal":  "The Unnati-Gramophone merger (2025) and FarMart\u0027s $40M fundraise signal rapid consolidation of B2B agri-input commerce — the transaction data these platforms generate is becoming rich enough to underwrite credit. India\u0027s Account Aggregator (AA) framework (live since 2023) enables consent-based financial data sharing, enabling thin-file credit scoring. RBI\u0027s co-lending regulations allow fintech-NBFC partnerships that dramatically reduce capital requirements for an early-stage startup. ONDC\u0027s agri module is extending digital commerce rails to rural retailers, further digitising transaction flows.",
+        "score":  8
+    },
+    {
+        "id":  "7f0fd5c0",
+        "title":  "AI-Native Contract Intelligence Platform for Indian MSMEs and Mid-Market Firms",
+        "domain":  "Legal Tech \u0026 Compliance",
+        "problem":  "73% of medium-to-large Indian enterprises have digitized CLM, but the vast majority of MSMEs and mid-market firms (50-500 crore revenue) still manage contracts through email threads, Word documents, and manual tracking. They lack India-specific clause libraries, GST/FSSAI/labour law compliance checks, and vernacular language support — making them exposed to hidden risks, missed renewals, and regulatory penalties.",
+        "signal":  "India\u0027s Digital Personal Data Protection Act (DPDPA) 2023 enforcement is tightening in 2025, creating urgent compliance obligations that flow into vendor and customer contracts. Simultaneously, LLM costs have dropped 10x since 2022, making AI-powered contract parsing economically viable at MSME price points (sub-₹5,000/month). GST audit trails and e-invoicing mandates are also pushing firms to formalize contract records.",
+        "score":  9
+    },
+    {
+        "id":  "89f56eb3",
+        "title":  "ESGProof: BRSR \u0026 ESG Data Collection and Audit-Ready Reporting SaaS for Listed Indian Companies",
+        "domain":  "Enterprise SaaS \u0026 B2B Tools",
+        "problem":  "SEBI\u0027s BRSR Core mandate requires the top 150 listed Indian companies to submit third-party verified ESG data on emissions, water use, workforce diversity, and safety metrics starting FY2024-25, with the obligation set to expand to the top 1,000 listed entities. Currently, nearly 40% of ESG audit time is spent cleaning data sourced from disconnected plant-level spreadsheets, ERP exports, and manual surveys. Big-4 assurance is financially accessible only to the largest companies; global ERP-integrated ESG platforms are built for CSRD/GRI frameworks, not BRSR\u0027s specific disclosure format. Indian companies are optimising for form-filling rather than actual performance tracking.",
+        "signal":  "SEBI made BRSR Core assurance mandatory for the top 150 companies from FY2024-25 onwards, with penalties for non-compliance. Foreign institutional investors and ESG rating agencies (MSCI, Sustainalytics) are now scoring Indian listed companies on data quality, creating commercial pressure beyond regulatory penalties. Simultaneously, DPDPA and evolving labour codes mean ESG data intersects with compliance data, making integrated platforms more valuable. The window to become the default BRSR data infrastructure before the Big-4 build proprietary portals is narrow — approximately 18-24 months.",
+        "score":  9
+    },
+    {
+        "id":  "941af3d1",
+        "title":  "Fleet Depot Charging-as-a-Service for Last-Mile Logistics EVs",
+        "domain":  "Climate Tech \u0026 Sustainability",
+        "problem":  "Indian last-mile logistics fleet operators electrifying 2W/LCV fleets cannot afford or navigate the upfront capex, DISCOM approvals, and load management complexity of depot charging — stalling EV adoption despite strong vehicle-side demand.",
+        "signal":  "PM E-DRIVE scheme (active until March 2026) offers capital subsidies for fast charger installation, making the unit economics of charging-as-a-service viable today. DISCOM financial health has improved, enabling faster grid upgrade negotiations. E-commerce volumes post-pandemic have permanently elevated last-mile fleet sizes. The RMI June 2025 report explicitly identifies depot electrification and mid-shift top-up at logistics parks as the critical unsolved infrastructure gap.",
+        "score":  8
+    },
+    {
+        "id":  "9c7399de",
+        "title":  "FrostMile: Asset-Light First-Mile Cold Chain Network for Smallholder Farmers",
+        "domain":  "AgriTech \u0026 Rural Infrastructure",
+        "problem":  "India\u0027s cold chain infrastructure covers only ~5-11% of perishable produce needs, with a 99% gap at the first mile (farm gate to collection point). Smallholder farmers — who produce the majority of India\u0027s fruits, vegetables, dairy, and fish — lose 30-40% of their harvest to spoilage before it even enters any cold chain system. Existing cold storage is concentrated in urban/export zones and built for single commodities, leaving rural hinterlands entirely unserved.",
+        "signal":  "The Union Budget 2025-26 significantly expanded AIF and PMKSY allocations for cold chain. Investor confidence in agritech is returning (AgroStar $30M, Arya.ag $80M in 2025). Ecozen\u0027s 2.5x growth to Rs 1,150 crore in FY25 validates that rural cold infrastructure is a profitable model. 4G/smartphone penetration in rural India now enables IoT-based monitoring at low cost. Bharat-VISTAAR and AgriStack digital farmer ID infrastructure (7.63 crore Farmer IDs) creates a data backbone for targeted deployment.",
+        "score":  8
+    },
+    {
+        "id":  "aae89f10",
+        "title":  "Kirana-Anchored Q-Commerce Enablement SaaS for Tier-2/3 Cities",
+        "domain":  "Consumer \u0026 Community Platforms",
+        "problem":  "Kirana store owners in Tier-2/3 cities cannot participate in the Q-commerce revolution because no affordable, simple SaaS tool exists that turns their existing shop into a dark-store-equivalent node — with digital inventory, order management, delivery partner dispatch, and integration with ONDC or aggregator APIs — without requiring smartphone sophistication or upfront hardware investment.",
+        "signal":  "ONDC\u0027s open network now allows any store to become a discoverable seller node without exclusive platform tie-ins. Bain\u0027s 2025 research explicitly identifies order density and dark-store capex as the binding constraints on Q-commerce expansion — signaling the market needs an asset-light kirana-as-dark-store model. JioMart and ElasticRun have proven kirana digitization is viable; the gap is a focused, delivery-dispatch-integrated SaaS rather than a marketplace play.",
+        "score":  8
+    },
+    {
+        "id":  "b08a9135",
+        "title":  "SupplyLens: Real-Time Supply Chain Visibility Platform for Indian Mid-Market Manufacturers",
+        "domain":  "Enterprise SaaS \u0026 B2B Tools",
+        "problem":  "Indian mid-market manufacturers — in sectors like pharma, auto-ancillary, textiles, and FMCG — lack real-time visibility into their multi-tier supplier networks. They rely on WhatsApp messages, phone calls, and spreadsheets to track inbound materials, leading to production stoppages, excess safety stock, and inability to respond to demand shocks. Existing global visibility platforms (project44, e2open, Blume Global) are built for multinational shippers with structured EDI data flows; Indian suppliers operate on unstructured communication channels and informal logistics networks.",
+        "signal":  "Three converging factors make 2025 the inflection point: (1) GST e-way bill and e-invoice mandates have forced even informal logistics players to digitise, creating a structured data layer for the first time; (2) global buyers are imposing supply chain due diligence requirements (EUDR, EU CSDDD) on Indian exporters, making traceability a revenue-critical need rather than a nice-to-have; (3) WhatsApp Business API maturity now allows building lightweight supplier communication workflows without requiring suppliers to adopt new apps — critical for Indian MSMEs.",
+        "score":  8
+    },
+    {
+        "id":  "b0f9efc0",
+        "title":  "VernacularLearn: Offline-First Adaptive Learning Platform for Tier 2/3 India in Regional Languages",
+        "domain":  "EdTech \u0026 Learning Infrastructure",
+        "problem":  "Over 65% of India\u0027s 265 million students reside in Tier 2/3 cities and rural areas where internet connectivity is unreliable, power outages are frequent, and digital content is predominantly in English. Existing EdTech giants like BYJU\u0027S and Vedantu are designed for urban, English-proficient users with stable broadband. Students in these regions are systematically excluded from quality supplementary education, widening the learning gap at a critical stage.",
+        "signal":  "NEP 2020 enforcement is accelerating regional language instruction mandates in 2024-25. Government\u0027s National AI Skilling Framework and NMEICT investments are creating institutional pull for vernacular digital content. Affordable Android devices (sub-Rs 7,000) have penetrated rural India, but quality offline content for these devices is absent. Post-BYJU\u0027s collapse, trust in premium urban EdTech is low — a gap for credible, affordable regional alternatives. AI voice synthesis and LLM fine-tuning in Indian languages (e.g., IndicBERT, Sarvam AI) have matured enough for a small team to build multilingual content pipelines cheaply.",
+        "score":  8
+    },
+    {
+        "id":  "bb017ccc",
+        "title":  "AI-Powered ROI Measurement and Brand-Safety Platform for Indian Influencer Marketing",
+        "domain":  "Consumer \u0026 Community Platforms",
+        "problem":  "Indian brands collectively spend billions on influencer marketing yet BCG\u0027s landmark 2025 report — based on 60+ brand interviews — explicitly identifies fake engagement, ROI measurement gaps, and brand safety as the top three unresolved challenges blocking further investment. Brand managers at mid-market Indian companies (D2C, FMCG, fintech) have no reliable, India-specific tool to verify authentic audience reach, measure downstream purchase attribution, or screen creators for brand-unsafe content before signing deals. They rely on spreadsheets, manual follower audits, and gut feel.",
+        "signal":  "BCG published its first-ever India creator economy quantification report in May 2025, mainstreaming the problem for CFOs and CMOs. SEBI and ASCI have tightened influencer disclosure regulations in 2023–24, creating compliance urgency. Simultaneously, generative AI now makes it feasible for a small team to build real-time content moderation, synthetic follower detection, and multi-touch attribution at a fraction of the cost it would have required 3 years ago.",
+        "score":  8
+    },
+    {
+        "id":  "c24db816",
+        "title":  "ComplianceOS: AI-Native Regulatory Obligation Tracker for Indian SMEs and Mid-Market Enterprises",
+        "domain":  "Enterprise SaaS \u0026 B2B Tools",
+        "problem":  "Indian enterprises navigate over 8,600 compliance requirements annually across labour, tax, environmental, and sector-specific regulations. Obligations are tracked manually on spreadsheets, updates arrive scattered across emails and PDFs, and accountability is tied to individuals rather than systems. Nearly 40% of compliance audit time is spent cleaning data. Missed deadlines result in penalties, reputational risk, and board-level exposure. Existing solutions are either Big-4 consulting engagements (too expensive) or global ERP-integrated platforms (too generic for India\u0027s regulatory context).",
+        "signal":  "Three simultaneous regulatory triggers in 2024-2025 create urgent demand: (1) SEBI\u0027s BRSR Core mandating third-party verified ESG data from top 150 listed entities with cascading supply-chain obligations; (2) DPDPA enforcement transitioning from gray zone to active compliance requirement; (3) four new Labour Codes replacing 29 laws, creating re-mapping obligations for every employer. Indian regulators are also digitising their own oversight using AI, raising the cost of non-compliance materially.",
+        "score":  9
+    },
+    {
+        "id":  "c437264d",
+        "title":  "Vernacular AI-Powered Digital CBT Platform for Tier 2/3 City Mental Health",
+        "domain":  "HealthTech \u0026 BioTech",
+        "problem":  "India bears 15% of the global mental health disorder burden with a treatment gap exceeding 70%. Existing mental health apps — Wysa, YourDOST, Amaha — are English-first, urban-centric, and therapist-dependent, making them inaccessible and unaffordable for the 400M+ population in Tier 2/3 cities and semi-urban India. The government\u0027s Tele-MANAS program launched a multilingual chatbot in October 2025, signalling institutional validation but revealing that the private sector has not yet built a clinically-structured, vernacular, self-guided CBT product at scale.",
+        "signal":  "The Government of India launched the enhanced Tele-MANAS app in October 2025 with multilingual and chatbot support, normalising AI-led mental health support at policy level. LLM costs (via GPT-4o, Llama 3) have fallen 80% since 2023, making context-aware, vernacular conversational CBT economically viable for the first time. ABDM\u0027s digital health stack allows integration of mental health records with primary care, enabling referral pathways. The HITLAB 2025 report identifies India as a priority LMIC for digital CBT pilots, attracting global NGO co-funding.",
+        "score":  9
+    },
+    {
+        "id":  "c54fc6ba",
+        "title":  "KrishiSense: Affordable IoT-AI Precision Farming-as-a-Service for Sub-2-Acre Smallholders",
+        "domain":  "AgriTech \u0026 Rural Infrastructure",
+        "problem":  "India\u0027s 100+ million smallholder farmers (avg. landholding \u003c2 acres) cannot afford imported precision farming hardware (Rs 25 lakh per setup) or enterprise-grade agri-AI tools. Existing precision farming startups target large farms or use drone services that are episodic, not continuous. Smallholders make irrigation, fertilisation, and pest decisions based on habit or local agent advice, leading to 25-35% over-use of water and fertiliser and avoidable crop losses. The advisory gap costs Indian agriculture an estimated $6-10 billion annually in suboptimal input use.",
+        "signal":  "Union Budget 2026-27 proposed Bharat-VISTAAR, a multilingual AI advisory tool integrated with AgriStack — creating an open data layer startups can build on. Farm Again\u0027s Tamil Nadu deployment (3,500 farmers, 4,000 acres, Rs 2.5 lakh vs Rs 25 lakh import cost) proves the affordable localisation is feasible right now. 7.63 crore Farmer IDs on AgriStack provide a distribution and identity infrastructure that did not exist 2 years ago. 4G penetration in rural India crossed 85% in 2024, enabling real-time sensor-to-app data pipelines cheaply.",
+        "score":  9
+    },
+    {
+        "id":  "cd0ad4f6",
+        "title":  "Family-Coordinated Chronic Disease Management Platform for Indian Households",
+        "domain":  "HealthTech \u0026 BioTech",
+        "problem":  "In India, 77% of chronic disease patients have an informal \u0027family health manager\u0027 coordinating their care, yet no digital platform is designed around this multi-member, multi-generational decision-making unit. Existing apps like HealthifyMe and Sugar.fit are built for the individual patient, ignoring that medication adherence is 72% higher and lifestyle change completion 86% higher when family members are actively involved. This structural mismatch causes chronic conditions like diabetes and hypertension to worsen despite digital health adoption.",
+        "signal":  "Ayushman Bharat Digital Mission (ABDM) now enables consent-based sharing of health records across family members on a single platform. Wearable CGM and BP monitor costs have dropped sharply in 2024-25, making multi-member household monitoring economically viable. A LinkedIn dataset from Praan of 3,000+ Indian families published in 2025 has publicly validated the 3.2x improvement in chronic biomarkers under collaborative care frameworks, providing evidence to attract early enterprise pilots.",
+        "score":  8
+    },
+    {
+        "id":  "f28e7167",
+        "title":  "AI Workflow Automation Co-pilot for Indian SMB Back-Office Operations",
+        "domain":  "AI \u0026 Intelligent Systems",
+        "problem":  "Indian SMBs (manufacturers, distributors, D2C brands, service firms) have fragmented back-office operations — vendor reconciliation, GST filing prep, purchase order management, employee onboarding — handled manually via WhatsApp threads, Excel sheets, and phone calls. Off-the-shelf SaaS (Zoho, Tally) captures data but does not execute tasks autonomously. SMB owners lack the technical capacity to configure AI agents using horizontal tools like Zapier or Make.io. The result: 25 crore SMB employees spend disproportionate time on low-value repetitive administrative work.",
+        "signal":  "Three converging forces: (1) GST e-invoicing mandates have forced SMBs onto digital rails, creating structured data pipelines that AI agents can act on; (2) WhatsApp Business API now supports agentic workflows, giving SMBs a zero-friction interface they already use; (3) Cost of LLM inference has dropped 10x in 18 months, making per-SMB unit economics viable at Indian price points (sub-₹3,000/month). 92% of Indian businesses now automate internal workflows per 2026 survey data — SMBs are the laggard cohort with the highest upside.",
+        "score":  8
+    }
 ]
