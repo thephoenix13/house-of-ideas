@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enterprise AI — Diagnostics Use Case</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E0C; --paper:#F6F1E8; --ochre:#B8862F; --stone:#6B6660; --rule:#D9D2C5;
+    --serif:'Source Serif 4',Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{font-family:var(--sans);color:var(--ink);background:#111;-webkit-font-smoothing:antialiased;}
+  .deck{height:100vh;overflow:hidden;}
+  .slide{display:none;height:100vh;width:100vw;background:var(--paper);padding:8vh 9vw 9vh;flex-direction:column;position:relative;}
+  .slide.active{display:flex;}
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:.9rem;margin-bottom:auto;}
+  .wordmark{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.16em;text-transform:uppercase;}
+  .folio{font-family:var(--mono);font-size:.78rem;color:var(--stone);letter-spacing:.05em;}
+  .body-area{margin:auto 0;max-width:62rem;}
+  .eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--ochre);margin-bottom:1.4rem;}
+  h1{font-family:var(--serif);font-weight:700;font-size:4.4rem;line-height:1.04;letter-spacing:-.015em;}
+  h2{font-family:var(--serif);font-weight:700;font-size:2.9rem;line-height:1.08;letter-spacing:-.01em;margin-bottom:1.6rem;max-width:28ch;}
+  h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;line-height:1.3;}
+  p{font-size:1.18rem;line-height:1.62;color:var(--ink);max-width:60ch;}
+  p.lead{font-size:1.5rem;line-height:1.5;color:var(--ink);max-width:46ch;}
+  p + p{margin-top:1.1rem;}
+  .stone{color:var(--stone);}
+  em{font-style:italic;}
+  .accent{color:var(--ochre);}
+  .footnote{font-family:var(--mono);font-size:.72rem;color:var(--stone);letter-spacing:.04em;border-top:1px solid var(--rule);padding-top:.8rem;margin-top:auto;display:flex;justify-content:space-between;}
+  .rows{display:grid;gap:0;}
+  .row{display:grid;grid-template-columns:3.2rem 1fr;gap:1.4rem;padding:1.15rem 0;border-bottom:1px solid var(--rule);align-items:baseline;}
+  .row:first-child{border-top:1px solid var(--rule);}
+  .row .n{font-family:var(--mono);font-size:.95rem;color:var(--ochre);padding-top:.15rem;}
+  .row h3{margin-bottom:.25rem;}
+  .row p{font-size:1.02rem;color:var(--stone);max-width:64ch;}
+  .rows-sm .row{padding:.8rem 0;}
+  .rows-sm .row p{font-size:.92rem;}
+  .rows-sm h3{font-size:1.08rem;}
+  .stagegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);margin-top:.6rem;}
+  .stagegrid > div{padding:1rem 1.4rem 1rem 0;border-bottom:1px solid var(--rule);}
+  .stagegrid .stage-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);margin-bottom:.5rem;}
+  .stagegrid h3{margin-bottom:.4rem;}
+  .stagegrid p{font-size:.95rem;color:var(--stone);max-width:28ch;}
+  .cover h1{font-size:4.6rem;}
+  .cover .sub{font-size:1.5rem;color:var(--stone);margin-top:1.4rem;max-width:36ch;font-family:var(--serif);}
+  .rule-mark{width:64px;height:2px;background:var(--ochre);margin:2.2rem 0;}
+  .closing{background:var(--ink);}
+  .closing .masthead{border-color:#333;}
+  .closing .wordmark,.closing h2,.closing p{color:var(--paper);}
+  .closing .footnote{color:#8a857c;border-color:#333;}
+  .closing .eyebrow{color:var(--ochre);}
+  .closing .lead{color:var(--paper);}
+  .closing .rows{margin-top:2rem;}
+  .closing .row{border-color:#2a2a28;}
+  .closing .row:first-child{border-top-color:#2a2a28;}
+  .closing .row h3{color:var(--paper);}
+  .closing .row p{color:#8a857c;}
+  .closing .row .n{color:var(--ochre);}
+  .nav{position:fixed;bottom:16px;right:20px;display:flex;gap:6px;z-index:50;}
+  .nav button{background:var(--paper);border:1px solid var(--rule);color:var(--ink);width:34px;height:34px;font-size:1rem;cursor:pointer;font-family:var(--serif);}
+  @media print{body{background:#fff;}.deck{height:auto;overflow:visible;}.slide{display:flex !important;page-break-after:always;height:100vh;}.nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1. Cover -->
+  <section class="slide cover active">
+    <div class="masthead"><span class="wordmark">Perfect Skills</span><span class="folio">Diagnostics — AI Use Case</span></div>
+    <div class="body-area">
+      <h1>Enterprise AI<br/>Knowledge &amp;<br/>Intelligence Platform</h1>
+      <div class="rule-mark"></div>
+      <p class="sub">What we built for a large diagnostics network, and what changed.</p>
+    </div>
+    <div class="footnote"><span>Perfect Skills Technologies</span><span>Enterprise AI Practice</span></div>
+  </section>
+
+  <!-- 2. The problem -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">Perfect Skills</span><span class="folio">02 — The Problem</span></div>
+    <div class="body-area">
+      <div class="eyebrow">Where time was being lost</div>
+      <h2>The organisation's knowledge existed. Getting to it did not scale.</h2>
+      <div class="rows" style="margin-top:1.6rem;">
+        <div class="row"><span class="n">—</span><div><h3>SOPs and policies lived across multiple disconnected systems</h3></div></div>
+        <div class="row"><span class="n">—</span><div><h3>Getting an operational data answer meant waiting for someone to build the report</h3></div></div>
+        <div class="row"><span class="n">—</span><div><h3>Field staff and franchise partners depended on supervisors for routine queries</h3></div></div>
+        <div class="row"><span class="n">—</span><div><h3>Compliance prep meant hunting through folders and old document versions</h3></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>The knowledge existed. Nobody could reach it without a search job or a phone call.</span><span>02</span></div>
+  </section>
+
+  <!-- 3. The solution -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">Perfect Skills</span><span class="folio">03 — The Solution</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">What we built</div>
+      <h2>RAG as the foundation. Enterprise intelligence as the goal.</h2>
+      <div class="stagegrid">
+        <div>
+          <div class="stage-label">Stage 1</div>
+          <h3>Knowledge</h3>
+          <p>Employees ask, get the right document, with a citation.</p>
+        </div>
+        <div>
+          <div class="stage-label">Stage 2</div>
+          <h3>Intelligence</h3>
+          <p>Ask a data question. Get the answer. No report request needed.</p>
+        </div>
+        <div>
+          <div class="stage-label">Stage 3</div>
+          <h3>Action</h3>
+          <p>AI initiates approved workflows, requests and reports.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footnote"><span>Stage 1 works on its own. Stages 2 and 3 are where it becomes a platform.</span><span>03</span></div>
+  </section>
+
+  <!-- 4. Use cases A -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">Perfect Skills</span><span class="folio">04 — Use Cases</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Use cases: Compliance, Search &amp; Learning</div>
+      <h2>Four things the AI handles that used to eat up working time.</h2>
+      <div class="rows rows-sm">
+        <div class="row"><span class="n">01</span><div><h3>Quality &amp; Compliance Assistant</h3><p>Quality questions answered from approved documents, checklists generated on the spot. Audit prep that used to take hours.</p></div></div>
+        <div class="row"><span class="n">02</span><div><h3>Enterprise Search</h3><p>One search across SOPs, policies, manuals and internal circulars. Employees stop guessing which folder to check.</p></div></div>
+        <div class="row"><span class="n">03</span><div><h3>Training &amp; Learning Assistant</h3><p>Teaches a process, tests understanding, scores the result. All from content the organisation already owns.</p></div></div>
+        <div class="row"><span class="n">04</span><div><h3>Franchise &amp; Collection Centre Assistant</h3><p>Franchise partners get the same answer every time. Central teams stop fielding the same calls.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Use cases 01–04 of 07.</span><span>04</span></div>
+  </section>
+
+  <!-- 5. Use cases B -->
+  <section class="slide">
+    <div class="masthead"><span class="wordmark">Perfect Skills</span><span class="folio">05 — Use Cases</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Use cases: Reporting, Intelligence &amp; Resolution</div>
+      <h2>The three use cases that move beyond question-answering.</h2>
+      <div class="rows">
+        <div class="row"><span class="n">05</span><div><h3>MIS &amp; Management Reporting Assistant</h3><p>Management reports pulled from live data, on demand. The consolidation work disappears.</p></div></div>
+        <div class="row"><span class="n">06</span><div><h3>Executive Intelligence</h3><p>Leadership asks a question in plain language and gets the relevant numbers back, without routing it to an analyst first.</p></div></div>
+        <div class="row"><span class="n">07</span><div><h3>Complaint Resolution Assistant</h3><p>Active complaints matched against SOPs, past cases and resolution steps. Investigation that used to take hours gets a structured starting point in seconds.</p></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Use cases 05–07 of 07.</span><span>05</span></div>
+  </section>
+
+  <!-- 6. Closing -->
+  <section class="slide closing">
+    <div class="masthead"><span class="wordmark">Perfect Skills</span><span class="folio">Work With Us</span></div>
+    <div class="body-area" style="max-width:none;">
+      <div class="eyebrow">Seen something relevant?</div>
+      <h2 style="max-width:28ch;">We build this kind of work for enterprise organisations.</h2>
+      <p class="lead" style="max-width:46ch;">One use case from work we have done across diagnostics, healthcare and enterprise operations. If something here looks like a problem you recognise, talk to us.</p>
+      <div class="rows">
+        <div class="row"><span class="n">✉</span><div><h3>pratikgade@perfectskills.in</h3></div></div>
+        <div class="row"><span class="n">↗</span><div><h3>+91-9307042201</h3><p>Call or WhatsApp</p></div></div>
+        <div class="row"><span class="n">⌘</span><div><h3>perfectskills.in</h3></div></div>
+      </div>
+    </div>
+    <div class="footnote"><span>Perfect Skills Technologies · Enterprise AI Practice</span><span>perfectskills.in</span></div>
+  </section>
+
+</div>
+
+<div class="nav"><button id="prev">‹</button><button id="next">›</button></div>
+<script>
+  const slides=Array.from(document.querySelectorAll('.slide'));let i=0;
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,x)=>s.classList.toggle('active',x===i));}
+  document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+  show(0);
+</script>
+</body>
+</html>
